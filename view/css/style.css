@@ -1,0 +1,15 @@
+:root {
+    --back1: #232631;
+    --back2: #302F47;
+    --back3: #2F3B47;
+    --empha1: #fff;
+    --empha2: #f6f6f6;
+    --empha3: #d4d4d4;
+    --deta1: #3748F2;
+    --deta2: #4927DB;
+    --deta3: #2766DB;
+}
+
+body{
+    margin: 0;
+}
