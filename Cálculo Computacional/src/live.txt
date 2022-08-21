@@ -1,0 +1,37 @@
+{a}{tracos} PROCESSADOR {tracos}
+{a}Uso do Processador:{b} {psutil.cpu_percent()}% 
+{a}Modelo do Processador: {b} {modelo}   
+{a}Quantidade de Núcleos:{b} {psutil.cpu_count(logical=False)}
+{a}Quantidade de Núcleos Lógicos:{b} {psutil.cpu_count(logical=True)},
+{a}Frequência Máxima do Processador:{b} {psutil.cpu_freq().max}Ghz
+{a}{tracos}              {tracos}{b}
+\n
+{a}{tracos} MEMÓRIA RAM {tracos}
+{a}Uso da Memória RAM:{b} {psutil.virtual_memory().percent}% ({round(psutil.virtual_memory().used / 1024 ** 3, 1)}GB/{round(psutil.virtual_memory().total / 1024 ** 3, 1)}GB)
+{a}{tracos}             {tracos}{b}
+\n
+{a}{tracos} MEMÓRIA INTERNA {tracos}
+{str(getMemoriaInternaLive())}
+{a}Espaço no Disco Rígido:{b} {round(shutil.disk_usage("/").total / 1024 ** 3, 1)} GB
+{a}Espaço Usado:{b} {round(shutil.disk_usage("/").used / 1024 ** 3, 1)} GB
+{a}Espaço Livre:{b} {round(shutil.disk_usage("/").free / 1024 ** 3, 1)} GB
+{a}Porcentagem de Uso:{b} {round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)}%
+{a}{tracos}                 {tracos}{b}
+\n
+{a}{tracos} SISTEMA OPERACIONAL {tracos}
+{a}Sistema Operacional:{b} {platform.system()} {platform.version()}
+{a}{tracos}                     {tracos}{b}
+\n
+{a}{tracos} REDE {tracos}{b}
+{a}Qtd. Dados Recebidos:{b} {round(psutil.net_io_counters()[0] * 10 ** -9, 3)} GB
+{a}Qtd. Dados Enviados:{b} {round(psutil.net_io_counters()[1] * 10 ** -9, 3)} GB
+{a}Pacotes Enviados:{b} {psutil.net_io_counters()[3]}
+{a}Pacotes Recebidos{b} {psutil.net_io_counters()[4]}
+{a}Endereço IP{b} {psutil.net_if_addrs()['Ethernet'][1][1]}
+{a}Máscara da Rede{b} {psutil.net_if_addrs()['Ethernet'][1][2]}
+{a}{tracos} {tracos}{b}
+\n
+{a}{tracos} BATERIA {tracos}
+{str(getBateriaLive())}
+{a}{tracos}         {tracos}{b}
+\n
