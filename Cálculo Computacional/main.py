@@ -1,4 +1,4 @@
-import psutil, os, cpuinfo, platform, time, shutil, intro, relatorio
+import psutil, os, cpuinfo, platform, time, shutil, intro, relatorio, mascara
 
 from tabulate import tabulate
 
@@ -82,8 +82,8 @@ def getRede():
             f"{str(round(psutil.net_io_counters()[0] * 10 ** -9, 3))} GB"],
         ["GBs Recebidos",
             f"{str(round(psutil.net_io_counters()[1] * 10 ** -9, 3))} GB"],
-        ["Pacotes Enviados", f"{psutil.net_io_counters()[3]}"],
-        ["Pacotes Recebidos", f"{psutil.net_io_counters()[4]}"],
+        ["Pacotes Enviados", f"{mascara.getNumero(psutil.net_io_counters()[3])}"],
+        ["Pacotes Recebidos", f"{mascara.getNumero(psutil.net_io_counters()[4])}"],
         ["Endereço IP", f"{psutil.net_if_addrs()['Ethernet'][1][1]}"],
         ["Máscara da Rede", f"{psutil.net_if_addrs()['Ethernet'][1][2]}"]
     ]

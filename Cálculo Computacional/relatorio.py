@@ -5,7 +5,7 @@ from io import BytesIO
 from svglib.svglib import svg2rlg
 import cpuinfo, locale, psutil, os, matplotlib.pyplot as plt, shutil
 
-locale.setlocale(locale.LC_ALL, 'pt_pt.UTF-8')
+locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 def createRelatorio():
     os.system('cls')
