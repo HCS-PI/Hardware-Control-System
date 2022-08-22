@@ -31,4 +31,4 @@ def select(query, isAllRequested = False):
         if cnx.is_connected():
             cursor.close()
             cnx.close()
-            return dados
+            return dados 

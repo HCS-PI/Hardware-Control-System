@@ -1,33 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+
 body{
     font-family: 'Poppins';
     margin:0;
+    background-image: url(../assets/img/cadastro-background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position:center;
+    overflow-x: hidden;
+    overflow-y:hidden;
 }
 
-
-
-.background_image{
-position: absolute;
-/* width: 100% auto;
-height: 100% auto; */
-background: url(./assets/img/cadastro-background.jpeg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-}
 
 /* Barra de navegação */
 .header{
 position: sticky;
 width: 100% auto;
-height: 100%;
+height: 75px;
 background-color: #fff;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .header1{
@@ -37,7 +34,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header img{
-    height: 10vh;
+    height: 7vh;
 }
 
 .header .logoSep .textColumn::after{
@@ -58,15 +55,16 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header2 .boxSep{
-    border-left: #ccc 1px solid;
-    width: 156px;
-    height: 96px;
+    /* border-left: #ccc 1px solid; */
+    width: 146px;
+    height: 86px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 8px;
 }
 
 .header2 .boxSep:hover{
@@ -83,26 +81,25 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 4px;
 }
 
-/* Fim da barra de navegação */
-
-
-
-.container{
-color:rgb(0, 0, 0);
-display: flex;
-align-items:flex-start;
-justify-content: center;
-height: 115vh;
-width: 80vh;
-float: right;
+.txtHeader{
+    font-size: 15px;
 }
 
+/* Fim da barra de navegação */
+
 .screen {  
-height: 727px;
+height: 520px;
 width: 360px;
 background: rgba( 255, 255, 255, 0.15 );
 backdrop-filter: blur( 14.5px );
 -webkit-backdrop-filter: blur( 14.5px );
+padding: 0;
+color:rgb(0, 0, 0);
+display: flex;
+align-items:flex-start;
+justify-content: center;
+float: right;
+padding: 0;
 /* border: 0.5px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
@@ -117,7 +114,7 @@ clip-path: inset(0 0 0 0);
 .cad {
 width: 320px;
 padding-left: 20px;
-padding-top: 60px;
+padding-top: 10px;
 height: 300px;
 }
 
@@ -131,8 +128,20 @@ border-bottom: 1px solid #000000;
 background: none;
 padding: 10px;
 padding-left: 24px;
-font-weight: 700;
 width: 75%;
+}
+
+.cad_input1{
+border: none;
+border-bottom: 1px solid #000000;
+background: none;
+padding: 10px;
+padding-left: 24px;
+width: 75%;
+}
+
+.cad_input::placeholder{
+    color: black
 }
 
 
@@ -145,7 +154,7 @@ outline: 0;
 /* Botão */
 .texto_botao {
 font-size: 17px;
-margin-top: 30px;
+margin-top: 8px;
 padding: 16px 20px;
 text-transform: uppercase;
 font-weight: bold;
@@ -153,6 +162,7 @@ display: flex;
 cursor: pointer;
 width: 100%;
 justify-content: center;
+align-items: center;
 font-family: 'Poppins';
 appearance: none;
 }

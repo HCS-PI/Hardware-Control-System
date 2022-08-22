@@ -5,6 +5,11 @@ from tabulate import tabulate
 intro.callIntro()
 isSQLActive = True
 
+if platform.system() == 'Linux':
+  limpar = 'clear';
+else:
+  limpar  = 'cls';
+
 if isSQLActive:
     import runData
     runData.start()
@@ -23,7 +28,7 @@ def getProcessador():
         data.append([f"Uso CPU {j}", f"{i}%"])
         j+=1
 
-    os.system('cls')
+    os.system(limpar)
     return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getProcessadorLive():
@@ -42,7 +47,7 @@ def getMemoriaRAM():
         ["Uso da Memória", f"{psutil.virtual_memory().percent}% ({round(psutil.virtual_memory().used / 1024 ** 3, 1)}GB/{round(psutil.virtual_memory().total / 1024 ** 3, 1)}GB)%"]
     ]
 
-    os.system('cls')
+    os.system(limpar)
     return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getMemoriaInterna():
@@ -56,7 +61,7 @@ def getMemoriaInterna():
         data.append(["Espaço Livre", round(shutil.disk_usage("/").free / 1024 ** 3, 1)])
         data.append(["Porcentagem de Uso", round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)])
 
-    os.system('cls')
+    os.system(limpar)
     return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getMemoriaInternaLive():
@@ -73,7 +78,7 @@ def getOS():
         ["\033[1mVersão\033[0m", platform.version()]
     ]
 
-    os.system('cls')
+    os.system(limpar)
     return tabulate(data)
 
 def getRede():
@@ -88,11 +93,11 @@ def getRede():
         ["Máscara da Rede", f"{psutil.net_if_addrs()['Ethernet'][1][2]}"]
     ]
 
-    os.system('cls')
+    os.system(limpar)
     return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getBateria():
-    os.system('cls')
+    os.system(limpar)
 
     if str(psutil.sensors_battery()) == 'None':
         return "Dispositivo não alimentado por bateria"
@@ -133,14 +138,14 @@ def main():
     index = 0
 
     while index != '8':
-        os.system('cls')
+        os.system(limpar)
         index = input("\033[1mHardware Data\033[0m\n\n[1] - Estatísticas em tempo real\n[2] - Processador\n[3] - Memória RAM\n[4] - Memória Interna\n[5] - Sistema Operacional\n[6] - Rede\n[7] - Bateria\n[8] - Temperatura\n[9] - Relatório\n[10] - Sair\n\n\033[1mUsuário:\033[0m ")
-        os.system('cls')
+        os.system(limpar)
         if int(index) > 0 and int(index) < 10:
             print('Buscando dados...')
         try:
             if index == '10':
-                os.system('cls')
+                os.system(limpar)
                 print('\033[1mHardware Controll System\033[0m - Volte Sempre!\n\n')
                 time.sleep(4)
                 exit()
@@ -185,10 +190,10 @@ def main():
 \n
 """)
                     time.sleep(1)
-                    os.system('cls')
+                    os.system(limpar)
         except:
             main()
         input('\nPressione enter para voltar ao menu...\n\n')
 
-os.system('cls')
+os.system(limpar)
 main()

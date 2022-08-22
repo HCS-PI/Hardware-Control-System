@@ -3,12 +3,18 @@ from reportlab.graphics import renderPDF
 from datetime import datetime
 from io import BytesIO
 from svglib.svglib import svg2rlg
+import platform 
 import cpuinfo, locale, psutil, os, matplotlib.pyplot as plt, shutil
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
+if platform.system() == 'Linux':
+  limpar = 'clear';
+else:
+  limpar  = 'cls';
+
 def createRelatorio():
-    os.system('cls')
+    os.system(limpar)
     print('Gerando...')
 
     c = canvas.Canvas('relatorio.pdf')
@@ -283,5 +289,5 @@ def createRelatorio():
 
     c.showPage()
     c.save()
-    os.system('cls')
+    os.system(limpar)
     return 'Relatório Gerado'
