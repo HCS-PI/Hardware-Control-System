@@ -1,6 +1,13 @@
-import dbFunctions, psutil, shutil, time, os
+import dbFunctions, psutil, shutil, time, os,platform
 
-os.system('cls')
+
+if platform.system() == 'Linux':
+  limpar = 'clear';
+else:
+  limpar  = 'cls';
+
+
+os.system(limpar)
     
 placa = 'ABC1234'
 modelo = 'Model X'
@@ -11,7 +18,7 @@ dados = dbFunctions.select(f"SELECT * FROM carro WHERE placaCarro = '{placa}';",
 
 if dados:
     while True:
-        os.system('cls')
+        os.system(limpar)
         print('Inserindo dados...')
         usoProcessador = psutil.cpu_percent()
         usoMemoriaRAM = psutil.virtual_memory().percent
@@ -33,7 +40,7 @@ if dados:
         
         print('Dados Inseridos')
         time.sleep(4)
-        os.system('cls')
+        os.system(limpar)
         print('Inserção Pausada')
         time.sleep(26)
 else:

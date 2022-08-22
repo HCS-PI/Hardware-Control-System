@@ -1,7 +1,13 @@
-import dbFunctions, psutil, cpuinfo, platform, shutil, time, os
+import dbFunctions, psutil, cpuinfo, platform, shutil, time, os,platform
+
+
+if platform.system() == 'Linux':
+  limpar = 'clear';
+else:
+  limpar  = 'cls';
 
 def start():
-    os.system('cls')
+    os.system(limpar)
     
     placa = 'ABC1234'
     modelo = 'Model X'

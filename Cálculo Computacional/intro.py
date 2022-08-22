@@ -1,4 +1,10 @@
-import os, time
+import os, time,platform
+
+
+if platform.system() == 'Linux':
+  limpar = 'clear';
+else:
+  limpar  = 'cls';
 
 def callIntro():
     intro = [
@@ -23,7 +29,7 @@ def callIntro():
     '     .----)   |       |  |     .----)   |       |  |     |  |____ |  |  |  |                                ',
     '     |_______/        |__|     |_______/        |__|     |_______||__|  |__|                                ',
     '                                                                                                            ']
-    os.system('cls')
+    os.system(limpar)
     for i in intro:
         print(str(i))
         time.sleep(0.2)
