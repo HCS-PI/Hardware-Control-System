@@ -59,7 +59,7 @@ def createRelatorio():
     c.drawString(195, 500, f"{psutil.cpu_freq().max}Ghz")
 
     j = 1
-    k = 485
+    k = 490
 
     cpus = psutil.cpu_percent(percpu=True)
     cpusN = []

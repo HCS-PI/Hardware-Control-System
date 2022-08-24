@@ -1,5 +1,5 @@
-import psutil, os, cpuinfo, platform, time, shutil, intro, relatorio, mascara
-
+import psutil, os, cpuinfo, platform, time, shutil, intro, relatorio, mascara, threading
+from insertData import startInsert
 from tabulate import tabulate
 
 intro.callIntro()
@@ -91,7 +91,7 @@ def getRede():
     ]
 
     os.system(limpar)
-    return tabulate(image.pngdata, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
+    return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getBateria():
     os.system(limpar)
@@ -131,6 +131,8 @@ def getTemperatura():
     return psutil.sensors_temperatures()
 
 def main():
+    threading.Thread(target=startInsert).start()
+
     dictFunctions = {'2': getProcessador, '3': getMemoriaRAM, '4': getMemoriaInterna, '5': getOS, '6': getRede, '7': getBateria, '8': getTemperatura, '9': relatorio.createRelatorio}
     index = 0
 
