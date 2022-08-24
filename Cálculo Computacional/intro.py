@@ -1,10 +1,6 @@
 import os, time,platform
 
-
-if platform.system() == 'Linux':
-  limpar = 'clear';
-else:
-  limpar  = 'cls';
+limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 
 def callIntro():
     intro = [

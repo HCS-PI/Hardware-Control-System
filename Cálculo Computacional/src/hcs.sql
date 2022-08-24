@@ -10,7 +10,7 @@ CREATE TABLE Empresa (
 	cnpj varchar(14) NOT NULL UNIQUE,
 	nomeRepresentante VARCHAR(45) NOT NULL,
 	senha VARCHAR(256) NOT NULL
-)AUTO_INCREMENT = 5000;
+) AUTO_INCREMENT = 5000;
 
 CREATE TABLE Funcionario (
 	idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
@@ -24,10 +24,11 @@ CREATE TABLE Cliente (
 	idCliente INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(64) NOT NULL,
 	senha VARCHAR(12) NOT NULL
-)AUTO_INCREMENT=15000;
+) AUTO_INCREMENT=15000;
 
 CREATE TABLE Carro (
-	placaCarro CHAR(7) PRIMARY KEY,
+	enderecoMac VARCHAR(23) PRIMARY KEY,
+	placaCarro CHAR(7) NOT NULL UNIQUE,
 	modelo VARCHAR(64) NOT NULL,
 	
     processador VARCHAR(45) NOT NULL,
@@ -35,17 +36,18 @@ CREATE TABLE Carro (
     qtdNucleosLogicos INT NOT NULL,
     maxFrequencia INT NOT NULL,
     qtdMemoriaRAM INT NOT NULL,
-    qtdMemoriaInterna INT,
-    sistemaOperacional VARCHAR(45),
-    enderecoIP VARCHAR(32),
-    mascara VARCHAR(32),
+    qtdMemoriaInterna INT NOT NULL,
+    sistemaOperacional VARCHAR(45) NOT NULL,
+    enderecoIP VARCHAR(32) NOT NULL,
+    mascara VARCHAR(32) NOT NULL,
+    horarioReg DATETIME NOT NULL,
     
 	fkCliente INT,
 	FOREIGN KEY (fkCliente) REFERENCES Cliente(idCliente),
     
 	fkEmpresa INT,
     FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
-)AUTO_INCREMENT=10000;
+) AUTO_INCREMENT=10000;
 
 CREATE TABLE medidas (
 	idMedida INT PRIMARY KEY AUTO_INCREMENT,
@@ -58,9 +60,10 @@ CREATE TABLE medidas (
     qtdPacotesRec INT NOT NULL,
     qtdBateria INT,
     estaConectado BOOL,
+    horario DATETIME,
     
-    fkCarro VARCHAR(7),
-    FOREIGN KEY (fkCarro) REFERENCES Carro (placaCarro)
+    fkCarro VARCHAR(23),
+    FOREIGN KEY (fkCarro) REFERENCES Carro (enderecoMac)
 ) AUTO_INCREMENT = 100000;
 
 INSERT INTO Empresa VALUES (NULL, 'Tesla', '123456789', 'Marise', 'urubu100');

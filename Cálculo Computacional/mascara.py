@@ -1,4 +1,3 @@
-
 def getNumero(numeroInteiro):
         a = str(numeroInteiro) #recebe o número
         z = a[::-1] #faz a inversão
@@ -18,5 +17,5 @@ def getNumero(numeroInteiro):
                         cnt += 1
 
         d  = b[::-1] # faz a reinversão e coloca em d
+        
         return d
-

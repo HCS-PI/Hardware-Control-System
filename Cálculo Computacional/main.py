@@ -5,10 +5,7 @@ from tabulate import tabulate
 intro.callIntro()
 isSQLActive = True
 
-if platform.system() == 'Linux':
-  limpar = 'clear';
-else:
-  limpar  = 'cls';
+limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 
 if isSQLActive:
     import runData
@@ -25,7 +22,7 @@ def getProcessador():
 
     j = 1
     for i in psutil.cpu_percent(percpu=True):
-        data.append([f"Uso CPU {j}", f"{i}%"])
+        data.append([f"Uso CPUv {j}", f"{i}%"])
         j+=1
 
     os.system(limpar)
@@ -36,7 +33,7 @@ def getProcessadorLive():
     
     j = 1
     for i in psutil.cpu_percent(percpu=True):
-        processadores += f"\033[1mUso CPU {j}:\033[0m {i}%\n"
+        processadores += f"\033[1mUso CPUv {j}:\033[0m {i}%\n"
         j+=1
     
     return processadores
@@ -94,7 +91,7 @@ def getRede():
     ]
 
     os.system(limpar)
-    return tabulate(data, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
+    return tabulate(image.pngdata, headers=['\033[1mFunção\033[0m', '\033[1mValor\033[0m'])
 
 def getBateria():
     os.system(limpar)

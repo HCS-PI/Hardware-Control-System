@@ -8,10 +8,7 @@ import cpuinfo, locale, psutil, os, matplotlib.pyplot as plt, shutil
 
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
-if platform.system() == 'Linux':
-  limpar = 'clear';
-else:
-  limpar  = 'cls';
+limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 
 def createRelatorio():
     os.system(limpar)
@@ -62,16 +59,16 @@ def createRelatorio():
     c.drawString(195, 500, f"{psutil.cpu_freq().max}Ghz")
 
     j = 1
-    k = 480
+    k = 485
 
     cpus = psutil.cpu_percent(percpu=True)
     cpusN = []
     for i in cpus:
         c.setFont('Helvetica-Bold', 12)
-        c.drawString(75, k, f"CPU {j}:")
+        c.drawString(75, k, f"CPUv {j}:")
         c.setFont('Helvetica', 12)
         c.drawString(120, k, f"{i}%")
-        cpusN.append(f"CPU {j}")
+        cpusN.append(f"CPUv {j}")
         j+=1
         k-=20
 
