@@ -1,5 +1,5 @@
-import psutil, os, cpuinfo, platform, time, shutil, intro, relatorio, mascara, threading
-from insertData import startInsert
+import psutil, os, cpuinfo, platform, time, shutil, src.intro as intro, src.relatorio as relatorio, src.mascara as mascara, threading
+from src.insertData import startInsert
 from tabulate import tabulate
 
 intro.callIntro()
@@ -8,7 +8,7 @@ isSQLActive = True
 limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 
 if isSQLActive:
-    import runData
+    import src.runData as runData
     runData.start()
 
 def getProcessador():
@@ -33,7 +33,10 @@ def getProcessadorLive():
     
     j = 1
     for i in psutil.cpu_percent(percpu=True):
-        processadores += f"\033[1mUso CPUv {j}:\033[0m {i}%\n"
+        processadores += f"\033[1mUso CPUv {j}:\033[0m {i}%"
+        
+        if j < len(psutil.cpu_percent(percpu=True)):
+            processadores+="\n"
         j+=1
     
     return processadores
@@ -136,9 +139,9 @@ def main():
     dictFunctions = {'2': getProcessador, '3': getMemoriaRAM, '4': getMemoriaInterna, '5': getOS, '6': getRede, '7': getBateria, '8': getTemperatura, '9': relatorio.createRelatorio}
     index = 0
 
-    while index != '8':
+    while index != '10':
         os.system(limpar)
-        index = input("\033[1mHardware Data\033[0m\n\n[1] - Estatísticas em tempo real\n[2] - Processador\n[3] - Memória RAM\n[4] - Memória Interna\n[5] - Sistema Operacional\n[6] - Rede\n[7] - Bateria\n[8] - Temperatura\n[9] - Relatório\n[10] - Sair\n\n\033[1mUsuário:\033[0m ")
+        index = input("\033[1mHardware Data\033[0m\n\n[1] - Estatísticas em tempo real\n[2] - Processador\n[3] - Memória RAM\n[4] - Memória Interna\n[5] - Sistema Operacional\n[6] - Rede\n[7] - Bateria\n[8] - Temperatura\n[9] - Relatório\n[10] - Sair\n\n\033[1m>>>\033[0m ")
         os.system(limpar)
         if int(index) > 0 and int(index) < 10:
             print('Buscando dados...')
