@@ -1,0 +1,55 @@
+.bI{    
+    background: url("../assets/img/mapBackground.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.divPai{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%;
+}
+
+.contatos{
+    display: table;
+    margin: auto;
+}
+
+.box{
+    text-align: center;
+    background-color: #fff;
+    width: 356px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    margin: 16px;
+    white-space: pre-line;
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.box img{
+    max-width: 96px;
+}
+
+.mapa{
+    display: table;
+    margin: auto; 
+}
+
+.mapa iframe{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+}
+
+.txt-grid{
+    color: #000;
+    font-size: 22px;
+    font-weight: 900;
+}

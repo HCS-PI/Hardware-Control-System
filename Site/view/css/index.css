@@ -23,6 +23,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
 }
 
 .header img{
@@ -79,12 +80,16 @@ body{
     font-weight: 600;
 }
 
-.bI{
-    background: lightblue url("../assets/img/circuitBG.png") center no-repeat fixed;
+.bI{    
+    background: url("../assets/img/circuitBG.png");
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bI img{
@@ -211,6 +216,15 @@ body{
     body{
         background-color: grey;
     }
+
+    .bI img{
+        width: 624px;
+    }
+
+    .bIII .father{
+        display: table;
+    }
+    
 }
 
 /* Tablets e iPads na horizontal. Telas pequenas de notebooks e monitores */ 
@@ -218,6 +232,11 @@ body{
     body{
         background-color: red;
     }
+
+    .bI img{
+        width: 586px;
+    }
+    
 }
 
 /* Tablets, iPads e Celulares Flip */ 
@@ -225,6 +244,11 @@ body{
     body{
         background-color: green;
     }
+
+    .bI img{
+        width: 390px;
+    }
+    
 }
 
 /* E-books e tablets pequenos */ 
@@ -232,6 +256,11 @@ body{
     body{
         background-color: blue;
     }
+
+    .bI img{
+        width: 293px;
+    }
+    
 }
 
 /* Celulares e dispositivos com telas pequenas */ 
@@ -239,6 +268,11 @@ body{
     body{
         background-color: yellow;
     }
+
+    .bI img{
+        width: 195px;
+    }
+    
 }
 
 
