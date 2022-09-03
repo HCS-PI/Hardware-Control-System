@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins';
+    margin:0;
+    background-image: url(../assets/img/loginBackground2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position:center;
+    overflow-x: hidden;
+    overflow-y:hidden;
+    height: 100vh;
+}
+
+.paiScreen{
+    padding: 64px;
+    display: table;
+    margin: auto;
+}
+
+.screen {  
+    height: 520px;
+    width: 360px;
+    background: rgba(100 80 80 / 20%);
+    border-radius: 8px;
+    backdrop-filter: blur( 14.5px );
+    -webkit-backdrop-filter: blur( 14.5px );
+    padding: 0;
+    color:rgb(0, 0, 0);
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cad {
+    width: 320px;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 300px;
+}
+
+.cad__field {
+    padding: 20px 0px;
+}
+
+.cad_input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    width: 75%;
+}
+
+.cad_input1{
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    width: 75%;
+}
+
+.cad_input::placeholder{
+    color: black
+}
+
+
+/* apagar o contorno da caixa de texto */
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* Botão */
+.texto_botao {
+    font-size: 17px;
+    margin-top: 8px;
+    padding: 16px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    appearance: none;
+}
+
+/* Deixar o botão com transição */
+.texto_botao{
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    opacity: 0.5;
+}
+ 
+.texto_botao:hover{
+    opacity: 2;
+}
+
+/* Botão */
+input{
+    font-family: 'Poppins';
+}

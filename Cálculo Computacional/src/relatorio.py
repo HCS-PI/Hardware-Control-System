@@ -57,7 +57,7 @@ def createRelatorio():
     c.drawString(195, 500, f"{psutil.cpu_freq().max}Ghz")
 
     j = 1
-    k = 490
+    k = 480
 
     cpus = psutil.cpu_percent(percpu=True)
     cpusN = []
@@ -65,13 +65,13 @@ def createRelatorio():
         c.setFont('Helvetica-Bold', 12)
         c.drawString(75, k, f"CPUv {j}:")
         c.setFont('Helvetica', 12)
-        c.drawString(120, k, f"{i}%")
+        c.drawString(125, k, f"{i}%")
         cpusN.append(f"CPUv {j}")
         j+=1
         k-=20
 
     plt.rcParams["figure.figsize"] = (5,3)
-    plt.bar(cpusN, cpus)
+    plt.bar(cpusN, cpus, color="black")
     plt.ylim(1, 101)
 
     imgdata = BytesIO()
@@ -110,10 +110,11 @@ def createRelatorio():
     c.setFont('Helvetica', 12)
     c.drawString(190, 585, f"{round(memoria.used / 1024 ** 3, 1)} GBs")
 
+    plt.close()
     plt.rcParams["figure.figsize"] = (5,3)
-    fig, ax = plt.subplots(1, 1)
-    ax.bar('Memória RAM utilizada no momento', memoria.percent, width=0.2, align='center')
-    plt.ylim(1, 101)
+    pct = round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)
+    plt.pie([memoria.percent, 100-memoria.percent], labels=['Usado', 'Não Usado'], startangle=90,  colors=['black', 'lightgray'])
+    plt.rcParams.update({'font.size': 10})
 
     imgdata = BytesIO()
     plt.savefig(imgdata, format='svg', dpi=200, transparent=True)
@@ -174,10 +175,11 @@ def createRelatorio():
     c.drawString(355, x, f"""{round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)}%""")
     x -= 25
 
+    plt.close()
     plt.rcParams["figure.figsize"] = (5,3)
-    fig, ax = plt.subplots(1, 1)
-    ax.bar('Memória utilizada até o momento', round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1), width=0.2, align='center')
-    plt.ylim(1, 101)
+    pct = round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)
+    plt.pie([pct, 100-pct], labels=['Usado', 'Não Usado'], startangle=90,  colors=['black', 'lightgray'])
+    plt.rcParams.update({'font.size': 10})
 
     imgdata = BytesIO()
     plt.savefig(imgdata, format='svg', dpi=200, transparent=True)
@@ -228,8 +230,11 @@ def createRelatorio():
     c.setFont('Helvetica', 12)
     c.drawString(185, 510, f"{psutil.net_if_addrs()['Ethernet'][1][2]}")
 
-    fig, ax = plt.subplots(1, 1)
-    ax.bar(["Dados Enviados (GB)","Dados Recebidos (GB)"],[round(psutil.net_io_counters()[0] * 10 ** -9, 3), round(psutil.net_io_counters()[1] * 10 ** -9, 3)], width=0.2, align='center')
+    plt.close()
+    plt.rcParams["figure.figsize"] = (5,3)
+    pct = round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)
+    plt.pie([round(psutil.net_io_counters()[0] * 10 ** -9, 3), 100-round(psutil.net_io_counters()[1] * 10 ** -9, 3)], labels=['Enviados', 'Recebidos'], startangle=90,  colors=['black', 'lightgray'])
+    plt.rcParams.update({'font.size': 10})
 
     imgdata = BytesIO()
     plt.savefig(imgdata, format='svg', dpi=200, transparent=True)

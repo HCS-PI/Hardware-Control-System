@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="imagem/png" href="../assets/img/hcs.ico" />
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <title>HCS - Login</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header1">
+        <img src="../assets/img/hcs.png" onclick="window.location='../'">
+    </div>
+
+    <div class="header2">
+        <div class="boxSep" onclick="window.location='../sobre-nos'">
+            <img src="../assets/img/about.png" alt="Sobre Nós">
+            <span>Sobre Nós</span>
+        </div>
+        <div class="boxSep">
+            <img src="../assets/img/contact.png" alt="Entre em contato">
+            <span>Entre em contato</span>
+        </div>
+        <div class="boxSep" onclick="window.location='../login'">
+            <img src="../assets/img/user.png" alt="login">
+            <span>Login</span>
+        </div>
+      </div>
+    </div>
+
+  <div class="paiScreen">
+    <div class="screen">
+     <div class="content">
+      <h2>Login</h2>
+      <div class="cad__field">
+        <select id="empresa">
+          <option autofocus value="fabricante">Fabricante</option>
+          <option value="tesla">Tesla</option>
+          <option value="volkswagen">Volkswagen</option>
+          <option value="hyundai">Hyundai</option>
+          <option value="honda">Honda</option>
+        </select>
+       </div>
+
+       <div class="cad__field">
+        <select id="modelo">
+          <option autofocus value="fabricante">Modelo</option>
+          <option value="tesla">Tesla</option>
+          <option value="volkswagen">Volkswagen</option>
+          <option value="hyundai">Hyundai</option>
+          <option value="honda">Honda</option>
+        </select>
+       </div>
+
+       <div class="cad__field">
+        <input type="text" class="cad_input" placeholder="Token do Carro" pattern="required">
+       </div>
+       <span class="texto_botao">Entrar</span>    
+     </div>
+    </div>
+  </div>
+</body>
+</html>
