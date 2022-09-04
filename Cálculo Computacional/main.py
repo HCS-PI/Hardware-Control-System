@@ -80,13 +80,13 @@ def getMemoriaInternaLive():
         memoriaInterna += f"\033[1mPorcentagem de Uso:\033[0m {round(((shutil.disk_usage('/home/hcs/Documentos').used / 1024 ** 3) * 100) / (shutil.disk_usage('/home/hcs/Documentos').total / 1024 ** 3), 1)}%"
     else:
         for i in psutil.disk_partitions():
-            memoriaInterna += f"\033[1mDispositivo:\033[0m {i[0]}\n"
+            memoriaInterna += f"\033[1mDispositivo:\033[0m {i[0]}\n\n"
             memoriaInterna += f"\033[1mCaminho de Arquivo:\033[0m {i[1]}\033[0m\n"
             memoriaInterna += f"\033[1mTipo de Arquivo:\033[0m {i[2]}\033[0m\n"
-            memoriaInterna += f"\033[1mEspaço no Disco Rígido:\033[0m {round(shutil.disk_usage('/').total / 1024 ** 3, 1)} GB"
-            memoriaInterna += f"\033[1mEspaço Usado:\033[0m {round(shutil.disk_usage('/').used / 1024 ** 3, 1)} GB"
-            memoriaInterna += f"\033[1mEspaço Livre:\033[0m {round(shutil.disk_usage('/').free / 1024 ** 3, 1)} GB"
-            memoriaInterna += f"\033[1mPorcentagem de Uso:\033[0m {round(((shutil.disk_usage('/').used / 1024 ** 3) * 100) / (shutil.disk_usage('/').total / 1024 ** 3), 1)}%"
+            memoriaInterna += f"\033[1mEspaço no Disco Rígido:\033[0m {round(shutil.disk_usage('/').total / 1024 ** 3, 1)} GB\n"
+            memoriaInterna += f"\033[1mEspaço Usado:\033[0m {round(shutil.disk_usage('/').used / 1024 ** 3, 1)} GB\n"
+            memoriaInterna += f"\033[1mEspaço Livre:\033[0m {round(shutil.disk_usage('/').free / 1024 ** 3, 1)} GB\n"
+            memoriaInterna += f"\033[1mPorcentagem de Uso:\033[0m {round(((shutil.disk_usage('/').used / 1024 ** 3) * 100) / (shutil.disk_usage('/').total / 1024 ** 3), 1)}%\n"
     return memoriaInterna
 
 def getOS():
