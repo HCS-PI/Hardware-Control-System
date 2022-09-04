@@ -7,7 +7,7 @@ def startInsert():
     idCliente = 15000
     idEmpresa = 5000
 
-    dados = dbFunctions.select(f"SELECT * FROM carro WHERE enderecoMac = '{enderecoMAC}';", True)
+    dados = dbFunctions.select(f"SELECT * FROM Carro WHERE enderecoMac = '{enderecoMAC}';", True)
 
     if dados:
         while True:

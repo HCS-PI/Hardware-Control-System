@@ -1,4 +1,4 @@
-import src.dbFunctions as dbFunctions, psutil, cpuinfo, platform, shutil, os, platform, getmac
+import src.dbFunctions as dbFunctions, psutil, cpuinfo, platform, shutil, os, platform, getmac, socket, ipaddress
 limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 
 def start():
@@ -10,7 +10,7 @@ def start():
     idCliente = 15000
     idEmpresa = 5000
 
-    dados = dbFunctions.select(f"SELECT * FROM carro WHERE enderecoMac = '{enderecoMAC}';")
+    dados = dbFunctions.select(f"SELECT * FROM Carro WHERE enderecoMac = '{enderecoMAC}';")
 
     if not dados:
         processador = cpuinfo.get_cpu_info()['brand_raw']
@@ -20,8 +20,8 @@ def start():
         qtdMemoriaRAM = round(psutil.virtual_memory().total / 1024 ** 3, 1)
         qtdMemoriaInterna = round(shutil.disk_usage("/").total / 1024 ** 3, 1)
         sistemaOperacional = f"{platform.system()} {platform.release()}"
-        enderecoIP = psutil.net_if_addrs()['Ethernet'][1][1]
-        mascara = psutil.net_if_addrs()['Ethernet'][1][2]
+        enderecoIP = socket.gethostbyname(socket.gethostname())
+        mascara = ipaddress.IPv4Network(enderecoIP)
 
         dbFunctions.insert(f"""INSERT INTO Carro VALUES('{enderecoMAC}', '{placa}', '{modelo}', '{processador}', '{qtdNucleos}', '{qtdNucleosLogicos}', '{maxFrequencia}',
         '{qtdMemoriaRAM}', '{qtdMemoriaInterna}', '{sistemaOperacional}', '{enderecoIP}', '{mascara}', NOW(), {idCliente}, {idEmpresa});""")

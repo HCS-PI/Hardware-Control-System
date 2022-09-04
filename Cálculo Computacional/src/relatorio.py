@@ -3,8 +3,7 @@ from reportlab.graphics import renderPDF
 from datetime import datetime
 from io import BytesIO
 from svglib.svglib import svg2rlg
-import platform 
-import cpuinfo, locale, psutil, os, matplotlib.pyplot as plt, shutil
+import cpuinfo, locale, psutil, os, matplotlib.pyplot as plt, shutil, socket, ipaddress, platform
 
 limpar = 'clear' if platform.system() == 'Linux' else 'cls'
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
@@ -92,7 +91,7 @@ def createRelatorio():
     c.drawString(320, 735, "Relatório")
 
     c.setFont('Helvetica-Bold', 20)
-    c.drawString(75, 665, "Memória Interna")
+    c.drawString(75, 665, "Memória RAM")
 
     memoria = psutil.virtual_memory()
     c.setFont('Helvetica-Bold', 12)
@@ -136,50 +135,76 @@ def createRelatorio():
     c.drawString(75, 665, "Memória Interna")
 
     x = 635
-    for i in psutil.disk_partitions():
+
+    if platform.system() == 'Linux':
         c.setFont('Helvetica-Bold', 12)
-        c.drawString(75, x, "Dispositivo:") 
+        c.drawString(75, x, "Espaço no Disco Rígido:") 
         c.setFont('Helvetica', 12)
-        c.drawString(150, x, f"{i[0]}")
+        c.drawString(220, x, f"{round(shutil.disk_usage('/home/hcs/Documentos').total / 1024 ** 3, 1)} GB")
+        x -= 25
+        
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Espaço Usado:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(165, x, f"{round(shutil.disk_usage('/home/hcs/Documentos').used / 1024 ** 3, 1)} GB")
         x -= 25
 
         c.setFont('Helvetica-Bold', 12)
-        c.drawString(75, x, "Tipo de Arquivo:") 
+        c.drawString(75, x, "Espaço Livre:") 
         c.setFont('Helvetica', 12)
-        c.drawString(180, x, f"{i[2]}")
-        x-=10
-        c.drawString(75, x, "-"*100)
+        c.drawString(160, x, f"{round(shutil.disk_usage('/home/hcs/Documentos').free / 1024 ** 3, 1)} GB")
         x -= 25
 
-    c.setFont('Helvetica-Bold', 12)
-    c.drawString(75, x, "Espaço no Disco Rígido Principal:") 
-    c.setFont('Helvetica', 12)
-    c.drawString(275, x, f"""{round(shutil.disk_usage("/").total / 1024 ** 3, 1)} GBs""")
-    x -= 25
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Porcentagem de Uso:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(200, x, f"{round(((shutil.disk_usage('/home/hcs/Documentos').used / 1024 ** 3) * 100) / (shutil.disk_usage('/home/hcs/Documentos').total / 1024 ** 3), 1)}%")
+        x -= 25        
+    else:
+        for i in psutil.disk_partitions():
+            c.setFont('Helvetica-Bold', 12)
+            c.drawString(75, x, "Dispositivo:") 
+            c.setFont('Helvetica', 12)
+            c.drawString(150, x, f"{i[0]}")
+            x -= 25
 
-    c.setFont('Helvetica-Bold', 12)
-    c.drawString(75, x, "Espaço Usado no Disco Rígido Principal:") 
-    c.setFont('Helvetica', 12)
-    c.drawString(315, x, f"""{round(shutil.disk_usage("/").used / 1024 ** 3, 1)} GBs""")
-    x -= 25
+            c.setFont('Helvetica-Bold', 12)
+            c.drawString(75, x, "Tipo de Arquivo:") 
+            c.setFont('Helvetica', 12)
+            c.drawString(180, x, f"{i[2]}")
+            x-=10
+            c.drawString(75, x, "-"*100)
+            x -= 25
 
-    c.setFont('Helvetica-Bold', 12)
-    c.drawString(75, x, "Espaço Livre no Disco Rígido Principal:") 
-    c.setFont('Helvetica', 12)
-    c.drawString(310, x, f"""{round(shutil.disk_usage("/").free / 1024 ** 3, 1)} GBs""")
-    x -= 25
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Espaço no Disco Rígido Principal:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(275, x, f"""{round(shutil.disk_usage("/").total / 1024 ** 3, 1)} GBs""")
+        x -= 25
 
-    c.setFont('Helvetica-Bold', 12)
-    c.drawString(75, x, "Porcentagem de Uso do Disco Rígido Principal:") 
-    c.setFont('Helvetica', 12)
-    c.drawString(355, x, f"""{round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)}%""")
-    x -= 25
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Espaço Usado no Disco Rígido Principal:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(315, x, f"""{round(shutil.disk_usage("/").used / 1024 ** 3, 1)} GBs""")
+        x -= 25
 
-    plt.close()
-    plt.rcParams["figure.figsize"] = (5,3)
-    pct = round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)
-    plt.pie([pct, 100-pct], labels=['Usado', 'Não Usado'], startangle=90,  colors=['black', 'lightgray'])
-    plt.rcParams.update({'font.size': 10})
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Espaço Livre no Disco Rígido Principal:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(310, x, f"""{round(shutil.disk_usage("/").free / 1024 ** 3, 1)} GBs""")
+        x -= 25
+
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(75, x, "Porcentagem de Uso do Disco Rígido Principal:") 
+        c.setFont('Helvetica', 12)
+        c.drawString(355, x, f"""{round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)}%""")
+        x -= 25
+
+        plt.close()
+        plt.rcParams["figure.figsize"] = (5,3)
+        pct = round(((shutil.disk_usage("/").used / 1024 ** 3) * 100) / (shutil.disk_usage("/").total / 1024 ** 3), 1)
+        plt.pie([pct, 100-pct], labels=['Usado', 'Não Usado'], startangle=90,  colors=['black', 'lightgray'])
+        plt.rcParams.update({'font.size': 10})
 
     imgdata = BytesIO()
     plt.savefig(imgdata, format='svg', dpi=200, transparent=True)
@@ -190,7 +215,6 @@ def createRelatorio():
     c.showPage()
 
     # ---------------- Página 4 (REDE) --------------------
-
     c.drawImage(str(os.path.abspath(os.path.join(__file__ ,"../..")) + "/assets/img/logo.png"), 75, 725, mask='auto')
     c.setFont('Helvetica-Bold', 24)
     c.drawString(200, 765, "Hardware Controll System")
@@ -223,12 +247,12 @@ def createRelatorio():
     c.setFont('Helvetica-Bold', 12)
     c.drawString(75, 535, "Endereço IP:") 
     c.setFont('Helvetica', 12)
-    c.drawString(155, 535, f"{psutil.net_if_addrs()['Ethernet'][1][1]}")
+    c.drawString(155, 535, f"{socket.gethostbyname(socket.gethostname())}")
 
     c.setFont('Helvetica-Bold', 12)
     c.drawString(75, 510, "Máscara de Rede:") 
     c.setFont('Helvetica', 12)
-    c.drawString(185, 510, f"{psutil.net_if_addrs()['Ethernet'][1][2]}")
+    c.drawString(185, 510, f"{ipaddress.IPv4Network(socket.gethostbyname(socket.gethostname()))}")
 
     plt.close()
     plt.rcParams["figure.figsize"] = (5,3)
@@ -244,7 +268,7 @@ def createRelatorio():
 
     c.showPage()
 
-    # --------------- PÁGINA 5 ------------------
+    # --------------- PÁGINA 5 (BATERIA) ------------------
 
     c.drawImage(str(os.path.abspath(os.path.join(__file__ ,"../..")) + "/assets/img/logo.png"), 75, 725, mask='auto')
     c.setFont('Helvetica-Bold', 24)
@@ -264,22 +288,27 @@ def createRelatorio():
         c.setFont('Helvetica', 12)
         c.drawString(220, 635, f"{psutil.sensors_battery().percent}%")
 
-        c.setFont('Helvetica-Bold', 12)
-        c.drawString(75, 610, "Minutos Restantes:") 
-        c.setFont('Helvetica', 12)
-        c.drawString(190, 610, f"{round(psutil.sensors_battery().secsleft / 60, 0)} minutos")
+        npo = 610
+        if platform.system() != 'Linux':
+            c.setFont('Helvetica-Bold', 12)
+            c.drawString(75, 610, "Minutos Restantes:") 
+            c.setFont('Helvetica', 12)
+            c.drawString(190, 610, f"{round(psutil.sensors_battery().secsleft / 60, 0)} minutos")
+            npo -= 25
 
         c.setFont('Helvetica-Bold', 12)
-        c.drawString(75, 585, "Carregando:")
+        c.drawString(75, npo, "Carregando:")
         c.setFont('Helvetica', 12)
 
         if psutil.sensors_battery().power_plugged:
-            c.drawString(190, 585, "Sim")
+            c.drawString(190, npo, "Sim")
         else:
-            c.drawString(150, 585, "Não")
+            c.drawString(150, npo, "Não")
         
-        fig, ax = plt.subplots(1, 1)
-        ax.bar(["Porcentagem de Bateria Restante"],[psutil.sensors_battery().percent], width=0.2, align='center')
+        plt.close()
+        plt.rcParams["figure.figsize"] = (5,3)
+        plt.pie([psutil.sensors_battery().percent, 100-psutil.sensors_battery().percent], labels=['Bateria Restante', ' '], startangle=90,  colors=['black', 'lightgray'])
+        plt.rcParams.update({'font.size': 10})
 
         imgdata = BytesIO()
         plt.savefig(imgdata, format='svg', dpi=200, transparent=True)
