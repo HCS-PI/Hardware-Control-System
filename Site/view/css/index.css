@@ -77,7 +77,11 @@ body{
     white-space: pre;
     background-color: #fff;
     font-size: 64px;
-    font-weight: 600;
+}
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
 }
 
 .bI{    
@@ -203,6 +207,11 @@ body{
     color: #000;
 }
 
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
+}
+
 /* Notebooks e Monitores */ 
 @media (max-width:1280px) { 
     body{
@@ -213,10 +222,6 @@ body{
 
 /* Tablets grandes, notebooks e monitores*/ 
 @media (max-width:1024px) { 
-    body{
-        background-color: grey;
-    }
-
     .bI img{
         width: 624px;
     }
@@ -229,10 +234,6 @@ body{
 
 /* Tablets e iPads na horizontal. Telas pequenas de notebooks e monitores */ 
 @media (max-width:960px)  { 
-    body{
-        background-color: red;
-    }
-
     .bI img{
         width: 586px;
     }
@@ -241,10 +242,6 @@ body{
 
 /* Tablets, iPads e Celulares Flip */ 
 @media (max-width:640px)  { 
-    body{
-        background-color: green;
-    }
-
     .bI img{
         width: 390px;
     }
@@ -253,10 +250,6 @@ body{
 
 /* E-books e tablets pequenos */ 
 @media (max-width:480px)  { 
-    body{
-        background-color: blue;
-    }
-
     .bI img{
         width: 293px;
     }
@@ -265,24 +258,11 @@ body{
 
 /* Celulares e dispositivos com telas pequenas */ 
 @media (max-width:320px)  { 
-    body{
-        background-color: yellow;
-    }
-
     .bI img{
         width: 195px;
     }
     
 }
-
-
-
-
-
-
-
-
-
 
 ::-webkit-scrollbar-track {
     background-color: #fff;

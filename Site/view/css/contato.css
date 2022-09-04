@@ -1,5 +1,5 @@
 .bI{    
-    background: url("../assets/img/mapBackground.jpg");
+    background: url("../assets/img/whitewallpaper.png");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,11 @@
 .divPai{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 80%;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .contatos{
@@ -24,11 +28,12 @@
 .box{
     text-align: center;
     background-color: #fff;
-    width: 356px;
     font-size: 18px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
     margin: 16px;
     white-space: pre-line;
+    border-radius: 8px;
+    padding: 8px 16px;
 }
 
 .box a{
@@ -36,7 +41,7 @@
 }
 
 .box img{
-    max-width: 96px;
+    max-width: 64px;
 }
 
 .mapa{
@@ -46,10 +51,22 @@
 
 .mapa iframe{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    height: 600px;
 }
 
 .txt-grid{
     color: #000;
     font-size: 22px;
     font-weight: 900;
+}
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
 }

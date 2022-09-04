@@ -7,6 +7,16 @@
     padding: 0;
 }
 
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
+}
+
 .header{
     position: sticky;
     width: 100%;

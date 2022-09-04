@@ -8,8 +8,6 @@ body{
     background-position: center;
     background-size: cover;
     background-position:center;
-    overflow-x: hidden;
-    overflow-y:hidden;
     height: 100vh;
 }
 
@@ -41,30 +39,24 @@ body{
 
 .cad__field {
     padding: 20px 0px;
+    white-space: pre-line;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .cad_input {
     border: none;
     border-bottom: 1px solid #000000;
     background: none;
-    padding: 10px;
-    padding-left: 24px;
-    width: 75%;
-}
-
-.cad_input1{
-    border: none;
-    border-bottom: 1px solid #000000;
-    background: none;
-    padding: 10px;
-    padding-left: 24px;
-    width: 75%;
+    text-align: center;
 }
 
 .cad_input::placeholder{
-    color: black
+    color: #000;
 }
-
 
 /* apagar o contorno da caixa de texto */
 input:focus {
@@ -74,17 +66,15 @@ input:focus {
 
 /* Botão */
 .texto_botao {
-    font-size: 17px;
+    font-size: 23px;
     margin: 8px 0px 16px;
     text-transform: uppercase;
     font-weight: bold;
-    display: flex;
+    text-align: center;
     cursor: pointer;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
     font-family: 'Poppins';
     appearance: none;
+    padding: 16px;
 }
 
 /* Deixar o botão com transição */
@@ -101,7 +91,43 @@ input:focus {
     opacity: 2;
 }
 
-/* Botão */
-input{
+input, select{
+    font-size: 17px;
     font-family: 'Poppins';
+    text-align: center;
+    outline: none;
+    padding: 10px;
+    width: 180px;
+}
+
+input{
+    cursor:text;
+}
+
+select{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+option{
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+
+.paiEntrar{
+    padding: 32px;
+}
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
 }

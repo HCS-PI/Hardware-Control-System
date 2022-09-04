@@ -1,9 +1,19 @@
-video = document.getElementById("carLightVideo");
-video.pause();
-videoPlayed = false;
+isVideo = false;
+
+try{
+    video = document.getElementById("carLightVideo");
+    video.pause();
+    videoPlayed = false;
+    isVideo = true
+}catch(err){
+    console.log('')
+    videoPlayed = false;
+}
 
 function playVideo(){
-    video.play();
+    if(isVideo){
+        video.play();
+    }
 }
 
 function reveal() {
@@ -20,7 +30,7 @@ function reveal() {
             reveals[i].classList.remove("active");
         }
         
-        if(!videoPlayed){
+        if(!videoPlayed && isVideo){
             let x = reveals[i].className.split(' ');
             for(i = 0; i < x.length; i++){
                 if(x[i] == 'playVideo'){
