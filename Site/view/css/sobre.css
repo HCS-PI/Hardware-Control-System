@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
 
+
+
+
+
+
+
+
+
 *{
     background-color: var(--empha2);
     font-family: 'Tajawal', sans-serif;
@@ -99,6 +107,9 @@
 
 .bI img{
     width: 780px;
+}
+.imgTesla{
+    width: 79vw
 }
 
 .bII{
@@ -216,3 +227,241 @@
     border-radius: 8px;
 }
 
+
+@media (min-width: 320px) and (max-width: 520px) {
+   
+    *{
+        background-color: var(--empha2);
+        font-family: 'Tajawal', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;  
+        width: 280%;
+        
+    }
+    
+    .subir{
+        animation-name: subindo;
+        animation-duration: 2s;  
+    }
+    
+    @keyframes subindo {
+        0%   {transform: translateY(100px);}
+        100% {transform: translateY(0px);}
+    }
+    
+    .header{
+        position: sticky;
+        width: 100%;
+        height: 5rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .header1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
+    
+    .header img{
+        height: 5rem;
+    }
+    
+    .header .logoSep .textColumn{
+        font-weight: 600;
+    }
+    
+    .header .logoSep .textColumn::after{
+        content: "\a";
+        white-space: pre;
+    }
+    
+    .header2{
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      
+    }
+    
+    .header2 .boxSep{
+        border-left: #ccc 1px solid;
+        width: 156px;
+        height: 96px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .header2 .boxSep:hover{
+        background-color: #f6f6f6;
+        opacity: 0.5;
+    }
+    
+    .header2 .boxSep img{
+        max-width: 42px;
+        max-height: 42px;
+    }
+    
+    .header2 .boxSep span{
+        padding: 4px;
+    }
+    
+    .banner{
+        height: 100%;
+        text-align: center;
+        white-space: pre;
+        background-color: #fff;
+        font-size: 64px;
+        font-weight: 200;
+    }
+    
+    .bI{
+        background:  url("../assets/img/circuitBG.png") ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%; 
+        height: 100vh;  
+        
+    }
+    
+    .imgTesla{
+        width: 250vw
+    }
+    
+    .bII{
+        background: url("../assets/img/circuitoescuro.jpg") ;
+        color: #fff;
+        white-space: normal;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .reveal{
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 2s all ease;
+    }
+    
+    .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .bIII{
+        
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bIII .father{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3vh;
+    }
+    
+    .bIII .son{
+        border-radius: 32px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        display: table;
+        margin: 96px 32px 32px 32px;
+        padding: 32px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    }
+    
+    .bIII .son .title{
+        font-size: 32px;
+        white-space: pre; 
+    }
+    
+    .bIII .son .neoList{
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: left;
+        margin-left: 24px;
+    }
+    
+    .bIII .son img{
+        max-width: 128px;
+        padding: 16px;
+    }
+    
+    .son1, .son2, .son3{
+        display: grid;
+    }
+    
+    .bIV{
+        background:  url("../assets/img/blackBackground.jpg") ;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+    
+    }
+    
+    .bIV button{
+        padding: 24px;
+        font-size: 22px;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 24px;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 48px;
+    }
+    
+    .bIV button:hover{
+        background-color: #fff;
+        color: #000;
+    }
+    
+    
+    ::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #44474a;
+        border-radius: 8px;
+    }
+    
+    
+}
+    
