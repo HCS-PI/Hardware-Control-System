@@ -8,8 +8,14 @@
     --deta1: #3748F2;
     --deta2: #4927DB;
     --deta3: #2766DB;
+    --shadow1: 0px 0px 20px 0px #2F3B47;
 }
 
 body{
     margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
