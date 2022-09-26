@@ -26,69 +26,13 @@
     <div class="screen subir">
       <div class="content">
         <h2>Login</h2>
-        <div class="cad__field">
-          <span class="title">Entrar como</span>
-          <select id="modo" onchange="verificaModo(this.value)">
-            <option value="error">Escolha</option>
-            <option value="0">Proprietário de um Veículo</option>
-            <option value="1">Analista de Dados</option>
-          </select>
+
+        <div class="cad__field" style="display: flex;">
+          <input type="text" class="cad_input" placeholder="Email" id="ipt_email">
         </div>
 
-        <div class="cad__field" id="fieldFabricante" style="display: none;">
-          <span class="title">Fabricante do veículo</span>
-          <select id="fabricante" onchange="verificaFabricante(this.value)">
-            <option value="error">Escolher</option>
-            <option value="0">Tesla</option>
-            <option value="1">Volkswagen</option>
-            <option value="2">Hyundai</option>
-            <option value="3">Honda</option>
-          </select>
-        </div>
-
-        <div class="cad__field" id="fieldModeloTesla" style="display: none;">
-          <span class="title">Modelo</span>
-          <select onchange="verificaModelo(this.value)">
-            <option value="error">Modelo</option>
-            <option value="0">Model S</option>
-            <option value="1">Model 3</option>
-            <option value="2">Model X</option>
-            <option value="3">Model Y</option>
-          </select>
-        </div>
-
-        <div class="cad__field" id="fieldModeloVolkswagen" style="display: none;">
-          <span class="title">Modelo</span>
-          <select onchange="verificaModelo(this.value)">
-            <option value="error">Modelo</option>
-            <option value="0">Iconic Microbus</option>
-            <option value="2">ID.3</option>
-            <option value="1">ID.4</option>
-          </select>
-        </div>
-
-        <div class="cad__field" id="fieldModeloHyundai" style="display: none;">
-          <span class="title">Modelo</span>
-          <select onchange="verificaModelo(this.value)">
-            <option value="error">Modelo</option>
-            <option value="0">Ioniq 5</option>
-          </select>
-        </div>
-
-        <div class="cad__field" id="fieldModeloHonda" style="display: none;">
-          <span class="title">Modelo</span>
-          <select onchange="verificaModelo(this.value)">
-            <option value="error">Modelo</option>
-            <option value="0">Prologue</option>
-          </select>
-        </div>
-
-        <div class="cad__field" id="fieldTkVeiculo" style="display: none;">
-          <input type="text" class="cad_input" placeholder="Token do Veículo">
-        </div>
-
-        <div class="cad__field" id="fieldTkAcesso" style="display: none;">
-          <input type="text" class="cad_input" placeholder="Token de Acesso">
+        <div class="cad__field" style="display: flex;">
+          <input type="password" class="cad_input" placeholder="Senha" id="ipt_senha">
         </div>
 
         <div class="paiEntrar" onclick="login()">
