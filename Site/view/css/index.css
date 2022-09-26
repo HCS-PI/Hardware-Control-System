@@ -16,6 +16,7 @@ body {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .header1 {
@@ -37,6 +38,10 @@ body {
 }
 
 .header2 .boxSep {
+<<<<<<< HEAD
+=======
+    border-left: #ccc 1px solid;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     width: 14vw;
     cursor: pointer;
     display: flex;
@@ -50,6 +55,7 @@ body {
 .header img {
     width: 8rem;
     height: 2.6rem;
+<<<<<<< HEAD
     transition: 400ms;
 }
 
@@ -90,6 +96,44 @@ body {
 }
 
 .banner {
+=======
+}
+
+.boxSep img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.boxSep span {
+    display: none;
+}
+
+.header .logoSep .textColumn {
+    font-weight: 600;
+}
+
+.header .logoSep .textColumn::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.header2 .boxSep:hover {
+    background-color: #f6f6f6;
+    opacity: 0.5;
+}
+
+.header2 .boxSep img {
+    max-width: 2.6rem;
+    max-height: 2.6rem;
+}
+
+.header2 .boxSep span {
+    padding: 0.1;
+}
+
+.banner {
+    height: 100vh;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     text-align: center;
     white-space: pre;
     background-color: #fff;
@@ -107,6 +151,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    height: 60vh;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -134,6 +182,7 @@ body {
 }
 
 .bII .overlayText {
+<<<<<<< HEAD
     background-color: rgba(79, 82, 230, 0.712);
     border-radius: 10px;
     padding: 10px;
@@ -141,12 +190,20 @@ body {
     position: absolute;
     margin-top: 5.6rem;
     transition: 2s;
+=======
+    position: absolute;
+    padding-top: 5.6rem;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
 }
 
 
 /* toda a parte do bIII define os cards animados */
 .bIII {
+<<<<<<< HEAD
     height: 100%;
+=======
+    height: 70rem;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     width: 100%;
     text-align: center;
     white-space: normal;
@@ -155,14 +212,21 @@ body {
     justify-content: center;
     justify-items: center;
     padding-top: 5%;
+<<<<<<< HEAD
     padding-bottom: 10%;
+=======
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
 }
 
 .reveal {
     position: relative;
     transform: translateY(9.3rem);
     opacity: 0;
+<<<<<<< HEAD
     transition: 400ms all ease;
+=======
+    transition: 2s all ease;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
 }
 
 .reveal.active {
@@ -175,6 +239,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     width: 70vw;
     padding-bottom: 2%;
+<<<<<<< HEAD
+=======
+    padding-left: 4%;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
 }
 
 .bIII .son {
@@ -183,15 +251,26 @@ body {
     color: #fff;
     text-align: center;
     display: table;
+<<<<<<< HEAD
     margin: 3.5rem 0px 0px 0rem;
+=======
+    margin: 3.5rem 0px 0px 3.1rem;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     padding: 1.3rem;
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.8), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.8);
 }
 
+<<<<<<< HEAD
 .bIII .son .title {
     font-size: 1.5rem;
     white-space: pre;
     font-weight: 600;
+=======
+
+.bIII .son .title {
+    font-size: 1.5rem;
+    white-space: pre;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
 }
 
 .bIII .son .neoList {
@@ -214,6 +293,10 @@ body {
 }
 
 .bIV {
+<<<<<<< HEAD
+=======
+    height: 90vh;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     background: lightblue url("../assets/img/blackBackground.jpg") center fixed;
     background-size: cover;
     display: flex;
@@ -282,13 +365,23 @@ body {
 
     .header {
         position: sticky;
+<<<<<<< HEAD
         width: 100%;
+=======
+        width: 100vw;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
         background-color: var(--empha2);
         display: flex;
         flex-direction: row;
         align-items: center;
+<<<<<<< HEAD
         justify-content: space-around;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+=======
+        justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     }
 
     .header1 {
@@ -310,8 +403,13 @@ body {
     }
 
     .header2 .boxSep {
+<<<<<<< HEAD
         width: 14vw;
         height: 64px;
+=======
+        border-left: #ccc 1px solid;
+        width: 14vw;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -344,7 +442,12 @@ body {
     }
 
     .header2 .boxSep:hover {
+<<<<<<< HEAD
         box-shadow: var(--shadow1);
+=======
+        background-color: #f6f6f6;
+        opacity: 0.5;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     }
 
     .header2 .boxSep img {
@@ -357,6 +460,10 @@ body {
     }
 
     .banner {
+<<<<<<< HEAD
+=======
+        height: 100vh;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
         text-align: center;
         white-space: pre;
         background-color: #fff;
@@ -374,6 +481,10 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+<<<<<<< HEAD
+=======
+        height: 60vh;
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -391,6 +502,10 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8a9e3db67fb5fb8bc9d6635920858722e997347
     }
 
     .bII video {
