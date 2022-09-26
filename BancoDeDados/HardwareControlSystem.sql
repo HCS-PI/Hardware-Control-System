@@ -106,6 +106,6 @@ select * from vw_dashGES_RAM where idEmpresa = 1;
 select * from vw_dashGES_CPU where idEmpresa = 2;
 select * from vw_dashGES_RAM where idEmpresa = 2;
 
-drop database HardwareControllSystem;
+
 
 
