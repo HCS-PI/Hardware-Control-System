@@ -79,7 +79,7 @@ insert into Medida values (null, now(), 44.0, 6);
 
 
 CREATE VIEW `vw_dashGES_CPU` AS
-SELECT idEmpresa,
+SELECT idEmpresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
 unidMedida as 'Unidade de Medida',
@@ -88,7 +88,7 @@ FROM Empresa, Carro, Dispositivo, Medida
 WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="CPU" group by Carro.modelo;
 
 CREATE VIEW `vw_dashGES_RAM` AS
-SELECT idEmpresa,
+SELECT idEmpresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
 unidMedida as 'Unidade de Medida',
