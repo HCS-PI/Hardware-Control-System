@@ -110,9 +110,10 @@
     }
 }
 
+
 @media (max-width: 930px) {
     .bI {
-        font-size: 50px;
+        font-size: 3.1rem;
         padding-top: 50px;
     }
 
@@ -123,15 +124,17 @@
 
 @media (max-width: 850px) {
     .box {
-        font-size: 15px;
+        font-size: 1.5rem;
     }
+   
 }
+
 
 @media (max-width: 700px) {
     .bI  {
         padding: 50px;
         align-items: center;
-        font-size: 35px;
+        font-size: 2.1rem;
     }
 
     .contatos {
@@ -142,5 +145,12 @@
 
     .box {
         width: 90%;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .bI  {
+        font-size: 1.5rem;
     }
 }

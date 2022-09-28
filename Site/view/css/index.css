@@ -146,7 +146,7 @@ body {
 
 /* toda a parte do bIII define os cards animados */
 .bIII {
-    height: 100%;
+    height: 70rem;
     width: 100%;
     text-align: center;
     white-space: normal;
@@ -156,6 +156,9 @@ body {
     justify-items: center;
     padding-top: 5%;
     padding-bottom: 10%;
+}
+.bIII div{
+    padding-left: 10%;
 }
 
 .reveal {
@@ -399,6 +402,7 @@ body {
     }
 
     .bIII {
+        height: 70rem;
         width: 100%;
         text-align: center;
         white-space: normal;
@@ -408,7 +412,9 @@ body {
         justify-items: center;
         padding-top: 5%;
     }
-
+    .bIII div{
+        padding-left: 0%;
+    }
     .reveal {
         position: relative;
         transform: translateY(9.3rem);
@@ -627,6 +633,7 @@ body {
     }
 
     .bIII {
+        height: 75rem;
         width: 100%;
         text-align: center;
         white-space: normal;
@@ -727,6 +734,7 @@ body {
 @media (min-width: 750px){
     
     .bIII {
+        height: 75rem;
         width: 100%;
         text-align: center;
         white-space: normal;
@@ -937,6 +945,7 @@ body {
     }
 
     .bIII {
+        height: 100vh;
         width: 100%;
         text-align: center;
         white-space: normal;
