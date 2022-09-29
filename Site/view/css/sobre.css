@@ -37,7 +37,7 @@
 }
 
 .imgTesla{
-    width: 100%
+    width: 79vw;
 }
 
 .bII{
@@ -50,6 +50,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.bII .reveal{
+    padding: 180px;
 }
 
 .reveal{
@@ -64,22 +67,24 @@
     opacity: 1;
 }
 
-.bIII{
+.bIIIIII{
     width: 100%;
     text-align: center;
     white-space: normal;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
+    font-size: 1.9rem;
 }
 
-.bIII .father{
+.bIIIIII .father{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.bIII .son{
+.bIIIIII .son{
     border-radius: 32px;
     background-color: #000;
     color: #fff;
@@ -90,12 +95,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
 }
 
-.bIII .son .title{
+.bIIIIII .son .title{
     font-size: 32px;
     white-space: pre; 
 }
 
-.bIII .son .neoList{
+.bIIIIII .son .neoList{
     margin-top: 8px;
     font-size: 18px;
     font-weight: 300;
@@ -103,7 +108,7 @@
     margin-left: 24px;
 }
 
-.bIII .son img{
+.bIIIIII .son img{
     max-width: 128px;
     padding: 16px;
 }
@@ -160,6 +165,9 @@
         margin: 0;
         padding: 0;
     }
+    span{
+        font-size: 1.7rem;
+    }
 
     body{
         margin: 0;
@@ -214,13 +222,18 @@
         opacity: 0;
         transition: 2s all ease;
     }
+    .bII .reveal{
+        padding: 100px;
+    }
     
     .reveal.active{
         transform: translateY(0);
         opacity: 1;
     }
-    
-    .bIII{        
+    .bIIIIII div{
+        padding-left: 0%;
+    }
+    .bIIIIII{        
         width: 100%;
         text-align: center;
         white-space: normal;
@@ -233,13 +246,13 @@
         width: 100%;
     }
 
-    .bIII .father{
+    .bIIIIII .father{
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
-    .bIII .son{
+    .bIIIIII .son{
         border-radius: 32px;
         background-color: #000;
         color: #fff;
@@ -250,12 +263,12 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
     }
     
-    .bIII .son .title{
+    .bIIIIII .son .title{
         font-size: 32px;
         white-space: pre; 
     }
     
-    .bIII .son .neoList{
+    .bIIIIII .son .neoList{
         margin-top: 8px;
         font-size: 18px;
         font-weight: 300;
@@ -263,7 +276,7 @@
         margin-left: 24px;
     }
     
-    .bIII .son img{
+    .bIIIIII .son img{
         max-width: 128px;
         padding: 16px;
     }
@@ -271,6 +284,7 @@
     .son1, .son2, .son3{
         display: grid;
     }
+   
     
     .bIV{
         background:  url("../assets/img/blackBackground.jpg") ;

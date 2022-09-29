@@ -171,6 +171,7 @@ body {
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
+    font-size: 1.7rem;
 }
 
 .bIII .father {
@@ -425,6 +426,7 @@ body {
     .reveal.active {
         transform: translateY(0);
         opacity: 1;
+        
     }
 
     .bIII .father {
@@ -654,6 +656,7 @@ body {
     .reveal.active {
         transform: translateY(0);
         opacity: 1;
+        
     }
 
     .bIII .father {
