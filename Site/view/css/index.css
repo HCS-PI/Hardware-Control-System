@@ -601,6 +601,7 @@ body {
     .subir {
         animation-name: subindo;
         animation-duration: 2s;
+        font-size: 45px;
     }
 
     .bI {
@@ -905,6 +906,7 @@ body {
     .subir {
         animation-name: subindo;
         animation-duration: 2s;
+        font-size: 64px;
     }
 
     .bI {
