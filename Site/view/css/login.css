@@ -132,3 +132,22 @@ option{
     100% {transform: translateY(0px);}
 }
 
+@media (min-width: 660px) {
+    .content h2 {
+        font-size: 80%;
+    }
+
+    .paiScreen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+    }
+
+    .screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}

@@ -1,0 +1,84 @@
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: yellow;
+    background-image: url(../assets/img/loginBackground2.jpg);
+}
+
+.header {
+    position: sticky;
+    width: 100%;
+    height: 6rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+}
+
+.header h3 {
+    background-color: slategray;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.header1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header img {
+    height: 6rem;
+    transition: 400ms;
+}
+
+.header img:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px #222);
+    filter: drop-shadow(0px 0px 5px 5px #222);
+}
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(163, 163, 163, 0.527);
+    width: 40%;
+    border-radius: 10px;
+}
+.graficos {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+}
+
+.grafico1,
+.grafico2,
+.grafico3 {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grafico1 {
+    width: 33.3%;
+    background-color: rgba(0, 102, 255, 0.220);
+}
+
+.grafico2 {
+    width: 33.3%;
+    background-color: rgba(0, 255, 149, 0.220);
+}
+
+.grafico3 {
+    width: 16.7%;
+    background-color: rgba(137, 43, 226, 0.220);
+}

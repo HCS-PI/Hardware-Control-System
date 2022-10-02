@@ -1,12 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashGestor</title>
+    <link rel="stylesheet" href="css/dashGES.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard de gestão</title>
 </head>
+
 <body>
-    <h1>Olá eu Sou a DASH do Gestor</h1>
+    <div class="header">
+        <h3>Gestão</h3>
+        <a href="index.html">
+          <div class="header1">
+              <img src="assets/img/hcs.png">
+          </div>
+      </a>
+    </div>
+    <div class="titulo">
+        <h2>Visão geral - CPU, RAM e Disco</h2>
+    </div>
+    <div class="graficos">
+        <div class="grafico1">
+            <div class="graficoBarraCPU"><canvas id="grafico1"></canvas></div>
+        </div>
+
+        <div class="grafico2">
+            <div class="graficoBarraRAM"><canvas id="grafico2"></canvas></div>
+        </div>
+
+        <div class="grafico3">
+            <div class="graficoPizzaDisco"><canvas id="grafico3"></canvas></div>
+        </div>
+    </div>
+
+    <!--------------------------Primeiro gráfico - CPU---------------------------------------->
+    <script>
+        const graficoUsoCPU = [
+            // Colocar aqui o tempo da coleta, estes são os títulos das barras
+            'Hora 1',
+            'Hora 2',
+            'Hora 3',
+            'Hora 4',
+            'Hora 5',
+            'Hora 6',
+            'Hora 7',
+        ];
+
+        // Valores sólidos guardados em variáveis. Os números colocados aqui seráo os recebidos do banco, pode ser string
+        cpuValor1 = 1000
+        cpuValor2 = 2000
+        cpuValor3 = 3000
+        cpuValor4 = 4000
+        cpuValor5 = 5000
+        cpuValor6 = 6000
+        cpuValor7 = 7000
+
+        // Dados do gráfico
+        const dados1 = {
+            labels: graficoUsoCPU, // Nome da variável do gráfico
+            datasets: [{
+                label: 'Uso de CPU', // Título
+                backgroundColor: '#FCA311', // cor de fundo
+                borderColor: 'orange', // cor da borda
+                data: [cpuValor1, cpuValor2, cpuValor3, cpuValor4, cpuValor5, cpuValor6, cpuValor7], // Plot dos valores embaixo das barras
+            },]
+        };
+
+        // Configurações do gráfico
+        const config1 = {
+            type: 'bar', // Define para o tipo barra
+            data: dados1, // Diz quais dados serão referentes àquele gráfico
+            options: {}
+        };
+
+        //Diz qual é a div que receberá o gráfico pronto
+        const grafico1 = new Chart(
+            document.getElementById('grafico1'),
+            config1
+        );
+    </script>
+
+<!--------------------------Segundo gráfico - RAM---------------------------------------->
+    <script>
+        const graficoUsoRAM = [
+            // Colocar aqui o tempo da coleta, estes são os títulos das barras
+            'Hora 1',
+            'Hora 2',
+            'Hora 3',
+            'Hora 4',
+            'Hora 5',
+            'Hora 6',
+            'Hora 7',
+        ];
+
+         // Valores sólidos guardados em variáveis. Os números colocados aqui seráo os recebidos do banco, pode ser string
+        ramValor1 = 7000
+        ramValor2 = 6000
+        ramValor3 = 5000
+        ramValor4 = 4000
+        ramValor5 = 3000
+        ramValor6 = 2000
+        ramValor7 = 1000
+
+        const dados2 = {
+            labels: graficoUsoRAM,
+            datasets: [{
+                label: 'Uso de RAM',
+                backgroundColor: '#FCA311',
+                borderColor: 'orange',
+                data: [ramValor1, ramValor2, ramValor3, ramValor4, ramValor5, ramValor6, ramValor7], // Plot dos valores embaixo das barras
+            },]
+        };
+
+        const config2 = {
+            type: 'bar',
+            data: dados2,
+            options: {}
+        };
+
+        const grafico2 = new Chart(
+            document.getElementById('grafico2'),
+            config2
+        );
+    </script>
+
+    <!--------------------------Terceiro gráfico - Disco---------------------------------------->
+    <script>
+const graficoUsoDisco = [
+            'Livre',
+            'Utilizado',
+        ];
+
+        const dados3 = {
+            labels: graficoUsoDisco,
+            datasets: [{
+                label: 'Uso de Disco',
+                backgroundColor: ['#06D6A0', '#B84A62'],
+                borderColor: 'none',
+                data: [30, 70],
+            },]
+        };
+
+        const config3 = {
+            type: 'pie',
+            data: dados3,
+            options: {}
+        };
+
+        const grafico3 = new Chart(
+            document.getElementById('grafico3'),
+            config3
+        );
+    </script>
 </body>
+
 </html>
