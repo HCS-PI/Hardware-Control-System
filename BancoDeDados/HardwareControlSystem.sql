@@ -7,7 +7,6 @@ idEmpresa INT PRIMARY KEY AUTO_INCREMENT
 ,nomeEmpresa VARCHAR(40)
 ,cnpj VARCHAR(18)
 );
-
 CREATE TABLE Funcionario(
 idFuncionario INT PRIMARY KEY AUTO_INCREMENT
 ,nomeFuncionario VARCHAR(64)
@@ -72,7 +71,7 @@ insert into Dispositivo values (null, 'CPU', 'Intel i5 7400', '%', 3);
 insert into Medida values (null, now(), 50.0, 5);
 insert into Medida values (null, now(), 50.0, 5);
 
-insert into Dispositivo values (null, 'RAM', 'Kingston 8GB 1600 Mhz DDR3L', '%', 1); 
+insert into Dispositivo values (null, 'RAM', 'Kingston 8GB 1600 Mhz DDR3L', '%', 3); 
 
 insert into Medida values (null, now(), 77.0, 6);
 insert into Medida values (null, now(), 44.0, 6);
@@ -99,13 +98,14 @@ WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDisposit
 select * from vw_dashGES_CPU;
 
 /*Selecionando as tabelas dinâmicas referentes a empresa TESLA*/
-select * from vw_dashGES_CPU where idEmpresa = 1;
-select * from vw_dashGES_RAM where idEmpresa = 1;
+select * from vw_dashGES_CPU where CodEmpresa = 1;
+select * from vw_dashGES_RAM where CodEmpresa = 1;
 
 /*Selecionando as tabelas dinâmicas referentes a empresa HYUNDAI*/
-select * from vw_dashGES_CPU where idEmpresa = 2;
-select * from vw_dashGES_RAM where idEmpresa = 2;
+select * from vw_dashGES_CPU where CodEmpresa = 2;
+select * from vw_dashGES_RAM where CodEmpresa = 2;
 
+drop database HardwareControllSystem;
 
 
 
