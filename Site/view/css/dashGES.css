@@ -104,6 +104,15 @@ body {
         justify-content: center;
         width: 100%;
     }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
+    }
     .grafico3 {
         width: 33.3%;
         background-color: rgba(137, 43, 226, 0.220);
@@ -128,6 +137,15 @@ body {
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
     }
     .grafico3 {
         width: 33.3%;
