@@ -4,6 +4,8 @@ body {
     font-family: 'Tajawal', sans-serif;
     background-color: yellow;
     background-image: url(../assets/img/loginBackground2.jpg);
+    width: 100%;
+    
 }
 
 .header {
@@ -58,6 +60,7 @@ body {
     flex-direction: row; 
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .grafico1,
@@ -82,3 +85,57 @@ body {
     width: 16.7%;
     background-color: rgba(137, 43, 226, 0.220);
 }
+@media screen and (max-width: 800px) {
+    html{
+        width: 120%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    html{
+        width: 130%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+}
+
+    
+
+    
