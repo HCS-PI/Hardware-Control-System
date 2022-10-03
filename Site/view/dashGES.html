@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon"/>
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard de gestão</title>
 </head>
@@ -20,21 +20,21 @@
     <div class="header">
         <h3>Gestão</h3>
         <a href="index.html">
-          <div class="header1">
-              <img src="assets/img/hcs.png">
-          </div>
-      </a>
+            <div class="header1">
+                <img src="assets/img/hcs.png">
+            </div>
+        </a>
     </div>
     <div class="titulo">
         <h2>Visão geral - CPU, RAM e Disco</h2>
     </div>
     <div class="graficos">
         <div class="grafico1">
-            <div class="graficoBarraCPU"><canvas id="grafico1"></canvas></div>
+            <div class="graficoBarraCPU" id="graficoBarraCPU"><canvas id="grafico1"></canvas></div>
         </div>
 
         <div class="grafico2">
-            <div class="graficoBarraRAM"><canvas id="grafico2"></canvas></div>
+            <div class="graficoBarraRAM" id="graficoBarraRAM"><canvas id="grafico2"></canvas></div>
         </div>
 
         <div class="grafico3">
@@ -44,98 +44,198 @@
 
     <!--------------------------Primeiro gráfico - CPU---------------------------------------->
     <script>
-        const graficoUsoCPU = [
-            // Colocar aqui o tempo da coleta, estes são os títulos das barras
-            'Hora 1',
-            'Hora 2',
-            'Hora 3',
-            'Hora 4',
-            'Hora 5',
-            'Hora 6',
-            'Hora 7',
-        ];
 
-        // Valores sólidos guardados em variáveis. Os números colocados aqui seráo os recebidos do banco, pode ser string
-        cpuValor1 = 1000
-        cpuValor2 = 2000
-        cpuValor3 = 3000
-        cpuValor4 = 4000
-        cpuValor5 = 5000
-        cpuValor6 = 6000
-        cpuValor7 = 7000
+        setInterval(() => {
+            buscarMediaCPUCarros()
+            buscarMediaRAMCarros()
+        }, 1000);
 
-        // Dados do gráfico
-        const dados1 = {
-            labels: graficoUsoCPU, // Nome da variável do gráfico
-            datasets: [{
-                label: 'Uso de CPU', // Título
-                backgroundColor: '#FCA311', // cor de fundo
-                borderColor: 'orange', // cor da borda
-                data: [cpuValor1, cpuValor2, cpuValor3, cpuValor4, cpuValor5, cpuValor6, cpuValor7], // Plot dos valores embaixo das barras
-            },]
-        };
 
-        // Configurações do gráfico
-        const config1 = {
-            type: 'bar', // Define para o tipo barra
-            data: dados1, // Diz quais dados serão referentes àquele gráfico
-            options: {}
-        };
+        function buscarMediaCPUCarros() {
+ 
+            vt_ModeloCarrosCPU = [];
+            vt_MediasCPU = []
 
-        //Diz qual é a div que receberá o gráfico pronto
-        const grafico1 = new Chart(
-            document.getElementById('grafico1'),
-            config1
-        );
-    </script>
+            fetch("dashGestor/mediaCpuCarros", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idEmpresa: sessionStorage.ID_EMPRESA
+                })
+            }).then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(json => {
 
-<!--------------------------Segundo gráfico - RAM---------------------------------------->
-    <script>
-        const graficoUsoRAM = [
-            // Colocar aqui o tempo da coleta, estes são os títulos das barras
-            'Hora 1',
-            'Hora 2',
-            'Hora 3',
-            'Hora 4',
-            'Hora 5',
-            'Hora 6',
-            'Hora 7',
-        ];
+                        for (let i = 0; i < json.length; i++) {
+                            vt_ModeloCarrosCPU.push(json[i].ModeloCarro);
+                            vt_MediasCPU.push(parseFloat((json[i].MediaConsumo)));
+                        }
 
-         // Valores sólidos guardados em variáveis. Os números colocados aqui seráo os recebidos do banco, pode ser string
-        ramValor1 = 7000
-        ramValor2 = 6000
-        ramValor3 = 5000
-        ramValor4 = 4000
-        ramValor5 = 3000
-        ramValor6 = 2000
-        ramValor7 = 1000
+                        console.log(vt_ModeloCarrosCPU);
+                        console.log(vt_MediasCPU);
 
-        const dados2 = {
-            labels: graficoUsoRAM,
-            datasets: [{
-                label: 'Uso de RAM',
-                backgroundColor: '#FCA311',
-                borderColor: 'orange',
-                data: [ramValor1, ramValor2, ramValor3, ramValor4, ramValor5, ramValor6, ramValor7], // Plot dos valores embaixo das barras
-            },]
-        };
+                        var porcentagemCategeoriaGraficoCPU = 0
+                        var porcentagemBarraGraficoCPU =  0 
+                        if (vt_ModeloCarrosCPU.length < 3) {
+                            porcentagemCategeoriaGraficoCPU = 0.2
+                            porcentagemBarraGraficoCPU =  0.7
+                        }
+                        else {
+                            porcentagemCategeoriaGraficoCPU = 0.6
+                            porcentagemBarraGraficoCPU =  0.9
+                        }
 
-        const config2 = {
-            type: 'bar',
-            data: dados2,
-            options: {}
-        };
+                        document.getElementById('grafico1').remove();
+                        novoGraficoCPU = document.createElement('canvas');
+                        novoGraficoCPU.setAttribute('id', 'grafico1');
+                        graficoBarraCPU.appendChild(novoGraficoCPU);
 
-        const grafico2 = new Chart(
-            document.getElementById('grafico2'),
-            config2
-        );
-    </script>
 
-    <!--------------------------Terceiro gráfico - Disco---------------------------------------->
-    <script>
-const graficoUsoDisco = [
+                        const graficoUsoCPU = [
+                            // Colocar aqui o tempo da coleta, estes são os títulos das barras
+                            vt_ModeloCarrosCPU[0],
+                            vt_ModeloCarrosCPU[1],
+                            vt_ModeloCarrosCPU[2],
+                            vt_ModeloCarrosCPU[3],
+                            vt_ModeloCarrosCPU[4],
+                        ];
+
+
+                        // Dados do gráfico
+                        const dados1 = {
+                            labels: graficoUsoCPU, // Nome da variável do gráfico
+                            datasets: [{
+                                label: 'Uso de CPU (%)', // Título
+                                categoryPercentage: porcentagemCategeoriaGraficoCPU,
+                                barPercentage: porcentagemBarraGraficoCPU, 
+                                backgroundColor: '#49a7de', // cor de fundo
+                                borderColor: 'black', // cor da borda
+                                data: [vt_MediasCPU[0], vt_MediasCPU[1], vt_MediasCPU[2], vt_MediasCPU[3], vt_MediasCPU[4]], // Plot dos valores embaixo das barras
+                            },
+                            ]
+                        };
+
+                        // Configurações do gráfico
+                        const config1 = {
+                            type: 'bar', // Define para o tipo barra
+                            data: dados1, // Diz quais dados serão referentes àquele gráfico
+                            options: {
+                                scales: {
+                                    y: {
+                                        min: 0,
+                                        max: 100,
+                                        beginAtZero: true
+                                    }
+                                },
+                                animation: 0
+                            }
+                        };
+
+                        //Diz qual é a div que receberá o gráfico pronto
+                        const grafico1 = new Chart(
+                            document.getElementById('grafico1'),
+                            config1
+                        );
+                    })
+                }
+            })
+        }
+
+
+        function buscarMediaRAMCarros() {
+
+
+            vt_ModeloCarrosRAM = [];
+            vt_MediasRAM = []
+
+            fetch("dashGestor/mediaRamCarros", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idEmpresa: sessionStorage.ID_EMPRESA
+                })
+            }).then(function (resposta) {
+                if (resposta.ok) {
+                    
+                    resposta.json().then(json => {
+
+                        for (let i = 0; i < json.length; i++) {
+                            vt_ModeloCarrosRAM.push(json[i].ModeloCarro);
+                            vt_MediasRAM.push(parseFloat((json[i].MediaConsumo)));
+                        }
+                        var porcentagemCategeoriaGraficoRAM = 0
+                        var porcentagemBarraGraficoRAM =  0  
+
+                        if (vt_ModeloCarrosRAM.length < 3) {
+                            porcentagemCategeoriaGraficoRAM = 0.2
+                            porcentagemBarraGraficoRAM =  0.7
+                        }
+                        else {
+                            porcentagemCategeoriaGraficoRAM = 0.6
+                            porcentagemBarraGraficoRAM =  0.9
+                        }
+
+                        
+                        document.getElementById('grafico2').remove();
+                        novoGraficoRAM = document.createElement('canvas');
+                        novoGraficoRAM.setAttribute('id', 'grafico2');
+                        graficoBarraRAM.appendChild(novoGraficoRAM);
+
+                        
+                        const graficoUsoRAM = [
+                            // Colocar aqui o tempo da coleta, estes são os títulos das barras
+                            vt_ModeloCarrosRAM[0],
+                            vt_ModeloCarrosRAM[1],
+                            vt_ModeloCarrosRAM[2],
+                            vt_ModeloCarrosRAM[3],
+                            vt_ModeloCarrosRAM[4],
+                        ];
+
+                        // Dados do gráfico
+                        const dados2 = {
+                            labels: graficoUsoRAM, // Nome da variável do gráfico
+                            datasets: [{
+                                label: 'Uso de RAM (%)',// Título
+                                categoryPercentage: porcentagemCategeoriaGraficoRAM,
+                                barPercentage: porcentagemBarraGraficoRAM, 
+                                backgroundColor: '#b449de', // cor de fundo
+                                borderColor: 'black', // cor da borda
+                                data: [vt_MediasRAM[0], vt_MediasRAM[1], vt_MediasRAM[2], vt_MediasRAM[3], vt_MediasRAM[4]], // Plot dos valores embaixo das barras
+                            },
+                            ]
+                        };
+
+                        // Configurações do gráfico
+                        const config2 = {
+                            type: 'bar', // Define para o tipo barra
+                            data: dados2, // Diz quais dados serão referentes àquele gráfico
+                            options: {
+                                scales: {
+                                    y: {
+                                        min: 0,
+                                        max: 100,
+                                        beginAtZero: true
+                                    }
+                                },
+                                animation: 0
+                            }
+                        };
+
+                        //Diz qual é a div que receberá o gráfico pronto
+                        const grafico2 = new Chart(
+                            document.getElementById('grafico2'),
+                            config2
+                        );
+                    })
+                }
+            })
+        }
+
+        const graficoUsoDisco = [
             'Livre',
             'Utilizado',
         ];
@@ -160,7 +260,10 @@ const graficoUsoDisco = [
             document.getElementById('grafico3'),
             config3
         );
+
     </script>
+
+  
 </body>
 
 </html>
