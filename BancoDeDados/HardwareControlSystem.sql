@@ -84,7 +84,8 @@ tipo as Componente,
 unidMedida as 'Unidade de Medida',
 round(avg(valor),1) as MediaConsumo
 FROM Empresa, Carro, Dispositivo, Medida
-WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="CPU" group by Carro.modelo;
+WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="CPU" 
+group by Carro.modelo order by MediaConsumo desc limit 5;
 
 CREATE VIEW `vw_dashGES_RAM` AS
 SELECT idEmpresa as CodEmpresa,
@@ -93,7 +94,8 @@ tipo as Componente,
 unidMedida as 'Unidade de Medida',
 round(avg(valor),1) as MediaConsumo
 FROM Empresa, Carro, Dispositivo, Medida
-WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="RAM" group by Carro.modelo;
+WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="RAM" 
+group by Carro.modelo order by MediaConsumo desc limit 5;
 
 select * from vw_dashGES_CPU;
 
@@ -104,6 +106,11 @@ select * from vw_dashGES_RAM where CodEmpresa = 1;
 /*Selecionando as tabelas dinâmicas referentes a empresa HYUNDAI*/
 select * from vw_dashGES_CPU where CodEmpresa = 2;
 select * from vw_dashGES_RAM where CodEmpresa = 2;
+
+
+
+
+
 
 drop database HardwareControllSystem;
 

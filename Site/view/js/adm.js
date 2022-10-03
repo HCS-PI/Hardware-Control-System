@@ -99,6 +99,7 @@ function cadastrar() {
 
         if (resposta.ok) {
             alert("cadastro realizado!")
+            window.reload();
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
