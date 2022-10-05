@@ -69,12 +69,31 @@ function cadastrar() {
         var cargo = "TEC"
     } else {
         alert("Entre com um cargo")
-
+        return false;
     }
+
     console.log("resposta: ", idEmpresaVar, nome, email, senha, cpf, cargo);
 
     //Adicionar verificações
+    if (nome == "" || email == "" || senha == "" || cpf == "") {
+        alert("Preencha todos os campos para prosseguir!");
+        return false;
+    }
 
+    if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+
+        alert("Ops, e-mail inválido! Verifique e tente novamente.");
+
+        return false;
+    }
+    if (senha.length < 8) {
+        alert("Senha não preenche os requisitos de segurança: Tenha pelo menos algum 8 caracteres")
+        return false;
+    }
+    if(cpf.length != 14){
+        alert("Entre com um CPF valido!");
+        return false;
+    }
 
     // Enviando o valor da nova input
     fetch("/adm/cadastro", {
@@ -98,8 +117,8 @@ function cadastrar() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            alert("cadastro realizado!")
-            window.reload();
+            alert("cadastro realizado com sucesso!")
+            window.location = "/dashADM.html";
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
