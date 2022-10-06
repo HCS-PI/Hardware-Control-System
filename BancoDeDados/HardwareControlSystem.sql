@@ -1,43 +1,45 @@
+DROP DATABASE HardwareControllSystem;
+
 CREATE DATABASE HardwareControllSystem;
 
 USE  HardwareControllSystem;
 
 CREATE TABLE Empresa(
-idEmpresa INT PRIMARY KEY AUTO_INCREMENT
-,nomeEmpresa VARCHAR(40)
+id_empresa INT PRIMARY KEY AUTO_INCREMENT
+,nome_empresa VARCHAR(40)
 ,cnpj VARCHAR(18)
 );
 CREATE TABLE Funcionario(
-idFuncionario INT PRIMARY KEY AUTO_INCREMENT
-,nomeFuncionario VARCHAR(64)
+id_funcionario INT PRIMARY KEY AUTO_INCREMENT
+,nome_funcionario VARCHAR(64)
 ,cpf CHAR(14)
 ,email VARCHAR(100)
 ,senha VARCHAR(256)
 ,cargo CHAR(3)
-,fkEmpresa INT, FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
+,fk_empresa INT, FOREIGN KEY (fk_empresa) REFERENCES Empresa(id_empresa)
 );
 
 CREATE TABLE Carro(
-idCarro INT PRIMARY KEY AUTO_INCREMENT
-,enderecoMAC VARCHAR(17)
-,placaCarro CHAR(7)
+id_carro INT PRIMARY KEY AUTO_INCREMENT
+,endereco_mac VARCHAR(17)
+,placa_carro CHAR(7)
 ,modelo VARCHAR(64)
-,fkEmpresa INT, FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
+,fk_empresa INT, FOREIGN KEY (fk_empresa) REFERENCES Empresa(id_empresa)
 );
 
 CREATE TABLE Dispositivo(
-idDispositivo INT PRIMARY KEY AUTO_INCREMENT
+id_dispositivo INT PRIMARY KEY AUTO_INCREMENT
 ,tipo VARCHAR(45)
 ,modelo VARCHAR(45)
-,unidMedida VARCHAR(10)
-,fkCarro INT, FOREIGN KEY (fkCarro) REFERENCES Carro(idCarro)
+,unid_medida VARCHAR(10)
+,fk_carro INT, FOREIGN KEY (fk_carro) REFERENCES Carro(id_carro)
 );
 
 CREATE TABLE Medida(
-idMedida INT PRIMARY KEY AUTO_INCREMENT
-,horarioRegistro DATETIME
+id_medida INT PRIMARY KEY AUTO_INCREMENT
+,horario_registro DATETIME
 ,valor DECIMAL(5,1)
-,fkDispositivo INT, FOREIGN KEY (fkDispositivo) REFERENCES Dispositivo(idDispositivo)
+,fk_dispositivo INT, FOREIGN KEY (fk_dispositivo) REFERENCES Dispositivo(id_dispositivo)
 );
 
 
@@ -78,23 +80,23 @@ insert into Medida values (null, now(), 44.0, 6);
 
 
 CREATE VIEW `vw_dashGES_CPU` AS
-SELECT idEmpresa as CodEmpresa,
+SELECT id_empresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
-unidMedida as 'Unidade de Medida',
+unid_medida as 'Unidade de Medida',
 round(avg(valor),1) as MediaConsumo
 FROM Empresa, Carro, Dispositivo, Medida
-WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="CPU" 
+WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo AND tipo ="CPU" 
 group by Carro.modelo order by MediaConsumo desc limit 5;
 
 CREATE VIEW `vw_dashGES_RAM` AS
-SELECT idEmpresa as CodEmpresa,
+SELECT id_empresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
-unidMedida as 'Unidade de Medida',
+unid_medida as 'Unidade de Medida',
 round(avg(valor),1) as MediaConsumo
 FROM Empresa, Carro, Dispositivo, Medida
-WHERE fkEmpresa = idEmpresa AND fkCarro = idCarro AND fkDispositivo = idDispositivo AND tipo ="RAM" 
+WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo AND tipo ="RAM" 
 group by Carro.modelo order by MediaConsumo desc limit 5;
 
 select * from vw_dashGES_CPU;
@@ -106,13 +108,4 @@ select * from vw_dashGES_RAM where CodEmpresa = 1;
 /*Selecionando as tabelas dinâmicas referentes a empresa HYUNDAI*/
 select * from vw_dashGES_CPU where CodEmpresa = 2;
 select * from vw_dashGES_RAM where CodEmpresa = 2;
-
-
-
-
-
-
-drop database HardwareControllSystem;
-
-
 

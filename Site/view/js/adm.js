@@ -16,8 +16,8 @@ fetch("/adm/pegarFunc", {
 
         resposta.json().then(json => {
             for (var index = 0; index < json.length; index++) {
-                idFuncionario = json[index].idFuncionario
-                nome = json[index].nomeFuncionario;
+                idFuncionario = json[index].id_funcionario
+                nome = json[index].nome_funcionario;
                 email = json[index].email; cargo = json[index].cargo;
                 cpf = json[index].cpf;
 

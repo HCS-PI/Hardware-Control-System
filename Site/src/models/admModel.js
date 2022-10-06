@@ -1,24 +1,24 @@
 var database = require("../database/config");
 
 function buscarFuncionarios(idEmpresa) {
-    instrucaoSql = `select * from Funcionario where fkEmpresa = ${idEmpresa}`;
+    instrucaoSql = `select * from Funcionario where fk_empresa = ${idEmpresa}`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 function deletarFuncionarios(idFuncionario) {
     console.log(idFuncionario);
-    instrucaoSql = `delete from Funcionario where idFuncionario = ${idFuncionario}`;
+    instrucaoSql = `delete from Funcionario where id_funcionario = ${idFuncionario}`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 function cadastrar(idEmpresa, cpf, nomeFuncionario, email, senha, cargo) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarUser():", idEmpresa,cpf, nomeFuncionario, email, senha, cargo);
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarUser():", idEmpresa, cpf, nomeFuncionario, email, senha, cargo);
 
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    INSERT INTO Funcionario (idFuncionario,nomeFuncionario, cpf, email,senha,cargo,fkEmpresa)
+    INSERT INTO Funcionario (id_funcionario,nome_funcionario, cpf, email,senha,cargo,fk_empresa)
      VALUES (null,'${nomeFuncionario}','${cpf}','${email}', '${senha}','${cargo}' ,${idEmpresa});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
