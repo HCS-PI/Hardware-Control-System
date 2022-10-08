@@ -1,11 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.teste.looca;
 
+import conexao.bd.DadosConexao;
+import conexao.bd.Usuario;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.xml.crypto.Data;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import java.util.List;
 
 /**
  *
@@ -18,9 +24,15 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     private String email = "asd";
     private String senha = "asd";
+
     public TelaLogin() {
         initComponents();
+        
+        URL caminhoIcone = getClass().getResource("/assets/hcs.png");
+        Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoIcone);
+        this.setIconImage(iconeTitulo);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -115,13 +127,24 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
         // TODO add your handling code here:
+        DadosConexao database = new DadosConexao();
+
+        JdbcTemplate connection = database.getConnection();
+
+        List<Usuario> users = connection.query("SELECT * FROM Teste;", new BeanPropertyRowMapper(Usuario.class));
         email = iptEmail.getText();
         senha = iptSenha.getText();
-        if (email.equals("teste@gmail.com") && senha.equals("1234")) {
+        Boolean isLoginValido = false;
+        
+        for (Usuario usuario : users) {
+            if (usuario.getEmail().equals(email) && usuario.getSenha().equals(senha)) {
+               isLoginValido = true;
+            } 
+        }
+        if (isLoginValido == true) {
             new TelaAposLogin().setVisible(true);
             this.dispose();
-        } 
-        else {
+        } else {
             JOptionPane.showMessageDialog(null, "Email ou Senha Inválidos");
         }
     }//GEN-LAST:event_btnLogarActionPerformed
