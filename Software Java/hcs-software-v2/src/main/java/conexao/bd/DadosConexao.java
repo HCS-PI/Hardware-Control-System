@@ -19,7 +19,7 @@ public class DadosConexao {
 
         dataSource​.setUsername("root");
 
-        dataSource​.setPassword("Vini_0507");
+        dataSource​.setPassword("mdS5005jooj");
 
         this.connection = new JdbcTemplate(dataSource);
 
