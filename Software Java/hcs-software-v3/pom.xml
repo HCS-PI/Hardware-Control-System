@@ -22,7 +22,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.mycompany.teste.looca.TelaLogin</mainClass> 
+                            <mainClass>hcs.software.TelaLogin</mainClass> 
                         </manifest>
                     </archive>
                 </configuration>
