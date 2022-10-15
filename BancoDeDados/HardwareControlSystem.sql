@@ -1,8 +1,8 @@
-DROP DATABASE HardwareControllSystem;
+DROP DATABASE hardware_control_system;
 
-CREATE DATABASE HardwareControllSystem;
+CREATE DATABASE hardware_control_system;
 
-USE  HardwareControllSystem;
+USE  hardware_control_system;
 
 CREATE TABLE Empresa(
 id_empresa INT PRIMARY KEY AUTO_INCREMENT
@@ -108,4 +108,8 @@ select * from vw_dashGES_RAM where CodEmpresa = 1;
 /*Selecionando as tabelas dinâmicas referentes a empresa HYUNDAI*/
 select * from vw_dashGES_CPU where CodEmpresa = 2;
 select * from vw_dashGES_RAM where CodEmpresa = 2;
+
+select * from medida where fk_dispositivo = 1 order by id_medida desc;
+
+select * from medida where fk_dispositivo = 2 order by id_medida desc;
 
