@@ -17,9 +17,9 @@ public class DadosConexao {
 
         dataSource​.setUrl("jdbc:mysql://localhost/teste_java");
 
-        dataSource​.setUsername("root");
+        dataSource​.setUsername("usernameBanco");
 
-        dataSource​.setPassword("mdS5005jooj");
+        dataSource​.setPassword("senhaBanco");
 
         this.connection = new JdbcTemplate(dataSource);
 
