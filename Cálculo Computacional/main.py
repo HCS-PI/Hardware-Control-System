@@ -181,28 +181,28 @@ def main():
                     b = "\033[0m"
                     print(f"""{a}HCS - Análise de Hardware Nativo{b}
 
-{a}{tracos} PROCESSADOR {tracos}
-{a}Uso do Processador:{b} {psutil.cpu_percent()}% 
-{str(getProcessadorLive())}
-{a}{tracos}              {tracos}{b}\n
-{a}{tracos} MEMÓRIA RAM {tracos}
-{a}Uso da Memória RAM:{b} {psutil.virtual_memory().percent}% ({round(psutil.virtual_memory().used / 1024 ** 3, 1)}GB/{round(psutil.virtual_memory().total / 1024 ** 3, 1)}GB)
-{a}{tracos}             {tracos}{b}\n
-{a}{tracos} MEMÓRIA INTERNA {tracos}
-{str(getMemoriaInternaLive())}
-{a}{tracos}                 {tracos}{b}\n
-{a}{tracos} REDE {tracos}{b}
-{a}Qtd. Dados Enviados:{b} {round(psutil.net_io_counters()[0] * 10 ** -9, 3)} GB
-{a}Qtd. Dados Recebidos:{b} {round(psutil.net_io_counters()[1] * 10 ** -9, 3)} GB
-{a}Pacotes Enviados:{b} {psutil.net_io_counters()[3]}
-{a}Pacotes Recebidos{b} {psutil.net_io_counters()[4]}
-{a}Endereço IP{b} {socket.gethostbyname(socket.gethostname())}
-{a}Máscara da Rede{b} {ipaddress.IPv4Network(socket.gethostbyname(socket.gethostname()))}
-{a}{tracos} {tracos}{b}\n
-{a}{tracos} BATERIA {tracos}
-{str(getBateriaLive())}
-{a}{tracos}         {tracos}{b}\n
-""")
+                    {a}{tracos} PROCESSADOR {tracos}
+                    {a}Uso do Processador:{b} {psutil.cpu_percent()}% 
+                    {str(getProcessadorLive())}
+                    {a}{tracos}              {tracos}{b}\n
+                    {a}{tracos} MEMÓRIA RAM {tracos}
+                    {a}Uso da Memória RAM:{b} {psutil.virtual_memory().percent}% ({round(psutil.virtual_memory().used / 1024 ** 3, 1)}GB/{round(psutil.virtual_memory().total / 1024 ** 3, 1)}GB)
+                    {a}{tracos}             {tracos}{b}\n
+                    {a}{tracos} MEMÓRIA INTERNA {tracos}
+                    {str(getMemoriaInternaLive())}
+                    {a}{tracos}                 {tracos}{b}\n
+                    {a}{tracos} REDE {tracos}{b}
+                    {a}Qtd. Dados Enviados:{b} {round(psutil.net_io_counters()[0] * 10 ** -9, 3)} GB
+                    {a}Qtd. Dados Recebidos:{b} {round(psutil.net_io_counters()[1] * 10 ** -9, 3)} GB
+                    {a}Pacotes Enviados:{b} {psutil.net_io_counters()[3]}
+                    {a}Pacotes Recebidos{b} {psutil.net_io_counters()[4]}
+                    {a}Endereço IP{b} {socket.gethostbyname(socket.gethostname())}
+                    {a}Máscara da Rede{b} {ipaddress.IPv4Network(socket.gethostbyname(socket.gethostname()))}
+                    {a}{tracos} {tracos}{b}\n
+                    {a}{tracos} BATERIA {tracos}
+                    {str(getBateriaLive())}
+                    {a}{tracos}         {tracos}{b}\n
+                    """)
                     time.sleep(1)
                     os.system(limpar)
         except:
