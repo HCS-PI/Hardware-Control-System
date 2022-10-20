@@ -1,7 +1,7 @@
 from pickle import FALSE, TRUE
 import intro, capturarDados
 import os, time, platform
-import keyboard as kb
+
 
 intro.callIntro()
 limpar = 'clear' if platform.system() == 'Linux' else 'cls'

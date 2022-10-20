@@ -1,4 +1,3 @@
-
 package hcs.software;
 
 import com.github.britooo.looca.api.core.Looca;
@@ -36,11 +35,11 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         URL caminhoIcone = getClass().getResource("/assets/hcs.png");
         Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoIcone);
         this.setIconImage(iconeTitulo);
-        
+
         initComponents();
 
         Looca looca = new Looca();
@@ -59,6 +58,9 @@ public class Dashboard extends javax.swing.JFrame {
                 consumoRamRealTime(looca);
                 inserirDadosMedidas(looca, conversor);
                 
+                // Comentado para resolver BUG - Temporariamente
+                // tempAtvRealTime(looca, conversor);
+
             }
         };
 
@@ -566,7 +568,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblSo.setText(sistemaOperacional);
         lblFabricante.setText(fabricanteSistema);
         lblArquitetura.setText(arquiteturaSistema);
-        
+
         String tempoAtvSistema = conversor.formatarSegundosDecorridos(looca.getSistema().getTempoDeAtividade());
         lblTempoAtv.setText(tempoAtvSistema);
     }
@@ -584,7 +586,6 @@ public class Dashboard extends javax.swing.JFrame {
         lblNucleosFisicos.setText(qtdNucleosFisicos.toString());
         lblNucleosLogicos1.setText(qtdNucleosLogicos.toString());
         lblThreads.setText(qtdTotalNucleos.toString());
-        
 
     }
 
@@ -644,24 +645,24 @@ public class Dashboard extends javax.swing.JFrame {
         lblRamDisp.setText(strMemoriaDisponívelGb);
 
     }
-    
-    public void inserirDadosMedidas(Looca looca, Conversor conversor){
-        
+
+    public void inserirDadosMedidas(Looca looca, Conversor conversor) {
+
         DadosConexao database = new DadosConexao();
 
         JdbcTemplate connection = database.getConnection();
-        
+
         // Inserindo consumo de CPU Carro Tesla Model S
         Double consumoCpu = looca.getProcessador().getUso();
-        
+
         connection.update("insert into Medida values (null, now()," + consumoCpu + ", 1);");
-        
+
         // Inserindo consumo de RAM Carro Tesla Model S
         Double consumoRam = (looca.getMemoria().getEmUso().doubleValue() * 100) / looca.getMemoria().getTotal();;
-        
+
         connection.update("insert into Medida values (null, now()," + consumoRam + ", 2);");
     }
-    
+
 //    public void tempAtvRealTime(Looca looca, Conversor conversor) {
 //        String tempoAtvSistema = conversor.formatarSegundosDecorridos(looca.getSistema().getTempoDeAtividade());
 //        lblTempoAtv.setText(tempoAtvSistema);
