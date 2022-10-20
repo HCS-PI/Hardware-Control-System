@@ -93,8 +93,7 @@ Select * from Carro;
 SELECT * FROM Medida;
 
 
-GO
-CREATE VIEW vw_dashGES_CPU AS 
+CREATE VIEW vwDashGesCPU AS 
 SELECT TOP 5 id_empresa as 'CodEmpresa',
 		Carro.modelo AS 'ModeloCarro',
 		tipo AS 'Componente',
@@ -104,9 +103,8 @@ WHERE id_empresa = fk_empresa AND fk_carro = id_carro
 AND fk_dispositivo = id_dispositivo AND tipo = 'CPU'
 group by Carro.modelo, id_empresa,tipo,unid_medida ;
 
-GO
 
-CREATE VIEW vw_dashGES_RAM AS 
+CREATE VIEW vwDashGesRAM AS 
 SELECT TOP 5 id_empresa as 'CodEmpresa',
 		Carro.modelo as 'ModeloCarro',
 		tipo as 'Componente',
@@ -114,7 +112,7 @@ SELECT TOP 5 id_empresa as 'CodEmpresa',
 		round(avg(valor),1) as 'MediaConsumo'
 		FROM Empresa, Carro, Dispositivo, Medida
 		WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo AND tipo = 'RAM' 
-		group by Carro.modelo,id_empresa,tipo,unid_medida;
+		group by Carro.modelo,id_empresa,tipo,unid_medida
 
-select * from vw_dashGES_CPU where CodEmpresa = 1 order by MediaConsumo DESC;
-select * from vw_dashGES_RAM where CodEmpresa = 1 order by MediaConsumo DESC;
+select * from vwDashGesCPU where CodEmpresa = 1 order by MediaConsumo DESC;
+select * from vwDashGesRAM where CodEmpresa = 1 order by MediaConsumo DESC;
