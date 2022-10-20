@@ -1,3 +1,4 @@
+import platform
 import psutil
 
 def dadosCPU():
@@ -27,12 +28,20 @@ dispositivos = psutil.disk_partitions();
 def dadosDisco(): 
     print('=-='*50)
     print('\033[1mDADOS DE UNIDADES DE ARMAZENAMENTO (DISCOS)\033[0m\n')
-    for dispositivo in dispositivos:
-        armzTotalDisco = round((psutil.disk_usage(f'{dispositivo.device}')[0]) / (10**9),2);
-        espacoUsadoDisco = round((psutil.disk_usage(f'{dispositivo.device}')[1]) / (10**9),2);
-        espacoLivreDisco = round((psutil.disk_usage(f'{dispositivo.device}')[2]) / (10**9),2);
-        consumoDisco = round((psutil.disk_usage(f'{dispositivo.device}')[3]),2);
+    if platform.system() == 'Linux':
+            armzTotalDisco = round((psutil.disk_usage(f'/')[0]) / (10**9),2);
+            espacoUsadoDisco = round((psutil.disk_usage(f'')[1]) / (10**9),2);
+            espacoLivreDisco = round((psutil.disk_usage(f'/')[2]) / (10**9),2);
+            consumoDisco = round((psutil.disk_usage(f'/')[3]),2);
+            print(f'\033[1mUnidade de Armazenamento: \033[95m{"/:"}\033[0m   \033[1mEspaço Total: \033[95m{armzTotalDisco} Gb\033[0m   \033[1mEspaço Usado: \033[95m{espacoUsadoDisco} Gb\033[0m   \033[1mEspaço Livre: \033[95m{espacoLivreDisco} Gb\033[0m   \033[1mConsumo(%): \033[95m{consumoDisco}%\033[0m')
 
-        print(f'\033[1mUnidade de Armazenamento: \033[95m{dispositivo.device}\033[0m   \033[1mEspaço Total: \033[95m{armzTotalDisco} Gb\033[0m   \033[1mEspaço Usado: \033[95m{espacoUsadoDisco} Gb\033[0m   \033[1mEspaço Livre: \033[95m{espacoLivreDisco} Gb\033[0m   \033[1mConsumo(%): \033[95m{consumoDisco}%\033[0m')
+    else:
+        for dispositivo in dispositivos:
+            armzTotalDisco = round((psutil.disk_usage(f'{dispositivo.device}')[0]) / (10**9),2);
+            espacoUsadoDisco = round((psutil.disk_usage(f'{dispositivo.device}')[1]) / (10**9),2);
+            espacoLivreDisco = round((psutil.disk_usage(f'{dispositivo.device}')[2]) / (10**9),2);
+            consumoDisco = round((psutil.disk_usage(f'{dispositivo.device}')[3]),2);
+
+            print(f'\033[1mUnidade de Armazenamento: \033[95m{dispositivo.device}\033[0m   \033[1mEspaço Total: \033[95m{armzTotalDisco} Gb\033[0m   \033[1mEspaço Usado: \033[95m{espacoUsadoDisco} Gb\033[0m   \033[1mEspaço Livre: \033[95m{espacoLivreDisco} Gb\033[0m   \033[1mConsumo(%): \033[95m{consumoDisco}%\033[0m')
     print('=-='*50) 
     print('=-='*50)    
