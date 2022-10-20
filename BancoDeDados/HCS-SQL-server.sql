@@ -1,4 +1,4 @@
-Drop database hardware_control_system;
+
 CREATE DATABASE hardware_control_system;
 
 USE  hardware_control_system;
@@ -116,3 +116,22 @@ SELECT TOP 5 id_empresa as 'CodEmpresa',
 
 select * from vwDashGesCPU where CodEmpresa = 1 order by MediaConsumo DESC;
 select * from vwDashGesRAM where CodEmpresa = 1 order by MediaConsumo DESC;
+GO
+
+CREATE VIEW vwDashTec AS
+Select TOP 5 id_empresa as CodEmpresa,
+Carro.id_carro AS 'IdCarro',
+Carro.modelo AS 'Modelo',
+Carro.placa_carro AS 'Placa',
+Medida.valor as 'Valor',
+tipo as 'Componente',
+unid_medida as 'UnidadeMedida' 
+FROM Empresa, Carro, Dispositivo, Medida
+WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo
+GROUP BY id_empresa,Medida.valor,unid_medida, Carro.id_carro,Carro.modelo,Carro.placa_carro,tipo  ;
+
+
+
+Select * from vwDashTec ORDER BY Valor desc;
+SELECT * from vwDashTec WHERE CodEmpresa = 1;
+
