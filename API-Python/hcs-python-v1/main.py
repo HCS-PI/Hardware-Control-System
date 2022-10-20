@@ -66,6 +66,7 @@ def main():
                                 capturarDados.dadosRAM()
                                 capturarDados.dadosDisco()
                                 time.sleep(1)
+                                os.system(limpar)
                                 
                         
                 else :
