@@ -37,19 +37,25 @@ def main():
         if opcaoMenu == 0:
                 print ("Encerrando Programa ....")
 
-        
-        elif opcaoMenu == 1:
-                isExibirDados = False;
-                while isExibirDados == False:
-                    
-                    capturarDados.dadosCPU()
-                    if kb.is_pressed('e'):
-                            break
-                    time.sleep(1)
-                    os.system(limpar)
-                    
-        elif opcaoMenu != 0 or opcaoMenu !=1:
-            print("opção Inválida. Digite Novamente")
+        try:
+
+                if opcaoMenu == 1:
+                        isExibirDados = True;
+                        while isExibirDados:
+                                print('=-='*50)
+                                print("\033[1mPressione \033[91mCtrl + C\033[0m \033[1mpara voltar ao Menu!\033[0m")
+                                capturarDados.dadosCPU()
+                                capturarDados.dadosRAM()
+                                capturarDados.dadosDisco()
+                                time.sleep(1)
+                                os.system(limpar)
+                        
+                elif opcaoMenu != 0 or opcaoMenu !=1:
+                        print("opção Inválida. Digite Novamente")
+        except:
+                time.sleep(1)
+                os.system(limpar)
+                main()
            
      
 
