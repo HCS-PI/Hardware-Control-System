@@ -113,3 +113,18 @@ select * from medida where fk_dispositivo = 1 order by id_medida desc;
 
 select * from medida where fk_dispositivo = 2 order by id_medida desc;
 
+
+CREATE VIEW `vw_dashTec` AS
+Select id_empresa as CodEmpresa,
+Carro.id_carro AS 'IdCarro',
+Carro.modelo AS 'Modelo',
+Carro.placa_carro AS 'Placa',
+Medida.valor as 'Valor',
+tipo as 'Componente',
+unid_medida as 'UnidadeMedida' 
+FROM Empresa, Carro, Dispositivo, Medida
+WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo
+order by Medida.valor desc limit 5;
+Select * from vw_dashTec;
+SELECT * from vw_dashTec WHERE CodEmpresa = 1;
+

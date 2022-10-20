@@ -12,6 +12,7 @@ var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var admRouter = require("./src/routes/adm");
 var dashGestouRouter = require("./src/routes/dashGestor");
+var dashTecnicoRouter = require("./src/routes/dashTecnico");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/adm", admRouter);
 app.use("/dashGestor", dashGestouRouter);
+app.use("/dashTecnico", dashTecnicoRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

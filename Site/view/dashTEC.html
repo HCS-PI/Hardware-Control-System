@@ -16,7 +16,7 @@
     <title>Dashboard Técnica</title>
 </head>
 
-<body>
+<body onload="verCarros(), monitorados()">
     <div class="header">
         <h3>Técnica</h3>
         <a href="index.html">
@@ -32,34 +32,35 @@
         <div class="bloco1">
             <div class="qtdCarros texto">
                 <h3>Carros sendo monitorados</h3>
-                <div class="numCarrosSendoMonitorados">100</div>
+                <div class="numCarrosSendoMonitorados" id = "numCarrosSendoMonitorados">0</div>
             </div>
         </div>
 
         <div class="bloco2">
             <div class="qtdCarrosProblema texto">
-                <h3>Carros com problemas</h3>
-                <div class="numCarrosProblema">50</div>
+                <h3>Carros em estado critico</h3>
+                <div class="numCarrosProblema" id="carrosCriticos">50</div>
             </div>
         </div>
 
         <div class="bloco3">
             <h3>Atualizar</h3>
-            <div class="botaoRefresh">
+            <div class="botaoRefresh" onclick="atualizar()">
                 <img src="assets/img/refreshIcon.png" alt="ícone botão atualizar">
             </div>
         </div>
     </div>
-    <div class="carros">
-        <div class="carro carro1">
+    <div class="carros" id = "cardCarros">
+
+     <div class="carro carro1">
             <ul class="ulTitulo">
-                <li>Marca</li>
+                <li>Placa</li>
                 <li>Modelo</li>
                 <li>Problema</li>
                 <li>Estado</li>
             </ul>
             <ul class="ulDescricao">
-                <div class="marcaCarro">marcaCarro</div>
+                <div class="placaCarro">placa</div>
                 <div class="modeloCarro">modeloCarro</div>
                 <div class="itemComProblema">itemComProblema</div>
                 <div class="estadoCarro">estadoCarro</div>
@@ -67,13 +68,13 @@
         </div>
         <div class="carro carro2">
             <ul class="ulTitulo">
-                <li>Marca</li>
+                <li>Placa</li>
                 <li>Modelo</li>
                 <li>Problema</li>
                 <li>Estado</li>
             </ul>
             <ul class="ulDescricao">
-                <div class="marcaCarro">marcaCarro</div>
+                <div class="placaCarro">placa</div>
                 <div class="modeloCarro">modeloCarro</div>
                 <div class="itemComProblema">itemComProblema</div>
                 <div class="estadoCarro">estadoCarro</div>
@@ -81,47 +82,20 @@
         </div>
         <div class="carro carro1">
             <ul class="ulTitulo">
-                <li>Marca</li>
+                <li>Placa</li>
                 <li>Modelo</li>
                 <li>Problema</li>
                 <li>Estado</li>
             </ul>
             <ul class="ulDescricao">
-                <div class="marcaCarro">marcaCarro</div>
+                <div class="placaCarro">placa</div>
                 <div class="modeloCarro">modeloCarro</div>
                 <div class="itemComProblema">itemComProblema</div>
                 <div class="estadoCarro">estadoCarro</div>
             </ul>
-        </div>
-        <div class="carro carro2">
-            <ul class="ulTitulo">
-                <li>Marca</li>
-                <li>Modelo</li>
-                <li>Problema</li>
-                <li>Estado</li>
-            </ul>
-            <ul class="ulDescricao">
-                <div class="marcaCarro">marcaCarro</div>
-                <div class="modeloCarro">modeloCarro</div>
-                <div class="itemComProblema">itemComProblema</div>
-                <div class="estadoCarro">estadoCarro</div>
-            </ul>
-        </div>
-        <div class="carro carro1">
-            <ul class="ulTitulo">
-                <li>Marca</li>
-                <li>Modelo</li>
-                <li>Problema</li>
-                <li>Estado</li>
-            </ul>
-            <ul class="ulDescricao">
-                <div class="marcaCarro">marcaCarro</div>
-                <div class="modeloCarro">modeloCarro</div>
-                <div class="itemComProblema">itemComProblema</div>
-                <div class="estadoCarro">estadoCarro</div>
-            </ul>
-        </div>
+        </div> 
     </div>
 </body>
 
 </html>
+<script src="js/dashTEC.js"></script>

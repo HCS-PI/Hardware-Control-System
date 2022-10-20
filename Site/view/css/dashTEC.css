@@ -333,11 +333,17 @@ ul {
 
     .ulTitulo {
         font-weight: 800;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .ulDescricao {
+        display: flex;
         font-size: 1rem;
+        justify-content: space-evenly;
+        text-align: center;
     }
 
     .bloco1 {
