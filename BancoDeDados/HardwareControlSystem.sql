@@ -79,7 +79,7 @@ insert into Medida values (null, now(), 77.0, 6);
 insert into Medida values (null, now(), 44.0, 6);
 
 
-CREATE VIEW `vw_dashGES_CPU` AS
+CREATE VIEW `vwDashGesCPU` AS
 SELECT id_empresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
@@ -89,7 +89,7 @@ FROM Empresa, Carro, Dispositivo, Medida
 WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo AND tipo ="CPU" 
 group by Carro.modelo order by MediaConsumo desc limit 5;
 
-CREATE VIEW `vw_dashGES_RAM` AS
+CREATE VIEW `vwDashGesRAM` AS
 SELECT id_empresa as CodEmpresa,
 Carro.modelo as ModeloCarro,
 tipo as Componente,
@@ -99,22 +99,22 @@ FROM Empresa, Carro, Dispositivo, Medida
 WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo AND tipo ="RAM" 
 group by Carro.modelo order by MediaConsumo desc limit 5;
 
-select * from vw_dashGES_CPU;
+select * from vwDashGesCPU;
 
 /*Selecionando as tabelas dinâmicas referentes a empresa TESLA*/
-select * from vw_dashGES_CPU where CodEmpresa = 1;
-select * from vw_dashGES_RAM where CodEmpresa = 1;
+select * from vwDashGesCPU where CodEmpresa = 1;
+select * from vwDashGesRAM where CodEmpresa = 1;
 
 /*Selecionando as tabelas dinâmicas referentes a empresa HYUNDAI*/
-select * from vw_dashGES_CPU where CodEmpresa = 2;
-select * from vw_dashGES_RAM where CodEmpresa = 2;
+select * from vwDashGesCPU where CodEmpresa = 2;
+select * from vwDashGesRAM where CodEmpresa = 2;
 
 select * from medida where fk_dispositivo = 1 order by id_medida desc;
 
 select * from medida where fk_dispositivo = 2 order by id_medida desc;
 
 
-CREATE VIEW `vw_dashTec` AS
+CREATE VIEW `vwDashTec` AS
 Select id_empresa as CodEmpresa,
 Carro.id_carro AS 'IdCarro',
 Carro.modelo AS 'Modelo',
@@ -125,6 +125,8 @@ unid_medida as 'UnidadeMedida'
 FROM Empresa, Carro, Dispositivo, Medida
 WHERE fk_empresa = id_empresa AND fk_carro = id_carro AND fk_dispositivo = id_dispositivo
 order by Medida.valor desc limit 5;
-Select * from vw_dashTec;
-SELECT * from vw_dashTec WHERE CodEmpresa = 1;
+Select * from vwDashTec;
+SELECT * from vwDashTec WHERE CodEmpresa = 1;
+
+
 

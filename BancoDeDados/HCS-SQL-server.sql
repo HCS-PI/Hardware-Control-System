@@ -118,6 +118,7 @@ select * from vwDashGesCPU where CodEmpresa = 1 order by MediaConsumo DESC;
 select * from vwDashGesRAM where CodEmpresa = 1 order by MediaConsumo DESC;
 GO
 
+
 CREATE VIEW vwDashTec AS
 Select TOP 5 id_empresa as CodEmpresa,
 Carro.id_carro AS 'IdCarro',

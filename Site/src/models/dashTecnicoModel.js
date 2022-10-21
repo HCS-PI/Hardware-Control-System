@@ -8,7 +8,7 @@ function carrosMonitorados(idEmpresa) {
 }
 function verCarrosProblema(idEmpresa) {
     instrucaoSql = `
-    SELECT * from vw_dashTec WHERE CodEmpresa = ${idEmpresa};`;
+    SELECT * from vwDashTec WHERE CodEmpresa = ${idEmpresa} ORDER BY Valor desc;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
