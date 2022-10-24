@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function carrosMonitorados(idEmpresa) {
     instrucaoSql = `
-    SELECT fk_empresa, COUNT(id_carro) AS 'qtdCarro' FROM Carro WHERE fk_empresa = ${idEmpresa};`;
+    SELECT fk_empresa, COUNT(id_carro) AS 'qtdCarro' FROM Carro WHERE fk_empresa = ${idEmpresa} group by fk_empresa;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

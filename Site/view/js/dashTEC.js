@@ -29,7 +29,8 @@ function monitorados() {
 
 function verCarros() {
     var idEmpresa = sessionStorage.ID_EMPRESA;
-
+    estadoRam = ""
+    estadoCpu = ""
     fetch("/dashTecnico/verCarros", {
         method: 'POST',
         headers: {
@@ -51,6 +52,8 @@ function verCarros() {
                     problema = json[index].Componente
                     Valor = json[index].Valor
 
+                  
+
 
                     if (Valor >= 80 && Valor < 90) {
                         estadoRam = 'Alerta'
@@ -58,12 +61,18 @@ function verCarros() {
                         estadoRam = 'Critico'
                         critico++
                     }
+                    else {
+                        estadoRam = 'Normal'
+                    }
 
                     if (Valor >= 70 && Valor < 90) {
                         estadoCpu = 'Alerta'
                     } else if (Valor > 90) {
                         estadoCpu = 'Critico'
                         critico++
+                    }
+                    else {
+                        estadoCpu = 'Normal'
                     }
 
                     if (problema == "RAM" && Valor > 40.0) {
