@@ -149,17 +149,17 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12.setText("Tempo de Atividade:");
 
         lblFabricante.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblFabricante.setForeground(new java.awt.Color(255, 255, 102));
+        lblFabricante.setForeground(new java.awt.Color(255, 255, 255));
 
         lblSo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSo.setForeground(new java.awt.Color(255, 255, 102));
+        lblSo.setForeground(new java.awt.Color(255, 255, 255));
 
         lblTempoAtv.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTempoAtv.setForeground(new java.awt.Color(255, 255, 102));
+        lblTempoAtv.setForeground(new java.awt.Color(255, 255, 255));
         lblTempoAtv.setText("0 Days, 14:25:36");
 
         lblArquitetura.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblArquitetura.setForeground(new java.awt.Color(255, 255, 102));
+        lblArquitetura.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -239,20 +239,20 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Físicos:");
 
-        lblModelo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblModelo.setForeground(new java.awt.Color(0, 244, 244));
+        lblModelo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblModelo.setForeground(new java.awt.Color(255, 255, 255));
         lblModelo.setText("Modelo");
 
         lblNucleosFisicos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblNucleosFisicos.setForeground(new java.awt.Color(0, 244, 244));
+        lblNucleosFisicos.setForeground(new java.awt.Color(255, 255, 255));
         lblNucleosFisicos.setText("0");
 
         lblThreads.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblThreads.setForeground(new java.awt.Color(0, 244, 244));
+        lblThreads.setForeground(new java.awt.Color(255, 255, 255));
         lblThreads.setText("12");
 
         lblNucleosLogicos1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblNucleosLogicos1.setForeground(new java.awt.Color(0, 244, 244));
+        lblNucleosLogicos1.setForeground(new java.awt.Color(255, 255, 255));
         lblNucleosLogicos1.setText("0");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -316,7 +316,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(pgBarCpu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(lblNucleosLogicos1)
@@ -344,7 +344,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel21.setText("Espaço Em Uso:");
 
         lblRamTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblRamTotal.setForeground(new java.awt.Color(112, 36, 181));
+        lblRamTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblRamTotal.setText("0");
 
         pgBarRam.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -360,7 +360,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel20.setText("Espaço Disponível:");
 
         lblRamDisp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblRamDisp.setForeground(new java.awt.Color(112, 36, 181));
+        lblRamDisp.setForeground(new java.awt.Color(255, 255, 255));
         lblRamDisp.setText("0");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -368,7 +368,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel23.setText("Consumo de Disco (%)");
 
         lblRamUso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblRamUso.setForeground(new java.awt.Color(112, 36, 181));
+        lblRamUso.setForeground(new java.awt.Color(255, 255, 255));
         lblRamUso.setText("0");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -453,15 +453,15 @@ public class Dashboard extends javax.swing.JFrame {
         pgBarDisco.setStringPainted(true);
 
         lblDiscoTotal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblDiscoTotal.setForeground(new java.awt.Color(51, 255, 51));
+        lblDiscoTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblDiscoTotal.setText("0");
 
         lblDiscoUso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblDiscoUso.setForeground(new java.awt.Color(51, 255, 51));
+        lblDiscoUso.setForeground(new java.awt.Color(255, 255, 255));
         lblDiscoUso.setText("0");
 
         lblDiscoDisp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblDiscoDisp.setForeground(new java.awt.Color(51, 255, 51));
+        lblDiscoDisp.setForeground(new java.awt.Color(255, 255, 255));
         lblDiscoDisp.setText("0");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
