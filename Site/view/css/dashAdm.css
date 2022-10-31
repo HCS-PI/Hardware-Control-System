@@ -28,8 +28,12 @@ body {
     background-color: rgba(113, 54, 223, 0.527);
     border-radius: 0.5rem;
     padding: 0.3rem;
+    margin: 5px;
 }
-
+a {
+    text-decoration: none;
+    color: #000;
+}
 .header1 {
     display: flex;
     flex-direction: row;
