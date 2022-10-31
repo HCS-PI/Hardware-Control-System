@@ -187,7 +187,7 @@ function buscarMediaRAMCarros() {
         }
     })
 }
-
+/*
 const graficoUsoDisco = [
     'Livre',
     'Utilizado',
@@ -213,4 +213,5 @@ const grafico3 = new Chart(
     document.getElementById('grafico3'),
     config3
 );
+*/
 

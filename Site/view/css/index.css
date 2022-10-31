@@ -166,6 +166,11 @@ body {
     transform: translateY(9.3rem);
     opacity: 0;
     transition: 400ms all ease;
+    
+}
+
+button.reveal.active{
+    font-size: 15px;
 }
 
 .reveal.active {
@@ -422,7 +427,10 @@ body {
         opacity: 0;
         transition: 400ms all ease;
     }
-
+    button.reveal.active{
+        font-size: 25px;
+    }
+    
     .reveal.active {
         transform: translateY(0);
         opacity: 1;
@@ -654,6 +662,10 @@ body {
         transition: 400ms all ease;
     }
 
+    button.reveal.active{
+        font-size: 30px;
+    }
+
     .reveal.active {
         transform: translateY(0);
         opacity: 1;
@@ -755,6 +767,10 @@ body {
         transform: translateY(9.3rem);
         opacity: 0;
         transition: 400ms all ease;
+    }
+
+    button.reveal.active{
+        font-size: 30px;
     }
 
     .reveal.active {
@@ -944,6 +960,10 @@ body {
         transform: translateY(9rem);
         opacity: 0;
         transition: 400ms all ease;
+    }
+
+    button.reveal.active{
+        font-size: 30px;
     }
 
     .reveal.active {
