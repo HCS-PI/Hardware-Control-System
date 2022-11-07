@@ -10,7 +10,7 @@ public class DadosMemoriaRam {
     Looca looca = new Looca();
     Conversor conversor = new Conversor();
     
-    String MemoriaTotalGb, MemoriaUsoGb, MemoriaDisponívelGb;
+    String MemoriaTotalGb, MemoriaUsoGb, MemoriaDisponivelGb;
     
     Long consumoRam;
 
@@ -37,11 +37,11 @@ public class DadosMemoriaRam {
         return MemoriaUsoGb;
     }
 
-    public String getMemoriaDisponívelGb() {
+    public String getMemoriaDisponivelGb() {
         
-        MemoriaDisponívelGb = conversor.formatarBytes(looca.getMemoria().getDisponivel()); // String Memória RAM Usada Gb
+        MemoriaDisponivelGb = conversor.formatarBytes(looca.getMemoria().getDisponivel()); // String Memória RAM Usada Gb
         
-        return MemoriaDisponívelGb;
+        return MemoriaDisponivelGb;
     }
     
     

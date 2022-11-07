@@ -633,7 +633,7 @@ public class Dashboard extends javax.swing.JFrame {
         
         lblRamUso.setText(dadosRam.getMemoriaUsoGb());
         
-        lblRamDisp.setText(dadosRam.getMemoriaDisponívelGb());
+        lblRamDisp.setText(dadosRam.getMemoriaDisponivelGb());
 
     }   
     
