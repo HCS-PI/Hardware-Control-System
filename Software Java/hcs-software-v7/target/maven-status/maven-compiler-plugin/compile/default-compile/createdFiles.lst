@@ -1,0 +1,16 @@
+hcs\view\Dashboard.class
+hcs\coleta\dados\InserirDados.class
+hcs\coleta\dados\DadosCpu.class
+hcs\view\TelaLogin$3.class
+conexao\bd\Medida.class
+hcs\coleta\dados\DadosDisco.class
+hcs\coleta\dados\DadosSistema.class
+conexao\bd\Funcionario.class
+hcs\view\Dashboard$2.class
+conexao\bd\DadosConexao.class
+hcs\view\TelaLogin$2.class
+hcs\view\TelaLogin$1.class
+hcs\view\TelaLogin.class
+hcs\view\Dashboard$1.class
+hcs\coleta\dados\DadosMemoriaRam.class
+conexao\bd\DadosConexaoAWS.class
