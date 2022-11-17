@@ -22,7 +22,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>hcs.software.TelaLogin</mainClass> 
+                            <mainClass>hcs.view.TelaLogin</mainClass> 
                         </manifest>
                     </archive>
                 </configuration>
