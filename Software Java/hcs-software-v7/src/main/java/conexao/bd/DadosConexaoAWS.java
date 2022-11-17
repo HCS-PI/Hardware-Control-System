@@ -13,7 +13,7 @@ public class DadosConexaoAWS {
 
         dataSource2.setDriverClassName("com.mysql.jdbc.Driver");
 
-        dataSource2.setUrl("jdbc:mysql://localhost:3306/hardware_control_system");
+        dataSource2.setUrl("jdbc:mysql://3.91.232.92:3306/hardware_control_system");
 
         dataSource2.setUsername("root");
 

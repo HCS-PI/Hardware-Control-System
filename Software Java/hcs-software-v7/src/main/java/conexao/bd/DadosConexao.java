@@ -15,7 +15,13 @@ public class DadosConexao {
 
         dataSource​.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-        dataSource​.setUrl("jdbc:sqlserver://hcs-bd.database.windows.net:1433;database=hcs-bd;user=hcs-Grupo09@hcs-bd;password=hardwareCSg9;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+        dataSource​.setUrl("jdbc:sqlserver://hcs-bd.database.windows.net:1433;"
+                + "database=hcs-bd;"
+                + "user=hcs-Grupo09@hcs-bd;"
+                + "password=hardwareCSg9;"
+                + "encrypt=true;"
+                + "trustServerCertificate=false;"
+                + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
 
         dataSource​.setUsername("hcs-Grupo09");
 
