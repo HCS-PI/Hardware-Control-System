@@ -13,9 +13,10 @@ if [ \"$inst\" == \"s\" ]
 	then
         sleep 2;
         echo ;
+        sudo apt install zip;
         echo "Instalando o gerenciador de pacotes";
-        source "/home/ubuntu/.sdkman/bin/sdkman-init.sh";
         curl -s "https://get.sdkman.io" | bash;
+        source "/home/ubuntu/.sdkman/bin/sdkman-init.sh";
         echo ;
         
         echo "Instalando java...";
