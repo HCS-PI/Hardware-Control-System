@@ -30,7 +30,7 @@ if [ \"$inst\" == \"s\" ]
         sudo apt install docker.io;
         sudo systemctl start docker;
         sudo systemctl enable docker;
-        systemctl -t service;
+
         echo ;
         sleep 2;
 
