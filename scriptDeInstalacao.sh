@@ -14,7 +14,7 @@ if [ \"$inst\" == \"s\" ]
         sleep 2;
         echo ;
         echo "Instalando o gerenciador de pacotes";
-        curl -s "https://get.sdkman.io" | bash
+        curl -s "https://get.sdkman.io" | bash;
         echo ;
         echo "Instalando java...";
         sdk install java 11.0.16-amzn;
