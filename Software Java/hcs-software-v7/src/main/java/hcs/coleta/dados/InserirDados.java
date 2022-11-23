@@ -38,7 +38,13 @@ public class InserirDados {
         // Em desenvolvimento
     }
 
-    // public void inserirDadosTemperatura(){
-    //     DadosTemperatura dadosTemp = new DadosTemperatura();
-    // }
+    public void inserirDadosTemperatura(){
+        DadosTemperatura dadosTemp = new DadosTemperatura();
+
+        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
+                + dadosTemp.getTemperaturaCelsius() + ", 2);");
+
+        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
+                + dadosTemp.getTemperaturaCelsius() + ", 2);");
+    }
 }
