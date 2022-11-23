@@ -37,4 +37,8 @@ public class InserirDados {
     public void inserirDadosDisco() {
         // Em desenvolvimento
     }
+
+    // public void inserirDadosTemperatura(){
+    //     DadosTemperatura dadosTemp = new DadosTemperatura();
+    // }
 }
