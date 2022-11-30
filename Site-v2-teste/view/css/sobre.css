@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
+
+*{
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
+}
+
+.banner{
+    text-align: center;
+    white-space: pre;
+    background-color: #fff;
+    font-size: 64px;
+    font-weight: 200;
+}
+
+.bI{
+    background: lightblue url("../assets/img/circuitBG.png") center no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bI img{
+    width: 780px;
+}
+
+.imgTesla{
+    width: 79vw;
+}
+
+.bII{
+    background: url("../assets/img/circuitoescuro.jpg") center no-repeat fixed;
+    color: #fff;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bII .reveal{
+    padding: 180px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.bIIIIII{
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 1.9rem;
+}
+
+.bIIIIII .father{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bIIIIII .son{
+    border-radius: 32px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    display: table;
+    margin: 96px 32px 32px 32px;
+    padding: 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+}
+
+.bIIIIII .son .title{
+    font-size: 32px;
+    white-space: pre; 
+}
+
+.bIIIIII .son .neoList{
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    margin-left: 24px;
+}
+
+.bIIIIII .son img{
+    max-width: 128px;
+    padding: 16px;
+}
+
+.son1, .son2, .son3{
+    display: grid;
+}
+
+.bIV{
+    background: lightblue url("../assets/img/blackBackground.jpg") center no-repeat fixed;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.bIV button{
+    padding: 24px;
+    font-size: 22px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 24px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 48px;
+}
+
+.bIV button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #44474a;
+    border-radius: 8px;
+}
+
+
+@media (min-width: 320px) and (max-width: 520px) {
+   
+    *{
+        font-family: 'Tajawal', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    span{
+        font-size: 1.7rem;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;  
+        width: 100%;
+    }
+    
+    .subir{
+        animation-name: subindo;
+        animation-duration: 2s;  
+    }
+    
+    @keyframes subindo {
+        0%   {transform: translateY(100px);}
+        100% {transform: translateY(0px);}
+    }
+
+    .banner{
+        height: 100%;
+        text-align: center;
+        white-space: pre;
+        background-color: #fff;
+        font-size: 64px;
+        font-weight: 200;
+    }
+    
+    .bI{
+        background:  url("../assets/img/circuitBG.png") ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%; 
+    }
+
+    .bII{
+        background: url("../assets/img/circuitoescuro.jpg") ;
+        color: #fff;
+        white-space: normal;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .reveal{
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 2s all ease;
+    }
+    .bII .reveal{
+        padding: 100px;
+    }
+    
+    .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .bIIIIII div{
+        padding-left: 0%;
+    }
+    .bIIIIII{        
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .imgTesla {
+        width: 100%;
+    }
+
+    .bIIIIII .father{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bIIIIII .son{
+        border-radius: 32px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        display: table;
+        margin: 96px 32px 32px 32px;
+        padding: 32px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    }
+    
+    .bIIIIII .son .title{
+        font-size: 32px;
+        white-space: pre; 
+    }
+    
+    .bIIIIII .son .neoList{
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: left;
+        margin-left: 24px;
+    }
+    
+    .bIIIIII .son img{
+        max-width: 128px;
+        padding: 16px;
+    }
+    
+    .son1, .son2, .son3{
+        display: grid;
+    }
+   
+    
+    .bIV{
+        background:  url("../assets/img/blackBackground.jpg") ;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+    }
+    
+    .bIV button{
+        padding: 24px;
+        font-size: 22px;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 24px;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 48px;
+    }
+    
+    .bIV button:hover{
+        background-color: #fff;
+        color: #000;
+    }
+    
+    
+    ::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #44474a;
+        border-radius: 8px;
+    }
+    
+    
+}
+    

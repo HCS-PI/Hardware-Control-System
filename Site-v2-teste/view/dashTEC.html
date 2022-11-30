@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashTEC.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard Técnica</title>
+</head>
+
+<body onload="verCarros(), monitorados()">
+    <div class="header">
+        <h3>Técnica</h3>
+        <a href="index.html">
+            <h3>Voltar</h3>
+        </a>    
+            <div class="header1">
+                <img src="assets/img/hcs2.png">
+            </div>
+    </div>
+    <div class="titulo">
+        <h2>Visão geral - Carros com alerta</h2>
+    </div>
+    <div class="blocos">
+        <div class="bloco1">
+            <div class="qtdCarros texto">
+                <h3>Carros sendo monitorados</h3>
+                <div class="numCarrosSendoMonitorados" id = "numCarrosSendoMonitorados">0</div>
+            </div>
+        </div>
+
+        <div class="bloco2">
+            <div class="qtdCarrosProblema texto">
+                <h3>Carros em estado critico</h3>
+                <div class="numCarrosProblema" id="carrosCriticos">50</div>
+            </div>
+        </div>
+
+        <div class="bloco3">
+            <h3>Atualizar</h3>
+            <div class="botaoRefresh" onclick="atualizar()">
+                <img src="assets/img/refreshIcon.png" alt="ícone botão atualizar">
+            </div>
+        </div>
+    </div>
+    <div class="carros" id = "cardCarros">
+
+     <div class="carro carro1">
+            <ul class="ulTitulo">
+                <li>Placa</li>
+                <li>Modelo</li>
+                <li>Problema</li>
+                <li>Estado</li>
+            </ul>
+            <ul class="ulDescricao">
+                <div class="placaCarro">placa</div>
+                <div class="modeloCarro">modeloCarro</div>
+                <div class="itemComProblema">itemComProblema</div>
+                <div class="estadoCarro">estadoCarro</div>
+            </ul>
+        </div>
+        <div class="carro carro2">
+            <ul class="ulTitulo">
+                <li>Placa</li>
+                <li>Modelo</li>
+                <li>Problema</li>
+                <li>Estado</li>
+            </ul>
+            <ul class="ulDescricao">
+                <div class="placaCarro">placa</div>
+                <div class="modeloCarro">modeloCarro</div>
+                <div class="itemComProblema">itemComProblema</div>
+                <div class="estadoCarro">estadoCarro</div>
+            </ul>
+        </div>
+        <div class="carro carro1">
+            <ul class="ulTitulo">
+                <li>Placa</li>
+                <li>Modelo</li>
+                <li>Problema</li>
+                <li>Estado</li>
+            </ul>
+            <ul class="ulDescricao">
+                <div class="placaCarro">placa</div>
+                <div class="modeloCarro">modeloCarro</div>
+                <div class="itemComProblema">itemComProblema</div>
+                <div class="estadoCarro">estadoCarro</div>
+            </ul>
+        </div> 
+    </div>
+</body>
+
+</html>
+<script src="js/dashTEC.js"></script>

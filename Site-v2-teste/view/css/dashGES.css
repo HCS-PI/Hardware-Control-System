@@ -1,0 +1,217 @@
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: yellow;
+    background-image: url(../assets/img/loginBackground2.jpg);
+    width: 100%;
+    
+    
+}
+
+.header {
+    position: sticky;
+    width: 100%;
+    height: 6rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+}
+
+.header h3 {
+    background-color: slategray;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.header1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header img {
+    height: 6rem;
+    transition: 400ms;
+}
+
+.header img:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px #222);
+    filter: drop-shadow(0px 0px 5px 5px #222);
+}
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(163, 163, 163, 0.527);
+    width: 40%;
+    border-radius: 10px;
+}
+.graficos {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.boxInfoCPUCarros, .boxInfoRAMCarros{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.informacoesCPUCarros, .informacoesRAMCarros{
+    background-color: rgba(0, 0, 0, 0.245);
+    display: flex;
+    width: 90%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 10px;
+
+}
+.div_graficoCPU, .div_graficoRAM{
+    display: flex;
+    width: 45%;
+    margin: 35px;
+    border-radius: 10px;
+}
+
+.div_ModelosCarros {
+    margin: 35px;
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    height: 350px;
+}
+
+.modelos_carros_input_modelos{
+    display: flex;
+    flex-direction: column;
+}
+.teste {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}
+.teste h3{
+    margin-right:60px ;
+}
+
+.div_graficoCPU canvas, .div_graficoRAM  canvas {
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.771);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+/* .grafico1,
+.grafico2,
+.grafico3 {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grafico1 {
+    width: 33.3%;
+    background-color: rgba(0, 102, 255, 0.220);
+}
+
+.grafico2 {
+    width: 33.3%;
+    background-color: rgba(0, 255, 149, 0.220);
+}
+
+.grafico3 {
+    width: 16.7%;
+    background-color: rgba(137, 43, 226, 0.220);
+} */
+@media screen and (max-width: 800px) {
+    html{
+        width: 120%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    html{
+        width: 130%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+}
+
+    
+
+    

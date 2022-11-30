@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashGES.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard de gestão</title>
+</head>
+
+<body>
+    <div class="header">
+        <h3>Gestão</h3>
+
+        <a href="index.html">
+            <h3>Voltar</h3>
+        </a>
+        <div class="header1">
+            <img src="assets/img/hcs2.png">
+        </div>
+
+
+    </div>
+    <div class="titulo">
+        <h2>Visão geral - CPU, RAM e Disco</h2>
+    </div>
+    <div class="boxInfoCPUCarros">
+        <div class="informacoesCPUCarros">
+            <div class="div_graficoCPU" id="div_graficoCPU">
+                <canvas id="graf_mediaCPU"></canvas>
+            </div>
+            <div class="div_ModelosCarros">
+                <div>
+                    <h2>Média de Consumo de CPU por Modelo</h2>
+                </div>
+                <div id="div_modelos_carros_CPU" class="modelos_carros_input_modelos">
+                    <div class="teste">
+                        <h3>Modelo: <span> Model X  </span></h3>
+                        <h3>Consumo: <span> 61,4 % </span></h3>
+                    </div>
+                    <div class="teste">
+                        <h3>Modelo: <span> Model S  </span></h3>
+                        <h3>Consumo: <span> 5,6 % </span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boxInfoRAMCarros">
+        <div class="informacoesRAMCarros">
+            <div class="div_graficoRAM" id="div_graficoRAM">
+                <canvas id="graf_mediaRAM"></canvas>
+            </div>
+            <div class="div_ModelosCarros">
+                <div>
+                    <h2>Média de Consumo de RAM por Modelo</h2>
+                </div>
+                <div  id = "div_modelos_carros_RAM" class="modelos_carros_input_modelos">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="graficos">
+        <div class="grafico1">
+            <div class="graficoBarraCPU" id="graficoBarraCPU">
+                <canvas id="grafico1"></canvas>
+            </div>
+        </div>
+
+        <div class="grafico2">
+            <div class="graficoBarraRAM" id="graficoBarraRAM"><canvas id="grafico2"></canvas></div>
+        </div>
+
+        <!--<div class="grafico3">
+            <div class="graficoPizzaDisco"><canvas id="grafico3"></canvas></div>
+        </div> -->
+
+    </div>
+
+</body>
+
+</html>
+<script src="js/dashGES.js"></script>

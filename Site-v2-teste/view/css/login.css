@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins';
+    margin:0;
+    background-image: url(../assets/img/loginBackground2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position:center;
+    height: 100vh;
+}
+
+.paiScreen{
+    padding: 64px;
+    display: table;
+    margin: auto;
+}
+
+.screen {  
+    background: rgba(100 80 80 / 20%);
+    border-radius: 8px;
+    backdrop-filter: blur( 14.5px );
+    -webkit-backdrop-filter: blur( 14.5px );
+    color: #000;
+    display: table;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 32px 64px;
+}
+
+.cad {
+    width: 320px;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 300px;
+}
+
+.cad__field {
+    padding: 20px 0px;
+    white-space: pre-line;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.cad_input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: none;
+    text-align: center;
+}
+
+.cad_input::placeholder{
+    color: #000;
+}
+
+/* apagar o contorno da caixa de texto */
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* Botão */
+.texto_botao {
+    font-size: 23px;
+    margin: 8px 0px 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+    appearance: none;
+    padding: 16px;
+}
+
+/* Deixar o botão com transição */
+.texto_botao{
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    opacity: 0.5;
+}
+ 
+.texto_botao:hover{
+    opacity: 2;
+}
+
+input, select{
+    font-size: 17px;
+    font-family: 'Poppins';
+    text-align: center;
+    outline: none;
+    padding: 10px;
+    width: 180px;
+}
+
+input{
+    cursor:text;
+}
+
+select{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+option{
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+
+.paiEntrar{
+    padding: 32px;
+}
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
+}
+@media (min-width: 320px) and (max-width: 520px){
+    .content h2 {
+        font-size: 80%;
+    }
+
+    .paiScreen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+    }
+
+    .screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+@media (min-width: 660px) {
+    .content h2 {
+        font-size: 80%;
+    }
+
+    .paiScreen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+    }
+
+    .screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}

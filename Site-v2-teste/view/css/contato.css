@@ -1,0 +1,156 @@
+.bI{    
+    background: url("../assets/img/whitewallpaper.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+}
+
+.divPai{
+    display: grid;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;    
+}
+
+.contatos{
+    display: table;
+    margin: auto;
+}
+
+.box{
+    text-align: center;
+    background-color: #fff;
+    font-size: 18px;
+    box-shadow: var(--shadow1);
+    margin: 16px;
+    white-space: pre-line;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.box img{
+    max-width: 64px;
+}
+
+.mapa{
+    display: table;
+    display: flex;
+    margin: auto; 
+}
+
+.mapa iframe{
+    box-shadow: var(--shadow1);
+    border-radius: 8px;
+    height: 650px;
+}
+
+.txt-grid{
+    color: #000;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.subir{
+    animation-name: subindo;
+    animation-duration: 2s;  
+}
+
+@keyframes subindo {
+    0%   {transform: translateY(100px);}
+    100% {transform: translateY(0px);}
+}
+
+@media (max-width: 1100px) {
+
+    .bI {
+        height: 100%;
+    }
+
+    .divPai {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .mapa {
+        margin: 0;
+        padding-top: 50px;
+        justify-content: center;
+    }
+
+    .mapa iframe {
+        width: 780px;
+        height: 500px;
+    }
+
+    .contatos {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .box {
+        width: 24%;
+    }
+}
+
+
+@media (max-width: 930px) {
+    .bI {
+        font-size: 3.1rem;
+        padding-top: 50px;
+    }
+
+    .box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .box {
+        font-size: 1.5rem;
+    }
+   
+}
+
+
+@media (max-width: 700px) {
+    .bI  {
+        padding: 50px;
+        align-items: center;
+        font-size: 2.1rem;
+    }
+
+    .contatos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .bI  {
+        font-size: 1.5rem;
+    }
+}

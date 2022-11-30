@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashAdm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h3>Administrador</h3>
+        <a href="index.html">
+            <h3>Voltar</h3>
+        </a>    
+            <div class="header1">
+                <img src="assets/img/hcs2.png">
+            </div>
+    </div>
+
+    <div class="titulo">
+        <div class="mudar" onclick="trocar()">
+            <h2 id="btCadastro">Cadastrar Funcionarios</h2>
+            <h2 id="btVer" style="display: none;">Ver Funcionarios</h2>
+        </div>
+    </div>
+
+    <div class="divForm">
+        <div class="container">
+            <div class="divCad" id="divCard" style="display: none;">
+                <h1 class="tituloCard">Cadastrar funcionario</h1>
+
+                <div class="conteudo">
+
+                    <div class="cad__field">
+                        <input type="text" class="cad_input" placeholder="Nome" id="ipt_nome">
+                    </div>
+
+                    <div class="cad__field">
+                        <input type="text" class="cad_input" placeholder="Email" id="ipt_email">
+                    </div>
+                    <div class="cad__field">
+                        <input type="password" class="cad_input" placeholder="Senha" id="ipt_senha">
+                    </div>
+
+                    <div class="cad__field">
+                        <input type="text" class="cad_input" placeholder="CPF" id="ipt_cpf">
+                    </div>
+
+                    <div class="cad__field">
+                        <select name="" id="ipt_cargo">
+                            <option value="0">Selecionar</option>
+                            <option value="1">Gestor</option>
+                            <option value="2">Tecnico</option>
+                        </select>
+                    </div>
+
+                    <div class="Entrar" onclick="cadastrar()">
+                        <!-- dq -->
+                        <span class="texto_botao">Cadastrar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divCadApresentar" id="divCadApresentar1">
+                <h1 class="tituloCard">gestor</h1>
+
+                <div class="conteudo">
+                    <div class="cad_Apresentar" id="cad_ApresentarGes">
+                        <h3 class="tituloFunc"><span>Nome</span> | <span>CPF</span> | <span>E-mail</span></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divCadApresentar" id="divCadApresentar2">
+                <h1 class="tituloCard">tecnico</h1>
+
+                <div class="conteudo">
+                    <div class="cad_Apresentar" id="cad_ApresentarTec">
+                        <h3 class="tituloFunc"><span>Nome</span> | <span>CPF</span> | <span>E-mail</span></h3>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="js/adm.js"></script>

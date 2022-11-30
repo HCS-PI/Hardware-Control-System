@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: yellow;
+    background-image: url(../assets/img/loginBackground2.jpg);
+}
+
+.container {
+    width: 80%;
+}
+
+
+.header {
+    position: sticky;
+    width: 100%;
+    height: 6rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+}
+
+.header h3 {
+    background-color: rgba(113, 54, 223, 0.527);
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.header1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header img {
+    height: 6rem;
+    transition: 400ms;
+}
+
+.header img:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px #222);
+    filter: drop-shadow(0px 0px 5px 5px #222);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(163, 163, 163, 0.527);
+    width: 100%;
+    text-align: center;
+    padding: 2%;
+    border-radius: 0.6rem;
+}
+
+.divForm {
+    display: flex;
+    height: 85vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.divCad {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 1.2rem;
+    background: rgb(122, 120, 120);
+
+    padding-bottom: 1%;
+}
+
+.tituloCard {
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+/* Animações */
+.header img:hover {
+    -webkit-filter: drop-shadow(0px 0px 0.6rem #222);
+    filter: drop-shadow(0px 0px 0.3rem 0.3rem #222);
+}
+
+.cad__field {
+    display: flex;
+}
+
+.cad__field input,
+select {
+    width: 30rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    border: none;
+    text-align: center;
+}
+
+.Entrar {
+    font-size: 0.8rem;
+    margin: 8px 0px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+    padding: 0.9rem;
+    background: white;
+    border-radius: 1.1rem;
+}
+
+.divForm .container {
+    display: flex;
+    height: 70vh;
+    width: 100vw;
+    justify-content: space-around;
+    padding-top: 4%;
+}
+
+.divCadApresentar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    border-radius: 1.25rem;
+    background: rgb(87, 85, 85);
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.3), 0 0.5rem 1.20rem 0 rgba(0, 0, 0, 0.49);
+}
+
+.cad_Apresentar {
+    color: white;
+}
+
+.tituloFunc {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    font-size: 1.2rem;
+}
+
+.box_func {
+    display: flex;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btExcluir {
+    width: 4rem;
+    border-radius: 0.6rem;
+    border: 0;
+    float: right;
+}
+
+@media (min-width: 750px) {
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Tajawal', sans-serif;
+        background-color: yellow;
+        background-image: url(../assets/img/loginBackground2.jpg);
+    }
+
+    .container {
+        width: 80%;
+    }
+
+
+    .header {
+        position: sticky;
+        width: 100%;
+        height: 6rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .header h3 {
+        background-color: rgba(113, 54, 223, 0.527);
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .header1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .header img {
+        height: 6rem;
+        transition: 400ms;
+    }
+
+    .header img:hover {
+        -webkit-filter: drop-shadow(0px 0px 10px #222);
+        filter: drop-shadow(0px 0px 5px 5px #222);
+    }
+
+    .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 100%;
+        text-align: center;
+        padding: 2%;
+        border-radius: 0.6rem;
+    }
+
+    .divForm {
+        display: flex;
+        height: 85vh;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .divCad {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 50%;
+        height: 100%;
+        border-radius: 1.2rem;
+        background: rgb(122, 120, 120);
+
+        padding-bottom: 1%;
+    }
+
+    .tituloCard {
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Poppins';
+    }
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+    }
+
+    /* Animações */
+    .header img:hover {
+        -webkit-filter: drop-shadow(0px 0px 0.6rem #222);
+        filter: drop-shadow(0px 0px 0.3rem 0.3rem #222);
+    }
+
+    .cad__field {
+        display: flex;
+    }
+
+    .cad__field input,
+    select {
+        width: 30rem;
+        height: 2rem;
+        border-radius: 0.75rem;
+        border: none;
+        text-align: center;
+    }
+
+    .Entrar {
+        font-size: 0.8rem;
+        margin: 8px 0px 0px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Poppins';
+        padding: 0.9rem;
+        background: white;
+        border-radius: 1.1rem;
+    }
+
+    .divForm .container {
+        display: flex;
+        height: 70vh;
+        width: 100vw;
+        justify-content: space-around;
+        padding-top: 4%;
+    }
+
+    .divCadApresentar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 40%;
+        height: 100%;
+        border-radius: 1.25rem;
+        background: rgb(87, 85, 85);
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.3), 0 0.5rem 1.20rem 0 rgba(0, 0, 0, 0.49);
+    }
+
+    .cad_Apresentar {
+        color: white;
+    }
+
+    .tituloFunc {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .box_func {
+        display: flex;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btExcluir {
+        width: 4rem;
+        border-radius: 0.6rem;
+        border: 0;
+        float: right;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Tajawal', sans-serif;
+        background-color: yellow;
+        background-image: url(../assets/img/loginBackground2.jpg);
+        width: 123%;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+
+    .header {
+        position: sticky;
+        width: 100%;
+        height: 6rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .header h3 {
+        background-color: rgba(113, 54, 223, 0.527);
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .header1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .header img {
+        height: 6rem;
+        transition: 400ms;
+    }
+
+    .header img:hover {
+        -webkit-filter: drop-shadow(0px 0px 10px #222);
+        filter: drop-shadow(0px 0px 5px 5px #222);
+    }
+
+    .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 100%;
+        text-align: center;
+        padding: 2%;
+        border-radius: 0.6rem;
+    }
+
+    .divForm {
+        display: flex;
+        height: 85vh;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .divCad {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 50%;
+        height: 100%;
+        border-radius: 1.2rem;
+        background: rgb(122, 120, 120);
+
+        padding-bottom: 1%;
+    }
+
+    .tituloCard {
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Poppins';
+    }
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+    }
+
+    /* Animações */
+    .header img:hover {
+        -webkit-filter: drop-shadow(0px 0px 0.6rem #222);
+        filter: drop-shadow(0px 0px 0.3rem 0.3rem #222);
+    }
+
+    .cad__field {
+        display: flex;
+    }
+
+    .cad__field input,
+    select {
+        width: 30rem;
+        height: 2rem;
+        border-radius: 0.75rem;
+        border: none;
+        text-align: center;
+    }
+
+    .Entrar {
+        font-size: 0.8rem;
+        margin: 8px 0px 0px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Poppins';
+        padding: 0.9rem;
+        background: white;
+        border-radius: 1.1rem;
+    }
+
+    .divForm .container {
+        display: flex;
+        height: 70vh;
+        width: 100vw;
+        justify-content: space-around;
+        padding-top: 4%;
+    }
+
+    .divCadApresentar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 40%;
+        height: 100%;
+        border-radius: 1.25rem;
+        background: rgb(87, 85, 85);
+        box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.3), 0 0.5rem 1.20rem 0 rgba(0, 0, 0, 0.49);
+    }
+
+    .cad_Apresentar {
+        color: white;
+    }
+
+    .tituloFunc {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .box_func {
+        display: flex;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btExcluir {
+        width: 4rem;
+        border-radius: 0.6rem;
+        border: 0;
+        float: right;
+    }
+}
