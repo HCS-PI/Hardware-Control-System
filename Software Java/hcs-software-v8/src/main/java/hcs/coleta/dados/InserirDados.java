@@ -18,20 +18,20 @@ public class InserirDados {
         DadosCpu dadosCpu = new DadosCpu();
 
         connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
-                + dadosCpu.getConsumoCpu() + ", 1);");
+                + dadosCpu.getConsumoCpu() + ", 5);");
 
         connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
-                + dadosCpu.getConsumoCpu() + ", 1);");
+                + dadosCpu.getConsumoCpu() + ", 5);");
     }
 
     public void inserirDadosRam() {
         DadosMemoriaRam dadosRam = new DadosMemoriaRam();
 
         connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
-                + dadosRam.getConsumoRam() + ", 3);");
+                + dadosRam.getConsumoRam() + ", 7);");
 
         connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
-                + dadosRam.getConsumoRam() + ", 3);");
+                + dadosRam.getConsumoRam() + ", 7);");
     }
 
     public void inserirDadosDisco() {
@@ -42,9 +42,9 @@ public class InserirDados {
         DadosTemperatura dadosTemp = new DadosTemperatura();
 
         connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
-                + dadosTemp.getTemperaturaCelsius() + ", 2);");
+                + dadosTemp.getTemperaturaCelsius() + ", 6);");
 
         connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
-                + dadosTemp.getTemperaturaCelsius() + ", 2);");
+                + dadosTemp.getTemperaturaCelsius() + ", 6);");
     }
 }
