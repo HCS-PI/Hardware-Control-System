@@ -1,6 +1,7 @@
 hcs\view\Dashboard.class
 hcs\coleta\dados\InserirDados.class
 hcs\coleta\dados\DadosCpu.class
+hcs\coleta\dados\Pipefy.class
 hcs\view\TelaLogin$3.class
 conexao\bd\Medida.class
 hcs\coleta\dados\DadosDisco.class
@@ -9,7 +10,6 @@ hcs\view\TelaLogin$2.class
 hcs\view\TelaLogin.class
 hcs\view\Dashboard$1.class
 hcs\coleta\dados\DadosMemoriaRam.class
-.netbeans_automatic_build
 conexao\bd\Funcionario.class
 hcs\view\Dashboard$2.class
 conexao\bd\DadosConexao.class
