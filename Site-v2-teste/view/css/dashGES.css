@@ -68,7 +68,7 @@ a {
     width: 100%;
 }
 
-.boxInfoCPUCarros, .boxInfoRAMCarros{
+.boxInfoCPUCarros, .boxInfoRAMCarros, .boxInfoTempCPUCarros{
     display: flex;
     flex-direction: row; 
     align-items: center;
@@ -76,7 +76,7 @@ a {
     width: 100%;
     margin-bottom: 30px;
 }
-.informacoesCPUCarros, .informacoesRAMCarros{
+.informacoesCPUCarros, .informacoesRAMCarros, .informacoesTempCPUCarros{
     background-color: rgba(0, 0, 0, 0.245);
     display: flex;
     width: 90%;
@@ -86,7 +86,7 @@ a {
     border-radius: 10px;
 
 }
-.div_graficoCPU, .div_graficoRAM{
+.div_graficoCPU, .div_graficoRAM, .div_graficoTempCPU{
     display: flex;
     width: 45%;
     margin: 35px;
@@ -114,7 +114,7 @@ a {
     margin-right:60px ;
 }
 
-.div_graficoCPU canvas, .div_graficoRAM  canvas {
+.div_graficoCPU canvas, .div_graficoRAM  canvas , .div_graficoTempCPU canvas{
     height: 350px;
     background-color: rgba(255, 255, 255, 0.771);
     border-radius: 10px;
@@ -175,6 +175,10 @@ a {
         width: 33.3%;
         background-color: rgba(137, 43, 226, 0.220);
     }
+    .grafico4 {
+        width: 50%;
+        background-color: rgba(221, 55, 146, 0.22);
+    }
     
 }
 @media screen and (max-width: 500px) {
@@ -209,7 +213,10 @@ a {
         width: 33.3%;
         background-color: rgba(137, 43, 226, 0.220);
     }
-    
+    .grafico4 {
+        width: 50%;
+        background-color: rgba(221, 55, 146, 0.22);
+    }
 }
 
     
