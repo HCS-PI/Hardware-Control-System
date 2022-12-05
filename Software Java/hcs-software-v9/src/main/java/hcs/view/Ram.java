@@ -102,6 +102,7 @@ public final class Ram extends javax.swing.JFrame {
         lblRamDisponivel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hardware Control System - Dashboard RAM");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelHeader.setBackground(new java.awt.Color(4, 30, 84));
@@ -146,7 +147,7 @@ public final class Ram extends javax.swing.JFrame {
         });
         panelMenu.add(btnSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 70));
 
-        jButton3.setBackground(new java.awt.Color(0, 75, 200));
+        jButton3.setBackground(new java.awt.Color(25, 120, 220));
         jButton3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/cpuIconWhite.png"))); // NOI18N
@@ -174,7 +175,7 @@ public final class Ram extends javax.swing.JFrame {
         });
         panelMenu.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 70));
 
-        jButton5.setBackground(new java.awt.Color(25, 120, 220));
+        jButton5.setBackground(new java.awt.Color(0, 75, 200));
         jButton5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/ramIconWhite.png"))); // NOI18N

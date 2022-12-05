@@ -86,6 +86,7 @@ public class Temp extends javax.swing.JFrame {
         lblFaren = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hardware Control System - Dashboard Temperatura CPU");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelHeader.setBackground(new java.awt.Color(4, 30, 84));
@@ -102,7 +103,7 @@ public class Temp extends javax.swing.JFrame {
         panelMenu.setBackground(new java.awt.Color(9, 22, 112));
         panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(25, 120, 220));
+        jButton1.setBackground(new java.awt.Color(0, 75, 200));
         jButton1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/thermometerIconWhite.png"))); // NOI18N
@@ -111,13 +112,18 @@ public class Temp extends javax.swing.JFrame {
         jButton1.setRolloverEnabled(false);
         panelMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 140, 70));
 
-        btnSistema.setBackground(new java.awt.Color(0, 75, 200));
+        btnSistema.setBackground(new java.awt.Color(25, 120, 220));
         btnSistema.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         btnSistema.setForeground(new java.awt.Color(255, 255, 255));
         btnSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/managementIconWhite.png"))); // NOI18N
         btnSistema.setText("SISTEMA");
         btnSistema.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnSistema.setRolloverEnabled(false);
+        btnSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSistemaActionPerformed(evt);
+            }
+        });
         panelMenu.add(btnSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 70));
 
         jButton3.setBackground(new java.awt.Color(25, 120, 220));
@@ -155,6 +161,11 @@ public class Temp extends javax.swing.JFrame {
         jButton5.setText("RAM");
         jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton5.setRolloverEnabled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         panelMenu.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 140, 70));
 
         getContentPane().add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 520));
@@ -285,6 +296,18 @@ public class Temp extends javax.swing.JFrame {
         new Disco().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        new Ram().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaActionPerformed
+        // TODO add your handling code here:
+        new Sistema().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSistemaActionPerformed
 
     /**
      * @param args the command line arguments

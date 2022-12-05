@@ -88,6 +88,7 @@ public class Sistema extends javax.swing.JFrame {
         lblArquitetura = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hardware Control System - Dashboard Sistema");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelHeader.setBackground(new java.awt.Color(4, 30, 84));
@@ -111,6 +112,11 @@ public class Sistema extends javax.swing.JFrame {
         jButton1.setText("TEMP ");
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton1.setRolloverEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         panelMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 140, 70));
 
         btnSistema.setBackground(new java.awt.Color(0, 75, 200));
@@ -157,6 +163,11 @@ public class Sistema extends javax.swing.JFrame {
         jButton5.setText("RAM");
         jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton5.setRolloverEnabled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         panelMenu.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 140, 70));
 
         getContentPane().add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 520));
@@ -323,6 +334,17 @@ public class Sistema extends javax.swing.JFrame {
         new Disco().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Ram().setVisible(true);        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Temp().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

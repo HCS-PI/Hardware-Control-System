@@ -125,6 +125,7 @@ public final class Cpu extends javax.swing.JFrame {
         lblModelo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hardware Control System - Dashboard Consumo CPU");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelHeader.setBackground(new java.awt.Color(4, 30, 84));

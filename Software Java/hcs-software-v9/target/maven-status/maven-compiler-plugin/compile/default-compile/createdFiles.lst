@@ -5,6 +5,7 @@ hcs\graficos\GraficoRamTask.class
 hcs\coleta\dados\DadosCpu.class
 hcs\coleta\dados\Pipefy.class
 hcs\view\Cpu$7.class
+hcs\view\Sistema$5.class
 hcs\graficos\GraficoRam.class
 hcs\view\Cpu$3.class
 hcs\view\Dashboard$6.class
@@ -29,6 +30,7 @@ hcs\view\Sistema.class
 hcs\view\Temp$4.class
 hcs\view\Ram$5.class
 hcs\view\Disco$5.class
+hcs\view\Temp$6.class
 hcs\view\TelaLogin$3.class
 conexao\bd\Medida.class
 hcs\coleta\dados\DadosDisco.class
@@ -45,7 +47,10 @@ hcs\coleta\dados\DadosMemoriaRam.class
 hcs\view\Temp$3.class
 hcs\view\Dashboard$4.class
 hcs\view\Cpu$5.class
+hcs\view\Sistema$6.class
+hcs\view\Temp$5.class
 hcs\view\Cpu$4.class
+hcs\view\Disco$6.class
 hcs\view\Ram$1.class
 hcs\view\Disco.class
 hcs\view\Dashboard$2.class
