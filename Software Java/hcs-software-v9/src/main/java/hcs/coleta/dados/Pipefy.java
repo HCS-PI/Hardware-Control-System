@@ -12,10 +12,10 @@ public class Pipefy {
         try {
             OkHttpClient client = new OkHttpClient();
             MediaType mediaType = MediaType.parse("application/json");
-            RequestBody body = RequestBody.create(mediaType, String.format("{"query":"mutation{   createCard(input:{     pipe_id:302751447,    fields_attributes:[     {field_id:\"assunto\",       field_value:\"%s\"},     {field_id:\"texto_longo\",field_value:\"%s\"}   ] }) {     card {      id title     }   }   }"}", assunto, descricao));
+            RequestBody body = RequestBody.create(mediaType, String.format("{\"query\":\"mutation{   createCard(input:{     pipe_id:302751447,    fields_attributes:[     {field_id:\\\"assunto\\\",       field_value:\\\"%s\\\"},     {field_id:\\\"texto_longo\\\",field_value:\\\"%s\\\"}   ] }) {     card {      id title     }   }   }\"}", assunto, descricao));
 
             Request request = new Request.Builder()
-                    .url("https://api.pipefy.com/graphql%22)
+                    .url("https://api.pipefy.com/graphql")
                     .post(body)
                     .addHeader("accept", "application/json")
                     .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIwODg1NjcsImVtYWlsIjoibWF0aGV1cy5zaWx2YUBzcHRlY2guc2Nob29sIiwiYXBwbGljYXRpb24iOjMwMDIxMzMwOX19.iZPooHUDHJBA1-dXDlzzEYVtmzKAPCIHK0YuY0-IwePMeQobX04Y_g_TM_2nrcR1m7f0oTof9Ey2irE6E1jnnA")
