@@ -11,6 +11,10 @@ router.post("/mediaRamCarros", function (req, res) {
     console.log('Chegou na rota!')
     dashGestorController.mediaRamCarrosController(req, res);
 });
+router.post("/cpuTemperaturaServer", function (req, res) {
+    console.log('Chegou na rota cpuTempServer')
+    dashGestorController.cpuTemperaturaController(req, res);
+});
 
 
 module.exports = router;

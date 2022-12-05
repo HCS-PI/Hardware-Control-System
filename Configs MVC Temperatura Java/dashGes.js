@@ -20,10 +20,10 @@ setInterval(() => {
           resposta.json().then((json) => {
     
             for (let i = 0; i < json.length; i++) {
-              if (json[i].Dispositivo % 2 == 0) {
-                vt_Temperatura.push(json[i].Valor);
-              } else if (json[i].Dispositivo % 2 != 0) {
-                vt_ConsumoCPU.push(json[i].Valor);
+              if (json[i].dispositivo % 2 == 0) {
+                vt_Temperatura.push(json[i].valor);
+              } else if (json[i].dispositivo % 2 != 0) {
+                vt_ConsumoCPU.push(json[i].valor);
               } else {
                 console.log('Erro no IF Dispositivo')
               } 
@@ -103,10 +103,10 @@ setInterval(() => {
           resposta.json().then((json) => {
     
             for (let i = 0; i < json.length; i++) {
-              if (json[i].Dispositivo % 2 == 0) {
-                newTemp = (json[i].Valor);
-              } else if (json[i].Dispositivo % 2 != 0) {
-                newCpu = (json[i].Valor);
+              if (json[i].dispositivo % 2 == 0) {
+                newTemp = (json[i].valor);
+              } else if (json[i].dispositivo % 2 != 0) {
+                newCpu = (json[i].valor);
               } else {
                 console.log('Erro no IF Dispositivo')
               } 

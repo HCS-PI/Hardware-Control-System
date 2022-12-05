@@ -232,7 +232,7 @@ const grafico3 = new Chart(
 );
 */
 
-/*
+
 function plotarTempCpuMaisRecente() {
   vt_ConsumoCPU = [];
   vt_Temperatura = [];
@@ -250,12 +250,12 @@ function plotarTempCpuMaisRecente() {
         resposta.json().then((json) => {
   
           for (let i = 0; i < json.length; i++) {
-            if (json[i].Dispositivo % 2 == 0) {
-              vt_Temperatura.push(json[i].Valor);
-            } else if (json[i].Dispositivo % 2 != 0) {
-              vt_ConsumoCPU.push(json[i].Valor);
+            if (json[i].dispositivo % 2 == 0) {
+              vt_Temperatura.push(json[i].valor);
+            } else if (json[i].dispositivo % 2 != 0) {
+              vt_ConsumoCPU.push(json[i].valor);
             } else {
-              console.log('Erro no IF Dispositivo')
+              console.log('Erro no IF Dispositivo');
             } 
           }
   
@@ -272,12 +272,12 @@ function plotarTempCpuMaisRecente() {
                       barPercentage: 0.9, 
                       backgroundColor: '#49a7de', // cor de fundo
                       borderColor: '#257eb3', // cor da borda
-                      data: [], // Plot dos valores embaixo das barras
+                      data: vt_ConsumoCPU, // Plot dos valores embaixo das barras
                       yAxisID: 'y',
                   },
                   {
                       label: 'Temperatura CPU (ºC)',
-                      data: [],
+                      data: vt_Temperatura,
                       borderColor: '#9c1010',
                       backgroundColor: '#d94343',
                       yAxisID: 'y',    
@@ -303,7 +303,7 @@ function plotarTempCpuMaisRecente() {
   
           //Diz qual é a div que receberá o gráfico pronto
           grafico4 = new Chart(
-              document.getElementById('grafico4'),
+              document.getElementById('graf_TempCPU'),
               config4,
           );
         });
@@ -331,18 +331,18 @@ const updateGraph = () => {
     }).then(function (resposta) {
       if (resposta.ok) {
         resposta.json().then((json) => {
-  
+
           for (let i = 0; i < json.length; i++) {
-            if (json[i].Dispositivo % 2 == 0) {
-              newTemp = (json[i].Valor);
-            } else if (json[i].Dispositivo % 2 != 0) {
-              newCpu = (json[i].Valor);
+            if (json[i].dispositivo % 2 == 0) {
+              newTemp = (json[i].valor);
+            } else if (json[i].dispositivo % 2 != 0) {
+              newCpu = (json[i].valor);
             } else {
               console.log('Erro no IF Dispositivo')
             } 
           }
 
-          grafico4.data.datasets[0].data.push(newCPU);
+          grafico4.data.datasets[0].data.push(newCpu);
           grafico4.data.datasets[1].data.push(newTemp);
 
           if (grafico4.data.datasets[0].data.length > 10) {
@@ -354,4 +354,3 @@ const updateGraph = () => {
     });
           grafico4.update();
 }
-*/
