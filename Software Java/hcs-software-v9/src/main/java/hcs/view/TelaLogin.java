@@ -2,6 +2,7 @@
 package hcs.view;
 
 import conexao.bd.DadosConexao;
+import conexao.bd.DadosConexaoAWS;
 import conexao.bd.Funcionario;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -227,7 +228,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
         // TODO add your handling code here:
-        DadosConexao database = new DadosConexao();
+        DadosConexaoAWS database = new DadosConexaoAWS();
 
         JdbcTemplate connection = database.getConnection();
 
