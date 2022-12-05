@@ -15,7 +15,7 @@ public class DadosConexao {
 
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 
-        dataSource.setUrl("jdbc:mysql://3.91.232.92:3306/hardware_control_system");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/hardware_control_system");
 
         dataSource.setUsername("root");
 
