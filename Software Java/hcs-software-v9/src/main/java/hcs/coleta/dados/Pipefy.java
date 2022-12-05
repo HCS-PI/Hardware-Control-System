@@ -1,33 +1,31 @@
 package hcs.coleta.dados;
 
-import com.google.protobuf.Message;
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.text.MessageFormat;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class Pipefy {
 
-    public static void criarCards(String assunto, String descricao) throws IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.pipefy.com/graphql"))
-                .header("accept", "application/json")
-                .header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIwODg1NjcsImVtYWlsIjoibWF0aGV1cy5zaWx2YUBzcHRlY2guc2Nob29sIiwiYXBwbGljYXRpb24iOjMwMDIxMzMwOX19.iZPooHUDHJBA1-dXDlzzEYVtmzKAPCIHK0YuY0-IwePMeQobX04Y_g_TM_2nrcR1m7f0oTof9Ey2irE6E1jnnA")
-                .header("Content-Type", "application/json")
-                .method("POST", HttpRequest.BodyPublishers.ofString("{\"query\":\"mutation{ createCard( input:    { pipe_id: \\\"302751447\\\" fields_attributes: "
-                            + "[          {field_id: \\\"assunto\\\", field_value: \\\" "+ assunto +" \\\"}          "
+    public void criarCards(String assunto, String descricao) {
+        try {
+            OkHttpClient client = new OkHttpClient();
+            MediaType mediaType = MediaType.parse("application/json");
+            RequestBody body = RequestBody.create(mediaType, String.format("{"query":"mutation{   createCard(input:{     pipe_id:302751447,    fields_attributes:[     {field_id:\"assunto\",       field_value:\"%s\"},     {field_id:\"texto_longo\",field_value:\"%s\"}   ] }) {     card {      id title     }   }   }"}", assunto, descricao));
 
-                            + "{field_id: \\\"texto_longo\\\", field_value: \\\" "+ descricao +" \\\"} ] } )            "
-                        
-                            + "{clientMutationId card {id title }}}\"}" ))
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        // System.out.println(response.body());
-    }
+            Request request = new Request.Builder()
+                    .url("https://api.pipefy.com/graphql%22)
+                    .post(body)
+                    .addHeader("accept", "application/json")
+                    .addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIwODg1NjcsImVtYWlsIjoibWF0aGV1cy5zaWx2YUBzcHRlY2guc2Nob29sIiwiYXBwbGljYXRpb24iOjMwMDIxMzMwOX19.iZPooHUDHJBA1-dXDlzzEYVtmzKAPCIHK0YuY0-IwePMeQobX04Y_g_TM_2nrcR1m7f0oTof9Ey2irE6E1jnnA")
+                    .addHeader("Content-Type", "application/json")
+                    .build();
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        criarCards("Teste RAM ", " A memoria ram está atingindo um total de 990%");
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
