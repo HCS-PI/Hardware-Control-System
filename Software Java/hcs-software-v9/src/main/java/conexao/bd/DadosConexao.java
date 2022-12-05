@@ -1,10 +1,10 @@
-
 package conexao.bd;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class DadosConexao {
+
     // ATRIBUTO
     private JdbcTemplate connection;
 
@@ -13,19 +13,13 @@ public class DadosConexao {
 
         BasicDataSource dataSource = new BasicDataSource();
 
-        dataSource​.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 
-        dataSource​.setUrl("jdbc:sqlserver://hcs-bd.database.windows.net:1433;"
-                + "database=hcs-bd;"
-                + "user=hcs-Grupo09@hcs-bd;"
-                + "password=hardwareCSg9;"
-                + "encrypt=true;"
-                + "trustServerCertificate=false;"
-                + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+        dataSource.setUrl("jdbc:mysql://3.91.232.92:3306/hardware_control_system");
 
-        dataSource​.setUsername("hcs-Grupo09");
+        dataSource.setUsername("root");
 
-        dataSource​.setPassword("hardwareCSg9");
+        dataSource.setPassword("urubu100");
 
         this.connection = new JdbcTemplate(dataSource);
 

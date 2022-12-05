@@ -16,12 +16,14 @@ public class InserirDados {
     Pipefy pipefy = new Pipefy();
 
     public void inserirDadosCpu() {
+        
         DadosCpu dadosCpu = new DadosCpu();
         String descricaoCpu;
-        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
+        
+        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
                 + dadosCpu.getConsumoCpu() + ", 5);");
 
-        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
+        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
                 + dadosCpu.getConsumoCpu() + ", 5);");
 
         if (dadosCpu.getConsumoCpu() > 70 && dadosCpu.getConsumoCpu() < 90) {
@@ -38,10 +40,10 @@ public class InserirDados {
         DadosMemoriaRam dadosRam = new DadosMemoriaRam();
         System.out.println(dadosRam.getConsumoRam());
 
-        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
+        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
                 + dadosRam.getConsumoRam() + ", 7);");
 
-        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
+        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
                 + dadosRam.getConsumoRam() + ", 7);");
 
         if (dadosRam.getConsumoRam() > 70 && dadosRam.getConsumoRam() < 90) {
@@ -55,15 +57,21 @@ public class InserirDados {
 
     public void inserirDadosDisco() {
         // Em desenvolvimento
+        DadosDisco dadosDisco = new DadosDisco();
+        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
+                + dadosDisco.getStrDiscoUsadoGb() + ", 8);");
+
+        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
+                + dadosDisco.getStrDiscoUsadoGb() + ", 8);");
     }
 
     public void inserirDadosTemperatura() {
         DadosTemperatura dadosTemp = new DadosTemperatura();
 
-        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
+        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (CURRENT_TIMESTAMP,"
                 + dadosTemp.getTemperaturaCelsius() + ", 6);");
 
-        connectionAWS.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
+        connection.update("insert into Medida(horario_registro,valor,fk_dispositivo) values (now(),"
                 + dadosTemp.getTemperaturaCelsius() + ", 6);");
     }
 }
