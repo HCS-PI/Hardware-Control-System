@@ -1,22 +1,22 @@
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosMemoriaRam.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Ram.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoCpu.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoCpuTask.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\conexao\bd\Medida.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Disco.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoRamTask.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\Pipefy.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Cpu.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Temp.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\conexao\bd\DadosConexao.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\conexao\bd\DadosConexaoAWS.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosSistema.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Dashboard.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\Sistema.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosTemperatura.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosDisco.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\InserirDados.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\conexao\bd\Funcionario.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosCpu.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoRam.java
-C:\Users\HinFumi\Desktop\PI\Hardware-Control-System\Software Java\hcs-software-v9\src\main\java\hcs\view\TelaLogin.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\conexao\bd\Medida.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosCpu.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosTemperatura.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Sistema.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\conexao\bd\DadosConexaoAWS.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosMemoriaRam.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosSistema.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Disco.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Temp.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoCpu.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\DadosDisco.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoRam.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\InserirDados.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Cpu.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\conexao\bd\DadosConexao.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Ram.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\conexao\bd\Funcionario.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoRamTask.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\coleta\dados\Pipefy.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\graficos\GraficoCpuTask.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\TelaLogin.java
+C:\Users\ricar\OneDrive\Documentos\CCO\PROJETO INDIVIDUAL\Software Java\hcs-software-v9\src\main\java\hcs\view\Dashboard.java
