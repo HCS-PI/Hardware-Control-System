@@ -282,7 +282,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/hc2white.png"))); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelHome.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 230, 160));
+        panelHome.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 230, 160));
 
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 120)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
