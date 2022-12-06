@@ -63,6 +63,7 @@ public class Disco extends javax.swing.JFrame {
             public void run() {
                 insertDados.inserirDadosCpu();
                 insertDados.inserirDadosRam();
+                insertDados.inserirDadosTemperatura();
                 
             }
         };

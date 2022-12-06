@@ -45,6 +45,7 @@ public class Sistema extends javax.swing.JFrame {
             public void run() {
                 insertDados.inserirDadosCpu();
                 insertDados.inserirDadosRam();
+                insertDados.inserirDadosTemperatura();
                 
             }
         };

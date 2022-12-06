@@ -14,6 +14,7 @@ hcs\view\Ram.class
 hcs\view\Sistema$2.class
 hcs\view\Ram$4.class
 hcs\view\Ram$7.class
+hcs\graficos\GraficoTempTask.class
 hcs\view\Disco$4.class
 hcs\view\Cpu$6.class
 hcs\view\Disco$2.class
@@ -36,6 +37,7 @@ conexao\bd\Medida.class
 hcs\coleta\dados\DadosDisco.class
 hcs\coleta\dados\DadosSistema.class
 hcs\view\Temp$2.class
+hcs\graficos\GraficoTemp.class
 hcs\view\Disco$1.class
 hcs\view\Ram$2.class
 hcs\view\Sistema$4.class

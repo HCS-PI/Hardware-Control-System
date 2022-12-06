@@ -8,17 +8,29 @@ import hcs.coleta.dados.DadosMemoriaRam;
 import hcs.coleta.dados.DadosSistema;
 import hcs.coleta.dados.DadosTemperatura;
 import hcs.coleta.dados.InserirDados;
+import hcs.graficos.GraficoCpu;
+import hcs.graficos.GraficoCpuTask;
+import hcs.graficos.GraficoTemp;
+import hcs.graficos.GraficoTempTask;
+import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.ui.RefineryUtilities;
 
 /**
  *
  * @author ricar
  */
-public class Temp extends javax.swing.JFrame {
+public final class Temp extends javax.swing.JFrame {
+    
+    GraficoTemp grafico = new GraficoTemp("Monitoramento Temperatura - CPU X RAM");
 
     /**
      * Creates new form Temp
@@ -30,6 +42,14 @@ public class Temp extends javax.swing.JFrame {
         this.setIconImage(iconeTitulo);
         
         initComponents();
+        
+        //grafico
+        grafico.pack();
+        RefineryUtilities.centerFrameOnScreen(grafico);
+        Grafico();
+        GraficoTempTask taskCpu = new GraficoTempTask(grafico);
+        Timer timer = new Timer("Grafico linha");
+        timer.schedule(taskCpu, 0, 3000);
 
         Looca looca = new Looca();
         Conversor conversor = new Conversor();
@@ -39,19 +59,39 @@ public class Temp extends javax.swing.JFrame {
         
         InserirDados insertDados = new InserirDados();
 
-        informacoesTemperatura();
-
         Timer temporizador = new Timer();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 insertDados.inserirDadosCpu();
                 insertDados.inserirDadosRam();
+                insertDados.inserirDadosTemperatura();
                 
             }
         };
 
         temporizador.schedule(task, 0, 1000);
+    }
+    
+    public void Grafico()  {
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        final XYDataset dataset = grafico.gerarDataSetInicial();
+
+        JFreeChart chart = grafico.gerarGrafico(dataset);
+                graficoCpu.setVisible(true);
+
+                ChartPanel pane = new ChartPanel(chart);
+                pane.setDomainZoomable(true);
+                
+                pane.setVisible(true);
+                
+                   graficoCpu.setLayout(new BorderLayout());
+                   
+                     graficoCpu.add(pane, BorderLayout.NORTH);
+                
+//        
     }
 
     /**
@@ -72,18 +112,9 @@ public class Temp extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         panelHome = new javax.swing.JPanel();
-        lblTitulo3 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         lblTitulo1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        lblTitulo2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        panelSistema = new javax.swing.JPanel();
-        lblCelsius = new javax.swing.JLabel();
-        panelSistema2 = new javax.swing.JPanel();
-        lblKelvin = new javax.swing.JLabel();
-        panelArquitetura = new javax.swing.JPanel();
-        lblFaren = new javax.swing.JLabel();
+        graficoCpu = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hardware Control System - Dashboard Temperatura CPU");
@@ -98,7 +129,7 @@ public class Temp extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(250, 250));
         panelHeader.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 40));
 
-        getContentPane().add(panelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 60));
+        getContentPane().add(panelHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 60));
 
         panelMenu.setBackground(new java.awt.Color(9, 22, 112));
         panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,53 +199,26 @@ public class Temp extends javax.swing.JFrame {
         });
         panelMenu.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 140, 70));
 
-        getContentPane().add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 520));
+        getContentPane().add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 590));
 
         panelHome.setBackground(new java.awt.Color(110, 124, 255));
         panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblTitulo3.setBackground(new java.awt.Color(56, 93, 118));
-
-        jLabel8.setBackground(new java.awt.Color(204, 255, 204));
-        jLabel8.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Farenheight:");
-        jLabel8.setPreferredSize(new java.awt.Dimension(250, 250));
-
-        javax.swing.GroupLayout lblTitulo3Layout = new javax.swing.GroupLayout(lblTitulo3);
-        lblTitulo3.setLayout(lblTitulo3Layout);
-        lblTitulo3Layout.setHorizontalGroup(
-            lblTitulo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblTitulo3Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
-        );
-        lblTitulo3Layout.setVerticalGroup(
-            lblTitulo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lblTitulo3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelHome.add(lblTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         lblTitulo1.setBackground(new java.awt.Color(56, 93, 118));
 
         jLabel9.setBackground(new java.awt.Color(204, 255, 204));
         jLabel9.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Celsius:");
+        jLabel9.setText("Temperatura - CPU x RAM");
         jLabel9.setPreferredSize(new java.awt.Dimension(250, 250));
 
         javax.swing.GroupLayout lblTitulo1Layout = new javax.swing.GroupLayout(lblTitulo1);
         lblTitulo1.setLayout(lblTitulo1Layout);
         lblTitulo1Layout.setHorizontalGroup(
             lblTitulo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblTitulo1Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(lblTitulo1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                 .addGap(15, 15, 15))
         );
         lblTitulo1Layout.setVerticalGroup(
@@ -225,63 +229,22 @@ public class Temp extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelHome.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 330, 70));
+        panelHome.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 450, 70));
 
-        lblTitulo2.setBackground(new java.awt.Color(56, 93, 118));
-
-        jLabel7.setBackground(new java.awt.Color(204, 255, 204));
-        jLabel7.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Kelvin:");
-        jLabel7.setPreferredSize(new java.awt.Dimension(250, 250));
-
-        javax.swing.GroupLayout lblTitulo2Layout = new javax.swing.GroupLayout(lblTitulo2);
-        lblTitulo2.setLayout(lblTitulo2Layout);
-        lblTitulo2Layout.setHorizontalGroup(
-            lblTitulo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lblTitulo2Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+        javax.swing.GroupLayout graficoCpuLayout = new javax.swing.GroupLayout(graficoCpu);
+        graficoCpu.setLayout(graficoCpuLayout);
+        graficoCpuLayout.setHorizontalGroup(
+            graficoCpuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
         );
-        lblTitulo2Layout.setVerticalGroup(
-            lblTitulo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lblTitulo2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        graficoCpuLayout.setVerticalGroup(
+            graficoCpuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
-        panelHome.add(lblTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        panelHome.add(graficoCpu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 860, 430));
 
-        panelSistema.setBackground(new java.awt.Color(56, 93, 118));
-        panelSistema.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblCelsius.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        lblCelsius.setForeground(new java.awt.Color(255, 255, 255));
-        panelSistema.add(lblCelsius, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 240, 70));
-
-        panelHome.add(panelSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 330, 70));
-
-        panelSistema2.setBackground(new java.awt.Color(56, 93, 118));
-        panelSistema2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblKelvin.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        lblKelvin.setForeground(new java.awt.Color(255, 255, 255));
-        panelSistema2.add(lblKelvin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 240, 70));
-
-        panelHome.add(panelSistema2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 330, 70));
-
-        panelArquitetura.setBackground(new java.awt.Color(56, 93, 118));
-        panelArquitetura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblFaren.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        lblFaren.setForeground(new java.awt.Color(255, 255, 255));
-        panelArquitetura.add(lblFaren, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 250, 70));
-
-        panelHome.add(panelArquitetura, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 330, 70));
-
-        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 740, 520));
+        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 910, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -344,37 +307,19 @@ public class Temp extends javax.swing.JFrame {
         });
     }
     
-    public void informacoesTemperatura() {
-        // Informações Sistema
-        DadosTemperatura dadosTemperatura = new DadosTemperatura();
-        
-        lblCelsius.setText(dadosTemperatura.getTemperaturaCelsius().toString());
-        lblFaren.setText(dadosTemperatura.getTemperaturaFaren().toString());
-        lblKelvin.setText(dadosTemperatura.getTemperaturaKelvin().toString());
-       
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSistema;
+    private javax.swing.JPanel graficoCpu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel lblCelsius;
-    private javax.swing.JLabel lblFaren;
-    private javax.swing.JLabel lblKelvin;
     private javax.swing.JPanel lblTitulo1;
-    private javax.swing.JPanel lblTitulo2;
-    private javax.swing.JPanel lblTitulo3;
-    private javax.swing.JPanel panelArquitetura;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelHome;
     private javax.swing.JPanel panelMenu;
-    private javax.swing.JPanel panelSistema;
-    private javax.swing.JPanel panelSistema2;
     // End of variables declaration//GEN-END:variables
 }

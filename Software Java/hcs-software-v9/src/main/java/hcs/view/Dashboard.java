@@ -69,6 +69,7 @@ public class Dashboard extends javax.swing.JFrame {
                 consumoRamRealTime();
                 insertDados.inserirDadosCpu();
                 insertDados.inserirDadosRam();
+                insertDados.inserirDadosTemperatura();
                 
             }
         };

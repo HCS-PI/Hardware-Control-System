@@ -2,10 +2,7 @@ package hcs.graficos;
 
 import com.github.britooo.looca.api.core.Looca;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.PlotOrientation;
@@ -15,44 +12,51 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.ApplicationFrame;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
-
-public class GraficoCpu extends ApplicationFrame
+public class GraficoTemp extends ApplicationFrame
 {
     
     private XYSeries series1;
     private XYSeries series2;
+    private XYSeries series3;
     private XYSeriesCollection dataSet;
 
-    
     Looca looca = new Looca();
 
     Double processadorUso = looca.getProcessador().getUso();
 
     Integer respostaCPU = processadorUso.intValue();
 
+    Integer temperatura = looca.getTemperatura().getTemperatura().intValue();
+    
     Long memoriaUso = (looca.getMemoria().getEmUso() * 100) / looca.getMemoria().getTotal();
 
     Integer respostaMemoria = memoriaUso.intValue();
     
     
     public XYDataset gerarDataSetInicial() {
-        this.series1 = new XYSeries("CPU");
+        this.series1 = new XYSeries("TEMP");
         series1.add(0.0, 0.0);
+        
+        this.series2 = new XYSeries("CPU");
+        series2.add(0.0, 0.0);
+        
+        this.series3 = new XYSeries("RAM");
+        series3.add(0.0, 0.0);
         
         final XYSeriesCollection dataset = new XYSeriesCollection();
         dataset.addSeries(series1);
+        dataset.addSeries(series2);
+        dataset.addSeries(series3);
     
         return dataset;
 
     }
-
+    
     public JFreeChart gerarGrafico(final XYDataset dataset) {
 
         JFreeChart chart = ChartFactory.createXYLineChart(
-                "Monitoramento CPU",
+                "Monitoramento TEMPERATURA - CPU X RAM",
                 "",
                 "",
                 dataset,
@@ -77,42 +81,44 @@ public class GraficoCpu extends ApplicationFrame
 
         return chart;
     }
-
-    // Método de exemplo que atualiza os dataset's
+    
+    
     public void atualizarDataSet() {
         processadorUso = looca.getProcessador().getUso();
         respostaCPU = processadorUso.intValue();
         memoriaUso = (looca.getMemoria().getEmUso() * 100) / looca.getMemoria().getTotal();
         respostaMemoria = memoriaUso.intValue();
+        temperatura = looca.getTemperatura().getTemperatura().intValue();
 
         // pegando o último valor do eixo X
         double maxXSeries1 = series1.getMaxX();
+        double maxXSeries2 = series2.getMaxX();
+        double maxXSeries3 = series3.getMaxX();
         
-
         double minXSeries1 = series1.getMinX();
+        double minXSeries2 = series2.getMinX();
+        double minXSeries3 = series3.getMinX();
        
 
-        // Incrementando eixo X em +1 para exemplo com um valor aleatório no eixo Y
-        //Substitua os valores aleatórios pelos valores lidos pelo 
         if (maxXSeries1 > 5 ) {
             series1.remove(minXSeries1);
+            series2.remove(minXSeries2);
+            series3.remove(minXSeries3);
             
         }
-        series1.add(maxXSeries1 + 1, respostaCPU);
-        
-
-        // Para atualizar é necessário recriar o dataset
+        series1.add(maxXSeries1 + 1, temperatura);
+        series2.add(maxXSeries2 + 1, respostaCPU);
+        series3.add(maxXSeries3 + 1, respostaMemoria);
+               
         dataSet = new XYSeriesCollection();
-
-        // adicionando novamente as series
         dataSet.addSeries(series1);
+        dataSet.addSeries(series2);
+        dataSet.addSeries(series3);
       
     }
     
-    
-    public GraficoCpu(String title) {
+    public GraficoTemp(String title) {
         super(title);
     }
-    
     
 }
