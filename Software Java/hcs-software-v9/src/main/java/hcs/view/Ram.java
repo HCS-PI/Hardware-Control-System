@@ -213,7 +213,7 @@ public final class Ram extends javax.swing.JFrame {
 
         lblRamEmUso.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         lblRamEmUso.setForeground(new java.awt.Color(255, 255, 255));
-        panelNucleos.add(lblRamEmUso, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 140, 70));
+        panelNucleos.add(lblRamEmUso, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 140, 70));
 
         jLabel10.setBackground(new java.awt.Color(204, 255, 204));
         jLabel10.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
@@ -231,7 +231,7 @@ public final class Ram extends javax.swing.JFrame {
 
         lblRamTotal.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         lblRamTotal.setForeground(new java.awt.Color(255, 255, 255));
-        panelNucleos.add(lblRamTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 120, 70));
+        panelNucleos.add(lblRamTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 120, 70));
 
         jLabel13.setBackground(new java.awt.Color(204, 255, 204));
         jLabel13.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
