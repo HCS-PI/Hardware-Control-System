@@ -12,7 +12,7 @@ function mediaRamCarrosModel(idEmpresa) {
     return database.executar(instrucaoSql);
 }
 function cpuTemperaturaModel() {
-    instrucaoSql = `select * from vwDashGesCPUTemp`
+    instrucaoSql = `select * from vwDashGesMostRecentCPU union select * from vwDashGesMostRecentTEMP`
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
