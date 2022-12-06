@@ -297,14 +297,14 @@ public final class Cpu extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Total:");
         jLabel10.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelNucleos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 70, 70));
+        panelNucleos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 120, 70));
 
         jLabel12.setBackground(new java.awt.Color(204, 255, 204));
         jLabel12.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 25)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Físicos:");
         jLabel12.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelNucleos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 100, 70));
+        panelNucleos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 130, 70));
 
         lblFisicos.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         lblFisicos.setForeground(new java.awt.Color(255, 255, 255));
@@ -315,11 +315,11 @@ public final class Cpu extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Lógicos:");
         jLabel13.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelNucleos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 100, 70));
+        panelNucleos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 140, 70));
 
         lblTotal.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         lblTotal.setForeground(new java.awt.Color(255, 255, 255));
-        panelNucleos.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 50, 70));
+        panelNucleos.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 90, 70));
 
         panelHome.add(panelNucleos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 680, 70));
 
@@ -328,7 +328,7 @@ public final class Cpu extends javax.swing.JFrame {
 
         lblModelo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         lblModelo.setForeground(new java.awt.Color(255, 255, 255));
-        panelModelo.add(lblModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 510, 35));
+        panelModelo.add(lblModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 660, 60));
 
         panelHome.add(panelModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 680, 70));
 
