@@ -69,7 +69,7 @@ public class Dashboard extends javax.swing.JFrame {
                 consumoRamRealTime();
                 insertDados.inserirDadosCpu();
                 insertDados.inserirDadosRam();
-                
+                insertDados.inserirDadosTemperatura();
             }
         };
 
@@ -277,17 +277,17 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VINDO");
         jLabel2.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelHome.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 430, 190));
+        panelHome.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 570, 190));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/hc2white.png"))); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelHome.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 180, 140));
+        panelHome.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 180, 140));
 
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 120)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("BEM");
         jLabel5.setPreferredSize(new java.awt.Dimension(250, 250));
-        panelHome.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 430, 190));
+        panelHome.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 500, 230));
 
         getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 740, 520));
 
