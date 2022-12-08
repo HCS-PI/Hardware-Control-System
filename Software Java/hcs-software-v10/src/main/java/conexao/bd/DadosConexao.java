@@ -17,9 +17,9 @@ public class DadosConexao {
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/hardware_control_system");
 
-        dataSource.setUsername("root");
+        dataSource.setUsername("aluno");
 
-        dataSource.setPassword("urubu100");
+        dataSource.setPassword("sptech");
 
         this.connection = new JdbcTemplate(dataSource);
 

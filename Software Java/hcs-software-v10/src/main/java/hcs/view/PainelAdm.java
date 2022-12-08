@@ -4,7 +4,7 @@
  */
 package hcs.view;
 
-import conexao.bd.DadosConexao;
+import conexao.bd.DadosConexaoAWS;
 import conexao.bd.Funcionario;
 import conexao.bd.Carro;
 import conexao.bd.Dispositivo;
@@ -20,7 +20,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class PainelAdm extends javax.swing.JFrame {
 
-    DadosConexao database = new DadosConexao();
+    DadosConexaoAWS database = new DadosConexaoAWS();
     JdbcTemplate connection = database.getConnection();
 
 //    TelaLogin login = new TelaLogin();
@@ -2490,8 +2490,7 @@ public class PainelAdm extends javax.swing.JFrame {
 
     private void bConsultarFuncionarioPainelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarFuncionarioPainelActionPerformed
         // TODO add your handling code here:
-        DadosConexao database = new DadosConexao();
-        JdbcTemplate connection = database.getConnection();
+
         Integer id = null;
         String nome = "nulo";
         String cpf = "nulo";
@@ -2546,8 +2545,7 @@ public class PainelAdm extends javax.swing.JFrame {
 
     private void bConsultarCarroPainelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarCarroPainelActionPerformed
         // TODO add your handling code here:
-        DadosConexao database = new DadosConexao();
-        JdbcTemplate connection = database.getConnection();
+
         Integer id = null;
         String mac = "nulo";
         String placa = vPlacaCarro.getText();
@@ -2601,8 +2599,7 @@ public class PainelAdm extends javax.swing.JFrame {
 
     private void bConsultarDispositivoPainelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarDispositivoPainelActionPerformed
         // TODO add your handling code here:
-        DadosConexao database = new DadosConexao();
-        JdbcTemplate connection = database.getConnection();
+
         Integer id = null;
         String tipo = "nulo";
         String modelo = "nulo";
@@ -2660,8 +2657,7 @@ public class PainelAdm extends javax.swing.JFrame {
 
     private void bConsultarEmpresaPainelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarEmpresaPainelActionPerformed
         // TODO add your handling code here:
-        DadosConexao database = new DadosConexao();
-        JdbcTemplate connection = database.getConnection();
+
         Integer id_empresa = null;
         String nomeEmpresa = "nulo";
         String cnpj = "nulo";
